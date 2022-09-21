@@ -9,13 +9,14 @@ import AuthWindowFooter from './AuthWindowFooter/AuthWindowFotter';
 interface IAuthWindow {
   children: React.ReactNode;
   isFooter:boolean;
+  isForgot: boolean;
   title:{
     title:string;
     subtitle:string;
   }
 }
 
-const AuthWindow = ({ children,isFooter,title }: IAuthWindow) => {
+const AuthWindow = ({ children,isFooter,title,isForgot }: IAuthWindow) => {
   
   return (
       <>
@@ -24,7 +25,7 @@ const AuthWindow = ({ children,isFooter,title }: IAuthWindow) => {
         <Logo />
         <AuthBodyTitle title={title.title} subTitle={title.subtitle} />
         {children}
-        {isFooter && <AuthWindowFooter />}
+        {isFooter && <AuthWindowFooter isForget={isForgot} />}
       </div>
       
       </>

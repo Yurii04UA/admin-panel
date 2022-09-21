@@ -1,12 +1,14 @@
 import "./AuthWindowFooter.scss";
+import { AuthWindowFotterForgot } from "./AuthWindowFotterForgot";
 
-const AuthWindowFooter = () => {
+interface IForgot{
+  isForget: boolean
+}
+
+const AuthWindowFooter = ({isForget}: IForgot) => {
   return (
     <div className="footer">
-      <div className="btn-wrapper">
-        <div>Forgot your password?</div>
-        <button className="btn-footer">Click!</button>
-      </div>
+      {isForget? <AuthWindowFotterForgot />: null}
       <div className="btn-wrapper">
         <div>Don't have an account?</div>
         <button className="btn-footer">Sing up</button>

@@ -50,6 +50,7 @@ export const Login = ({ value, setValue }: ILogin) => {
     <>
       <AuthWindow
         isFooter={true}
+        isForgot={true}
         title={{
           title: "Log In to Dashboard Kit",
           subtitle: "Enter your email and password",
