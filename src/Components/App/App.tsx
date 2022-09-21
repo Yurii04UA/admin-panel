@@ -3,6 +3,7 @@ import ForgotPass from '../../Pages/ForgotPass/ForgotPass';
 import { ForgotPassResult } from '../../Pages/ForgotPassResult/ForgotPassResult';
 import HomePage from '../../Pages/HomePage/HomePage';
 import { Login } from '../../Pages/Login/Login';
+import { Registration } from '../../Pages/Registration/Registration';
 import { ResetPassword } from '../../Pages/ResetPassword/ResetPassword';
 import AuthWindow from '../Auth/AuthWindow/AuthWindow';
 import './App.scss'
@@ -14,7 +15,8 @@ function App() {
     <div className='App'>
       {/* {isLogin? <HomePage /> : <Login setValue={setIsLogin} value={isLogin} />} */}
       {/* {isForgot? <ForgotPassResult /> : <ForgotPass setValue={setIsForgot} value={isForgot}/>} */}
-      <ResetPassword />
+      {/* <ResetPassword /> */}
+      <Registration />
     </div>
   );
 }
