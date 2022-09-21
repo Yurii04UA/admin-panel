@@ -25,57 +25,62 @@ export const Registration = () => {
       if (!REG.test(String(email).toLocaleLowerCase())) {
          err = true;
          setEmailErr("Incorrect email");
-       }
+       };
+
        if (!email) {
          err = true;
          setEmailErr("Field must not be empty");
-       }
+       };
 
        if (!pass) {
          err = true;
          setPassErr("Field must not be empty");
-       }
+       };
+
        if (!passConfirm) {
          err = true;
          setPassConfirmErr("Field must not be empty");
-       }
+       };
 
        if(pass.length < 8 || passConfirm.length < 8) {
          err= true
          setPassErr('Password must have 8 characters')
          setPassConfirmErr('Password must have 8 characters')
-       }
+       };
 
        if(pass!=passConfirm){
          err = true;
          setPassConfirmErr('Passwords must match');
          setPassErr('Passwords must match');
-       }
+       };
 
       if (!REG_ONLY_LETTER.test(String(name).toLocaleLowerCase())) {
          err = true;
          setNameErr("Name must contain only letters");
-       }
+       };
+
        if(!name){
          err = true;
          setNameErr("Field must not be empty");
-       }
+       };
+
       if (!REG_ONLY_LETTER.test(String(lastName).toLocaleLowerCase())) {
          err = true;
          setLastNameErr("Name must contain only letters");
-       }
+       };
+
        if(!lastName){
          err = true;
          setLastNameErr("Field must not be empty");
-       }
+       };
+
        if(!err){
          setShowResult(true)
-       }
-   }
+       };
+   };
 
    const submitHandler = (event: React.FormEvent) => {
       event.preventDefault();
-      
       setNameErr('');
       setLastNameErr('')
       setEmailErr('');
@@ -141,7 +146,7 @@ const registration =
             />
       <Button children={'Registration'} />
       </form>
- </AuthWindow>
+  </AuthWindow>
 
  const result = <AuthWindow 
  isFooter={false}
@@ -156,5 +161,5 @@ const registration =
     <>
     {showResult? result : registration}
     </>
-  )
+  );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Input.scss";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -11,17 +11,9 @@ interface IInput {
   setValue: React.Dispatch<React.SetStateAction<string>>;
   icon:boolean;
   error?:string;
-}
+};
 
-export const Input = ({
-      label,
-      type,
-      placeholder,
-      value,
-      setValue,
-      icon,
-      error
-}: IInput) => {
+export const Input = ({label, type, placeholder, value, setValue, icon, error}: IInput) => {
    const [showPass,setShowPass] = useState(false);
   return (
     <>

@@ -1,7 +1,7 @@
 interface ITitle{
     title:string;
     subTitle:string;
-}
+};
 
 const AuthBodyTitle = ({title,subTitle}: ITitle) => {
     return (

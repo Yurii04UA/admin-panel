@@ -1,17 +1,14 @@
-
 import { useState } from "react";
 import AuthWindow from "../../Components/Auth/AuthWindow/AuthWindow";
 import { Input } from "../../Components/Auth/Form/Input/Input";
 import Button from "../../Components/Button/Button";
 import { REG } from "../../Constans/Constans";
 
-interface IForgorPass {
-  value?: boolean;
-  setValue: React.Dispatch<React.SetStateAction<boolean>>;
-}
-const ForgotPass = ({setValue}: IForgorPass) => {
+
+const ForgotPass = () => {
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
+  const [showResult,setShowResult] = useState(false);
 
   const submitHandler = (event: React.FormEvent) => {
     let err = false;
@@ -28,35 +25,45 @@ const ForgotPass = ({setValue}: IForgorPass) => {
     };
 
     if(!err){
-      setValue(true);
       setEmail('');
-    }
+      setShowResult(true)
+    };
   };
   
+  const result = <AuthWindow 
+    isFooter={false} 
+    isForgot={false}
+    title={{
+      title:"Forgot password?",
+      subtitle:'Link to change your password has been sent to provided email if we have it inside our system'
+    }}>
 
+    </AuthWindow>
+
+    const forgot = <AuthWindow 
+    isFooter={true}
+    isForgot={false}
+    title={{
+      title:'Forgot password?',
+      subtitle:'Enter your email from registered account'
+    }}>
+      <form onSubmit={submitHandler}>
+        <Input
+          label="email"
+          type="text"
+          placeholder="Enter your email"
+          value={email}
+          setValue={setEmail}
+          icon={false}
+          error={emailErr}
+        />
+        <Button children={'Send'}/>
+      </form>
+  </AuthWindow>
   return (
-  
-      <AuthWindow 
-        isFooter={true}
-        isForgot={false}
-        title={{
-          title:'Forgot password?',
-          subtitle:'Enter your email from registered account'
-        }}>
-          <form onSubmit={submitHandler}>
-            <Input
-              label="email"
-              type="text"
-              placeholder="Enter your email"
-              value={email}
-              setValue={setEmail}
-              icon={false}
-              error={emailErr}
-            />
-            <Button children={'Send'}/>
-          </form>
-      </AuthWindow>
-
+    <>
+      {showResult? result : forgot }
+    </>
   );
 };
 

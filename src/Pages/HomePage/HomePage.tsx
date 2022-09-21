@@ -9,7 +9,7 @@ const HomePage = () => {
       <Sitebar />
       <MainContent />
     </div>
-  )
-}
+  );
+};
 
 export default HomePage;

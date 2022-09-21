@@ -1,10 +1,14 @@
-import React from "react";
+import { useContext } from "react";
+import { Context } from "../../../../Context/Context";
 
 export const AuthWindowFotterForgot = () => {
+  const { openForgot } = useContext(Context);
   return (
     <div className="btn-wrapper">
       <div>Forgot your password?</div>
-      <button className="btn-footer">Click!</button>
+      <button onClick={openForgot} className="btn-footer">
+        Click!
+      </button>
     </div>
   );
 };
