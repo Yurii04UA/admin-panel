@@ -10,7 +10,7 @@
       border: 1px solid #F0F1F7;
       outline: none;
       color: #8a8a8a;
-      margin-bottom: 10px;
+      
 
       &::placeholder {
          color: #4B506D;
@@ -22,9 +22,10 @@
       position: absolute;
       padding: 2px;
       right: 10px;
-      bottom: 0;
+      top: 30px;
       background-color: #fff;
       border: none;
       cursor: pointer;
+      color: #8a8a8a;
    }
 }
