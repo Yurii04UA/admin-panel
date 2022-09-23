@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AuthWindow from "../../Components/Auth/AuthWindow/AuthWindow";
-import { Input } from "../../Components/Auth/Form/Input/Input";
-import Button from "../../Components/Button/Button";
+import { AuthWindow } from "../../Components/Auth/AuthWindow/index";
+import { Input } from "../../Components/Auth/Form/Input/index";
+import { Button } from "../../Components/Button/index";
 import { REG } from "../../Constans/Constans";
 import "./Login.scss";
 
@@ -10,33 +10,34 @@ interface ILogin {
   setValue: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Login = ({ value, setValue }: ILogin) => {
+export const Login = ({ setValue }: ILogin) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [passErr, setPassErr] = useState("");
 
   const validateLogin = () => {
-   let err = false;
+    let err = false;
     if (!REG.test(String(email).toLocaleLowerCase())) {
       err = true;
       setEmailErr("Incorrect email");
     }
+
     if (!email) {
       err = true;
       setEmailErr("Field must not be empty");
     }
+
     if (!password) {
       err = true;
       setPassErr("Field must not be empty");
     }
-    
-    if(!err){
+
+    if (!err) {
       setValue(true);
-      setEmail('');
-      setPassword('');
+      setEmail("");
+      setPassword("");
     }
-    
   };
 
   const submitHandler = (event: React.FormEvent) => {
@@ -75,9 +76,8 @@ export const Login = ({ value, setValue }: ILogin) => {
             icon={true}
             error={passErr}
           />
-          <Button children={"Log In"} />
+          <Button children={"Log In"} type="submit" />
         </form>
-
       </AuthWindow>
     </>
   );

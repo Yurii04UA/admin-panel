@@ -1,7 +1,6 @@
 import "./Header.scss";
-import Button from '@mui/material/Button';
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="main-header">
       <div>Overview</div>
@@ -10,5 +9,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

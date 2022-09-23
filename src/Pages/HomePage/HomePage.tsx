@@ -1,11 +1,10 @@
-import React from 'react';
-import MainContent from '../MainContent/MainContent';
-import Sitebar from '../Sitebar/Sitebar';
-import './HomePage.scss'
+import {MainContent} from "../MainContent/MainContent";
+import { Sitebar } from "../Sitebar/index";
+import "./HomePage.scss";
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
-    <div className='homepage'>
+    <div className="homepage">
       <Sitebar />
       <MainContent />
     </div>

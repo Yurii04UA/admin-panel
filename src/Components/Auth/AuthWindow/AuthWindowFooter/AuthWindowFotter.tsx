@@ -5,16 +5,16 @@ import { Context } from "../../../../Context/Context";
 
 interface IForgot {
   isForget: boolean;
-};
+}
 
-const AuthWindowFooter = ({ isForget }: IForgot) => {
+export const AuthWindowFooter = ({ isForget }: IForgot) => {
   const { openRegistr } = useContext(Context);
 
   return (
     <div className="footer">
       {isForget ? <AuthWindowFotterForgot /> : null}
       <div className="btn-wrapper">
-        <div>Don't have an account?</div>
+        <div>Don`t have an account?</div>
         <button onClick={openRegistr} className="btn-footer">
           Sing up
         </button>
@@ -22,5 +22,3 @@ const AuthWindowFooter = ({ isForget }: IForgot) => {
     </div>
   );
 };
-
-export default AuthWindowFooter;

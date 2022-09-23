@@ -1,6 +1,6 @@
 import "./Logo.scss";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <div className="logo">
       <div className="circle">
@@ -11,4 +11,3 @@ const Logo = () => {
   );
 };
 
-export default Logo;

@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "../../Logo/Logo";
-import AuthBodyTitle from "./AuthBodyTitle/AuthBodyTitle";
+import { Logo } from "../../Logo/index";
+import { AuthBodyTitle } from "./AuthBodyTitle/index";
 import "./AuthWindow.scss";
-import AuthWindowFooter from "./AuthWindowFooter/AuthWindowFotter";
+import { AuthWindowFooter } from "./AuthWindowFooter/AuthWindowFotter";
 
 interface IAuthWindow {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ interface IAuthWindow {
   };
 }
 
-const AuthWindow = ({ children, isFooter, title, isForgot }: IAuthWindow) => {
+export const AuthWindow = ({ children, isFooter, title, isForgot }: IAuthWindow) => {
   return (
     <>
       <div className="auth" />
@@ -28,4 +28,3 @@ const AuthWindow = ({ children, isFooter, title, isForgot }: IAuthWindow) => {
   );
 };
 
-export default AuthWindow;

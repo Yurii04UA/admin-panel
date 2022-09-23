@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "./Header/Header";
+import {Header} from "./Header/index";
 import './MainContent.scss';
 
-const MainContent = () => {
+export const MainContent = () => {
   return <div className="main-content">
     <Header />
   </div>;
 };
 
-export default MainContent;

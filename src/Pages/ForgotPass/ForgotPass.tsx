@@ -1,14 +1,13 @@
 import { useState } from "react";
-import AuthWindow from "../../Components/Auth/AuthWindow/AuthWindow";
+import { AuthWindow } from "../../Components/Auth/AuthWindow/index";
 import { Input } from "../../Components/Auth/Form/Input/Input";
-import Button from "../../Components/Button/Button";
+import { Button } from "../../Components/Button/index";
 import { REG } from "../../Constans/Constans";
-
 
 const ForgotPass = () => {
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
-  const [showResult,setShowResult] = useState(false);
+  const [showResult, setShowResult] = useState(false);
 
   const submitHandler = (event: React.FormEvent) => {
     let err = false;
@@ -17,36 +16,41 @@ const ForgotPass = () => {
     if (!REG.test(String(email).toLocaleLowerCase())) {
       setEmailErr("Incorrect email");
       err = true;
-    };
+    }
 
     if (!email) {
       setEmailErr("Field must not be empty");
       err = true;
-    };
+    }
 
-    if(!err){
-      setEmail('');
-      setShowResult(true)
-    };
+    if (!err) {
+      setEmail("");
+      setShowResult(true);
+    }
   };
-  
-  const result = <AuthWindow 
-    isFooter={false} 
-    isForgot={false}
-    title={{
-      title:"Forgot password?",
-      subtitle:'Link to change your password has been sent to provided email if we have it inside our system'
-    }}>
 
-    </AuthWindow>
+  const result = (
+    <AuthWindow
+      isFooter={false}
+      isForgot={false}
+      title={{
+        title: "Forgot password?",
+        subtitle:
+          "Link to change your password has been sent to provided email if we have it inside our system",
+      }}
+      children=''
+    />
+  );
 
-    const forgot = <AuthWindow 
-    isFooter={true}
-    isForgot={false}
-    title={{
-      title:'Forgot password?',
-      subtitle:'Enter your email from registered account'
-    }}>
+  const forgot = (
+    <AuthWindow
+      isFooter={true}
+      isForgot={false}
+      title={{
+        title: "Forgot password?",
+        subtitle: "Enter your email from registered account",
+      }}
+    >
       <form onSubmit={submitHandler}>
         <Input
           label="email"
@@ -57,14 +61,11 @@ const ForgotPass = () => {
           icon={false}
           error={emailErr}
         />
-        <Button children={'Send'}/>
+        <Button children={"Send"} type="submit" />
       </form>
-  </AuthWindow>
-  return (
-    <>
-      {showResult? result : forgot }
-    </>
+    </AuthWindow>
   );
+  return <>{showResult ? result : forgot}</>;
 };
 
 export default ForgotPass;

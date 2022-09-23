@@ -1,7 +1,6 @@
-import React from 'react';
 import './Sitebar.scss';
 
-const Sitebar = () => {
+export const Sitebar = () => {
   return (
     <div className='sidebar'>
       <a className="logo">
@@ -21,7 +20,6 @@ const Sitebar = () => {
         <li>Subscription</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Sitebar
