@@ -38,7 +38,7 @@ const ForgotPass = () => {
         subtitle:
           "Link to change your password has been sent to provided email if we have it inside our system",
       }}
-      children=''
+      children=""
     />
   );
 

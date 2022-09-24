@@ -1,12 +1,18 @@
-import { useContext } from "react";
-import { Context } from "../../../../Context/Context";
+import { useNavigate } from "react-router-dom";
 
 export const AuthWindowFotterForgot = () => {
-  const { openForgot } = useContext(Context);
+  const navigate = useNavigate();
+  const redirectHandler = (url: string) => {
+    navigate(url);
+  };
+
   return (
     <div className="btn-wrapper">
       <div>Forgot your password?</div>
-      <button onClick={openForgot} className="btn-footer">
+      <button
+        onClick={() => redirectHandler("/forgot-password")}
+        className="btn-footer"
+      >
         Click!
       </button>
     </div>

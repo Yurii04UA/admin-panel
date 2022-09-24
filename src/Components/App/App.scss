@@ -2,8 +2,13 @@
    max-width: 1440px;
    width: 100%;
    margin: 0 auto;
+   display: flex;
  };
- 
+
+ .content{
+  width: 82%;
+  padding: 30px;
+ }
  .error{
    color: #c10000;
    text-transform: none;

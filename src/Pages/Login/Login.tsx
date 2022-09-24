@@ -3,18 +3,19 @@ import { AuthWindow } from "../../Components/Auth/AuthWindow/index";
 import { Input } from "../../Components/Auth/Form/Input/index";
 import { Button } from "../../Components/Button/index";
 import { REG } from "../../Constans/Constans";
+import { useNavigate } from "react-router-dom";
+
 import "./Login.scss";
 
-interface ILogin {
-  value?: boolean;
-  setValue: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-export const Login = ({ setValue }: ILogin) => {
+
+export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [passErr, setPassErr] = useState("");
+  const navigate = useNavigate();
+
 
   const validateLogin = () => {
     let err = false;
@@ -34,7 +35,7 @@ export const Login = ({ setValue }: ILogin) => {
     }
 
     if (!err) {
-      setValue(true);
+      navigate('/admin-dashboard/overview');
       setEmail("");
       setPassword("");
     }
