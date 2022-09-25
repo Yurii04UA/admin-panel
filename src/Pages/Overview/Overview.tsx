@@ -1,12 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import "./Overview.scss";
+import { Title } from "../../Components/Title";
 
 export const Overview = () => {
-  return(
-    <div>
-      <h1>Overview</h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nulla, deserunt rem est similique pariatur? Quod vitae enim odio. Totam aut sit molestias similique doloremque eum nam sed eos facilis!
+  return (
+    <div className="overview">
+      <Title title="Overview" />
     </div>
-    
   );
 };

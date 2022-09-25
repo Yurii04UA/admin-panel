@@ -34,10 +34,10 @@
       margin-top: 60px;
 
       li {
-         &:last-child{
+         &:last-child {
             border-top: 1px solid #dfe0eb2a;
-
          }
+
          .link {
             padding: 20px 35px;
             display: flex;
@@ -56,7 +56,15 @@
             }
          }
       }
+      a{
+         transition: all 0.3s ease;
 
+         &:hover{
+            background: #9fa2b414;
+               border-left: 3px solid #fff;
+         }
+      }
+      
    }
 
 }
