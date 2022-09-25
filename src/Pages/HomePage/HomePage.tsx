@@ -1,5 +1,5 @@
 import { MainContent } from "../MainContent/MainContent";
-import { Sitebar } from "../Sitebar/index";
+import { Sitebar } from "../Sidebar/index";
 import "./HomePage.scss";
 import { Route, Routes } from "react-router-dom";
 import { Overview } from "../Overview/Overview";

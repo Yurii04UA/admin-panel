@@ -24,6 +24,6 @@
         "react/react-in-jsx-scope": "off",
         "no-useless-escape": "off",
         "react/no-children-prop": "off",
-        "@typescript-eslint/no-empty-function" : "off"
+        "@typescript-eslint/no-empty-function" : "off",
     }
 }

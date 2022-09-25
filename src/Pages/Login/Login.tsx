@@ -35,7 +35,7 @@ export const Login = () => {
     }
 
     if (!err) {
-      navigate('/admin-dashboard/overview');
+      navigate('/admin/overview');
       setEmail("");
       setPassword("");
     }

@@ -4,7 +4,7 @@ import { Registration } from "../../Pages/Registration/Registration";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import ForgotPass from "../../Pages/ForgotPass/ForgotPass";
-import { Sitebar } from "../../Pages/Sitebar";
+import { Sitebar } from "../../Pages/Sidebar";
 import { Overview } from "../../Pages/Overview/Overview";
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPass />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/admin-dashboard/overview" element={<Overview />} />
-          <Route path="/admin-dashboard" element={<HomePage />} />
+          <Route path="/admin/overview" element={<Overview />} />
+          <Route path="/admin" element={<HomePage />} />
 
           <Route path="*" element={<div> error </div>} />
         </Routes>
