@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { AuthWindow } from "../../Components/Auth/AuthWindow/index";
-import { Input } from "../../Components/Auth/Form/Input/index";
-import { Button } from "../../Components/Button/index";
-import { REG } from "../../Constans/Constans";
+import { AuthWindow } from "../../../Components/Auth/AuthWindow";
+import { Input } from "../../../Components/Auth/Form/Input";
+import { Button } from "../../../Components/Button";
+import { REG } from "../../../Constans/Constans";
 import { useNavigate } from "react-router-dom";
 
 import "./Login.scss";

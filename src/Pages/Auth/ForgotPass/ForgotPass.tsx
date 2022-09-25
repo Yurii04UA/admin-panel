@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { AuthWindow } from "../../Components/Auth/AuthWindow/index";
-import { Input } from "../../Components/Auth/Form/Input/Input";
-import { Button } from "../../Components/Button/index";
-import { REG } from "../../Constans/Constans";
+import { AuthWindow } from "../../../Components/Auth/AuthWindow/index";
+import { Input } from "../../../Components/Auth/Form/Input/Input";
+import { Button } from "../../../Components/Button/index";
+import { REG } from "../../../Constans/Constans";
 
-const ForgotPass = () => {
+export const ForgotPass = () => {
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [showResult, setShowResult] = useState(false);
@@ -68,4 +68,4 @@ const ForgotPass = () => {
   return <>{showResult ? result : forgot}</>;
 };
 
-export default ForgotPass;
+

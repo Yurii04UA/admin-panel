@@ -1,16 +1,18 @@
-import { HomePage } from "../../Pages/HomePage/index";
-import { Login } from "../../Pages/Login/Login";
-import { Registration } from "../../Pages/Registration/Registration";
+import { HomePage } from "../Pages/HomePage/index";
+import { Login } from "../Pages/Auth/Login";
+import { Registration } from "../Pages/Auth/Registration";
 import { Route, Routes } from "react-router-dom";
+import { ForgotPass } from "../Pages/Auth/ForgotPass";
+import { Sitebar } from "../Pages/Sidebar";
+import { Overview } from "../Pages/Overview/Overview";
 import "./App.scss";
-import ForgotPass from "../../Pages/ForgotPass/ForgotPass";
-import { Sitebar } from "../../Pages/Sidebar";
-import { Overview } from "../../Pages/Overview/Overview";
 
 function App() {
   return (
     <div className="App">
-      <Sitebar />
+      <div className="sidebar">
+        <Sitebar />
+      </div>
       <div className="content">
         <Routes>
           <Route path="/" element={<Login />} />

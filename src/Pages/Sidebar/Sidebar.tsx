@@ -1,30 +1,45 @@
 import { NavLink } from "react-router-dom";
 import "./Sidebar.scss";
-import settings from './setting.png'
-
+import {
+  contacts,
+  overview,
+  settings,
+  tickets,
+} from "../../assets/img/sidebar";
 
 export const Sitebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar-wrapper">
       <a className="logo">
         <div className="circle">
           <div className="square"></div>
         </div>
         <div>Dashboard Kit</div>
       </a>
-      <ul className="sidebar-content">
+      <ul className="sidebar-list">
         <li>
-          <img src="../../assets/img/settings.png" alt="" />
-          <NavLink to="/admin/overview">Overview</NavLink>
+          <NavLink className='link' to="/admin/overview">
+            <img src={overview} alt="overview icon" className="filter-gray" />{" "}
+            Overview
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/admin/tickets">Tickets</NavLink>
+          <NavLink className='link' to="/admin/tickets">
+            <img src={tickets} alt="tickets icon" />
+            Tickets
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/admin/contacts">Contacts</NavLink>
+          <NavLink className='link' to="/admin/contacts">
+            <img src={contacts} alt="contacts icon" />
+            Contacts
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/admin/settings">Settings</NavLink>
+          <NavLink className='link' to="/admin/settings">
+            <img src={settings} alt="settings icon" />
+            Settings
+          </NavLink>
         </li>
       </ul>
     </div>
