@@ -31,6 +31,7 @@ export const Input = ({
           type={!showPass ? type : ""}
           placeholder={placeholder}
           value={value}
+          autoComplete='on'
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setValue(e.target.value)
           }

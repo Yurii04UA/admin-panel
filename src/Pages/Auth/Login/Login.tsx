@@ -61,7 +61,7 @@ export const Login = () => {
         <form onSubmit={submitHandler}>
           <Input
             label="email"
-            type="text"
+            type="email"
             placeholder="Enter your email"
             value={email}
             setValue={setEmail}

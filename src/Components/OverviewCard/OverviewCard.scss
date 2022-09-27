@@ -1,0 +1,28 @@
+.overview-card {
+  box-sizing: border-box;
+  width: 260px;
+  padding: 24px 32px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #DFE0EB;
+  text-align: center;
+  cursor: pointer;
+
+  h3 {
+    font-size: 19px;
+    color: #9FA2B4;
+  }
+
+  div {
+    font-size: 40px;
+    font-weight: 600;
+  }
+}
+
+.avtive-card {
+  border: 1px solid #3751FF;
+  color: #3751FF;
+  h3{
+   color: #3751FF;
+  }
+}
