@@ -1,0 +1,23 @@
+.overview-title{
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   padding: 30px;
+   h2{
+      font-size: 19px;
+      color: #000;
+      margin-bottom: 8px;
+   }
+   div{
+      font-size: 16px;
+      color: #9FA2B4;
+   }
+   button{
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+      color: #3751FF;
+      font-weight: 600;
+   }
+}
