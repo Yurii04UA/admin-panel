@@ -1,15 +1,15 @@
 import "./Overview.scss";
 import { Title } from "../../Components/Title";
-import { OverviewHeader } from "../../Components/OverviewHeader/OverviewHeader";
-import  App  from "../../Components/Line/Line";
+import { OverviewHeader } from "../../Components/Overview/OverviewHeader";
+import { Graph } from "../../Components/Overview/Graph";
 
 export const Overview = () => {
-
   return (
     <div className="overview">
       <Title title="Overview" />
       <OverviewHeader />
-      <App />
+      <Graph />
+      <div className="overview-footer"></div>
     </div>
   );
 };

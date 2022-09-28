@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./OverviewCard.scss";
 
 interface IOverviewCardProps {
@@ -7,7 +6,6 @@ interface IOverviewCardProps {
   onClick?: () => void;
   value?: boolean;
 }
-
 
 export const OverviewCard = ({
   title,

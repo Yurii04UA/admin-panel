@@ -1,0 +1,31 @@
+.graph {
+      margin-top: 50px;
+      background-color: #fff;
+      border: 1px solid #DFE0EB;
+      border-radius: 8px;
+      display: flex;
+
+      .graph-left{
+         border-right: 1px solid #DFE0EB ;
+         padding: 30px;
+      }
+      .graph-right{
+         width: 100%;
+         
+      }
+      .recharts-legend-wrapper {
+         opacity: 0;
+
+         .recharts-cartesian-grid-vertical {
+            display: none;
+         }
+      }
+
+      .recharts-dot {
+         display: none;
+      }
+
+      .recharts-cartesian-grid-vertical {
+         display: none;
+      }
+   }

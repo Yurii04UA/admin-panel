@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { OverviewCard } from "../OverviewCard/OverviewCard";
+import { useState } from "react";
+import { OverviewCard } from "../OverviewCard";
 import "./OverviewHeader.scss";
 
 export const OverviewHeader = () => {
   const [unresolver, setUnresolver] = useState(false);
-  const [overdue, setOverdue] = useState(false);
+  const [overdue, setOverdue] = useState(true);
   const [open, setOpen] = useState(false);
   const [hold, setHold] = useState(false);
 

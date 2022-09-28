@@ -1,0 +1,19 @@
+.graph-info{
+   padding: 28px;
+   // border: 1px solid;
+   // &:not(:last-child){
+   //    border-bottom: none;
+   // }
+   border-bottom: 1px solid #DFE0EB;
+   text-align: center;
+   .graph-info-title{
+      font-size: 16px;
+      font-weight: 600;
+      color: #9FA2B4;
+   }
+   .graph-info-descriprion{
+      font-size: 24px;
+      font-weight: 700;
+      color: #252733;
+   }
+}

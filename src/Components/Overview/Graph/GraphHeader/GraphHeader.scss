@@ -1,0 +1,44 @@
+.graph-header {
+   margin-bottom: 20px;
+   display: flex;
+   justify-content: space-between;
+
+   .graph-time {
+      color: #9FA2B4;
+   }
+
+   .example-line {
+      display: flex;
+      gap: 40px;
+
+      .today {
+         color: #9FA2B4;
+         position: relative;
+
+         &::before {
+            display: block;
+            width: 15px;
+            content: '';
+            position: absolute;
+            border-bottom: 2px solid #3751FF;
+            top: 25%;
+            left: -25px;
+         }
+      }
+
+      .yestarday {
+         color: #9FA2B4;
+         position: relative;
+
+         &::before {
+            display: block;
+            width: 15px;
+            content: '';
+            position: absolute;
+            border-bottom: 2px solid #00000074;
+            top: 25%;
+            left: -25px;
+         }
+      }
+   }
+}

@@ -1,16 +1,15 @@
-import { HomePage } from "../Pages/HomePage/index";
+import "./App.scss";
 import { Login } from "../Pages/Auth/Login";
 import { Registration } from "../Pages/Auth/Registration";
 import { Route, Routes } from "react-router-dom";
 import { ForgotPass } from "../Pages/Auth/ForgotPass";
 import { Sitebar } from "../Pages/Sidebar";
-import { Overview } from "../Pages/Overview/Overview";
-import "./App.scss";
-import { Tickets } from "../Pages/Tickets/Tickets";
-import { Contacts } from "../Pages/Contacts/Contacts";
-import { Settings } from "../Pages/Settings/Settings";
+import { Overview } from "../Pages/Overview";
+import { Tickets } from "../Pages/Tickets";
+import { Contacts } from "../Pages/Contacts";
+import { Settings } from "../Pages/Settings";
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <div className="sidebar">
@@ -25,13 +24,10 @@ function App() {
           <Route path="/admin/tickets" element={<Tickets />} />
           <Route path="/admin/contacts" element={<Contacts />} />
           <Route path="/admin/settings" element={<Settings />} />
-          <Route path="/admin" element={<HomePage />} />
 
           <Route path="*" element={<div> error </div>} />
         </Routes>
       </div>
     </div>
   );
-}
-
-export default App;
+};
