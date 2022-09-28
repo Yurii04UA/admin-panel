@@ -1,5 +1,6 @@
 import "./OverviewFooter.scss";
 import { OverviewLayout } from "./OverviewLayout";
+import { OverviewTasks } from "./OverviewTasks";
 import { OverviewTickets } from "./OverviewTickets";
 
 export const OverviewFooter = () => {
@@ -13,7 +14,7 @@ export const OverviewFooter = () => {
         <OverviewTickets />
       </OverviewLayout>
       <OverviewLayout title="Tasks" description="Today" btnTitle="View all">
-        <div>as</div>
+        <OverviewTasks />
       </OverviewLayout>
     </div>
   );

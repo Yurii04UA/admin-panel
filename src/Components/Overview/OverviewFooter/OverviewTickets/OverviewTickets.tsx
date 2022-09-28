@@ -1,5 +1,4 @@
 import { OverviewTicket } from "./OverviewTicket/OverviewTicket";
-import "./OverviewTickets.scss";
 
 export const OverviewTickets = () => {
   return (
