@@ -1,0 +1,25 @@
+.main-header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   &:first-child{
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+   }
+   .login{
+      font-size: 18px;
+      font-weight: normal;
+      padding: 5px 10px;
+      border: 1px solid #9FA2B4;
+      border-radius: 10px;
+      background-color: #3751FF;
+      color: #fff;
+      transition: all .3s ease;
+
+      &:hover{
+         background-color: #2b42da;
+      }
+   }
+}

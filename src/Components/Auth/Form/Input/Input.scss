@@ -1,0 +1,31 @@
+.label{
+   position: relative;
+   text-align: start;
+   text-transform: uppercase;
+   input {
+      margin-top: 5px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #F0F1F7;
+      outline: none;
+      color: #8a8a8a;
+      
+
+      &::placeholder {
+         color: #4B506D;
+         opacity: 0.4;
+      }
+   }
+
+   .icon{
+      position: absolute;
+      padding: 2px;
+      right: 10px;
+      top: 30px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      color: #8a8a8a;
+   }
+}
