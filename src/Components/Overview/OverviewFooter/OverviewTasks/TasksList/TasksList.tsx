@@ -7,11 +7,16 @@ interface ITasksListProps{
     title: string;
     status: string;
 }[]
-  setTasks:React.Dispatch<React.SetStateAction<{
+  setTasks: (value: {
     id: string;
     title: string;
     status: string;
-}[]>>
+    }[]) => void
+//   setTasks:React.Dispatch<React.SetStateAction<{
+//     id: string;
+//     title: string;
+//     status: string;
+// }[]>>
 }
 
 export const TasksList = ({tasks,setTasks}: ITasksListProps) => {
