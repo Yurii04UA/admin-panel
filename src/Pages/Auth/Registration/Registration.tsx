@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+
 import { AuthWindow, Input } from "../components";
 import { Button } from "../../../Components/Button";
 import { REG, REG_ONLY_LETTER } from "../../../Constants";
@@ -15,6 +17,7 @@ export const Registration = () => {
   const [passConfirm, setPassConfirm] = useState("");
   const [passConfirmErr, setPassConfirmErr] = useState("");
   const [showResult, setShowResult] = useState(false);
+
 
   const validationReg = () => {
     let err = false;
@@ -73,6 +76,10 @@ export const Registration = () => {
 
     if (!err) {
       setShowResult(true);
+      localStorage.setItem('email',email);
+      localStorage.setItem('name',name);
+      localStorage.setItem('lastName',lastName);
+      localStorage.setItem('pass',pass);
     }
   };
 

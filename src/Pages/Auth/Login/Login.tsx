@@ -1,19 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { AuthWindow, Input } from "../components";
 import { Button } from "../../../Components/Button";
 import { REG } from "../../../Constants";
-
-import "./Login.scss";
+import { useAuth } from "../../../Hooks/useAuth";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [passErr, setPassErr] = useState("");
-  const navigate = useNavigate();
+  const [errorMessage,setErrorMassage] = useState('');
+  const emailCheck = localStorage.getItem("email");
+  const passCheck = localStorage.getItem("pass");
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location.state?.from?.pathname || '/admin/overview';
+  const { signIn } = useAuth();
 
   const validateLogin = () => {
     let err = false;
@@ -33,9 +38,17 @@ export const Login = () => {
     }
 
     if (!err) {
-      navigate('/admin/overview');
-      setEmail("");
-      setPassword("");
+      if (email != emailCheck || password != passCheck) {
+        setErrorMassage('Incorrect login or password');
+      }
+    }
+    if (!err) {
+      if (email === emailCheck && password === passCheck) {
+        navigate(fromPage);
+        setEmail("");
+        setPassword("");
+        signIn();
+      }
     }
   };
 
@@ -52,8 +65,8 @@ export const Login = () => {
         isFooter={true}
         isForgot={true}
         title={{
-          title: "Log In to Dashboard Kit",
-          subtitle: "Enter your email and password",
+          title: "Log In to Dashboard Kit  uyriparaka@gmail.com",
+          subtitle: "Enter your email and password 11111111",
         }}
       >
         <form onSubmit={submitHandler}>
@@ -76,6 +89,7 @@ export const Login = () => {
             error={passErr}
           />
           <Button children={"Log In"} type="submit" />
+          <div className="error">{errorMessage}</div>
         </form>
       </AuthWindow>
     </>
