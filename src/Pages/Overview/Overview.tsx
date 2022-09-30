@@ -1,8 +1,7 @@
-import "./Overview.scss";
 import { Title } from "../../Components/Title";
-import { OverviewHeader } from "../../Components/Overview/OverviewHeader";
-import { Graph } from "../../Components/Overview/Graph";
-import { OverviewFooter } from "../../Components/Overview/OverviewFooter";
+import { OverviewHeader, OverviewFooter, Graph } from "./components";
+
+import "./Overview.scss";
 
 export const Overview = () => {
   return (

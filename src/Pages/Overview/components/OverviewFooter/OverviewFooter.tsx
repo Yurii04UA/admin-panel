@@ -1,7 +1,9 @@
-import "./OverviewFooter.scss";
 import { OverviewLayout } from "./OverviewLayout";
-import { OverviewTasks } from "./OverviewTasks";
 import { OverviewTickets } from "./OverviewTickets";
+
+import "./OverviewFooter.scss";
+import { OverviewTasks } from "./OverviewTasks";
+
 
 export const OverviewFooter = () => {
   return (

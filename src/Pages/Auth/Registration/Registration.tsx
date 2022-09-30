@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { AuthWindow } from "../../../Components/Auth/AuthWindow/index";
-import { Input } from "../../../Components/Auth/Form/Input/Input";
-import { Button } from "../../../Components/Button/index";
-import { REG, REG_ONLY_LETTER } from "../../../Constans/index";
+import { AuthWindow, Input } from "../components";
+import { Button } from "../../../Components/Button";
+import { REG, REG_ONLY_LETTER } from "../../../Constants";
 
 export const Registration = () => {
   const [email, setEmail] = useState("");

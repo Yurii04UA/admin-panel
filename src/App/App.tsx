@@ -1,19 +1,19 @@
-import "./App.scss";
-import { Login } from "../Pages/Auth/Login";
-import { Registration } from "../Pages/Auth/Registration";
+import { Login, Registration, ForgotPass } from "../Pages/Auth";
 import { Route, Routes } from "react-router-dom";
-import { ForgotPass } from "../Pages/Auth/ForgotPass";
-import { Sitebar } from "../Pages/Sidebar";
+
+import { Sidebar } from "../Pages/Sidebar";
 import { Overview } from "../Pages/Overview";
 import { Tickets } from "../Pages/Tickets";
 import { Contacts } from "../Pages/Contacts";
 import { Settings } from "../Pages/Settings";
 
+import "./App.scss";
+
 export const App = () => {
   return (
     <div className="App">
       <div className="sidebar">
-        <Sitebar />
+        <Sidebar />
       </div>
       <div className="content">
         <Routes>

@@ -1,20 +1,24 @@
 import React from "react";
-import { Logo } from "../../Logo/index";
-import { AuthBodyTitle } from "./AuthBodyTitle/index";
+
+import { Logo } from "../../../../Components/Logo";
+import { AuthBodyTitle } from "./AuthBodyTitle";
+import { AuthWindowFooter } from "./AuthWindowFooter";
+
 import "./AuthWindow.scss";
-import { AuthWindowFooter } from "./AuthWindowFooter/AuthWindowFotter";
+
+type Title = {
+  title: string;
+  subtitle: string;
+}
 
 interface IAuthWindow {
   children: React.ReactNode;
   isFooter: boolean;
   isForgot: boolean;
-  title: {
-    title: string;
-    subtitle: string;
-  };
+  title: Title
 }
 
-export const AuthWindow = ({ children, isFooter, title, isForgot }: IAuthWindow) => {
+export const AuthWindow: React.FC<IAuthWindow> = ({ children, isFooter, title, isForgot }) => {
   return (
     <>
       <div className="auth" />

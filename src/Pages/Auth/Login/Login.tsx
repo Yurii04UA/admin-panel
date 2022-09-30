@@ -1,13 +1,11 @@
-import { useState } from "react";
-import { AuthWindow } from "../../../Components/Auth/AuthWindow";
-import { Input } from "../../../Components/Auth/Form/Input";
-import { Button } from "../../../Components/Button";
-import { REG } from "../../../Constans/Constans";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import { AuthWindow, Input } from "../components";
+import { Button } from "../../../Components/Button";
+import { REG } from "../../../Constants";
 
 import "./Login.scss";
-
-
 
 export const Login = () => {
   const [email, setEmail] = useState("");

@@ -7,7 +7,7 @@ import {
   tickets,
 } from "../../assets/img/sidebar";
 
-export const Sitebar = () => {
+export const Sidebar = () => {
   return (
     <div className="sidebar-wrapper">
       <a className="logo">

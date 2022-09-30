@@ -7,9 +7,11 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+
+import { GraphHeader, GraphInfo } from "./";
+
 import "./Graph.scss";
-import { GraphHeader } from "./GraphHeader";
-import { GraphInfo } from "./GraphInfo";
+
 const data = [
   {
     name: "0",
