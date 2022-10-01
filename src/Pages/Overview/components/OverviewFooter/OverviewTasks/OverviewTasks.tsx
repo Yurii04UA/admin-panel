@@ -9,26 +9,26 @@ import "./OverviewTasks.scss";
 const data = [
   {  id: uuid(), 
      title: "Finish ticket update", 
-     status: "Urgent" 
+     status: "new" 
   },
   {  id: uuid(), 
-     title: "Finish ticket update", 
-     status: "New" 
+     title: "Create new ticket example", 
+     status: "new" 
   },
   {  id: uuid(), 
-     title: "Finish ticket update", 
-     status: "Default" 
+     title: "Update ticket report", 
+     status: "new" 
   },
-
   ];
 
+  const dataShort = [...data.slice(-3)];
 export const OverviewTasks = () => {
  
-  const [tasks, setTasks] = useState(data);
+  const [tasks, setTasks] = useState(dataShort);
  
   return (
     <div className="overview-tasks">
-      <AddTasks />
+      <AddTasks tasks={tasks} setTasks={setTasks}/>
       <TasksList tasks={tasks} setTasks={setTasks}/>
     </div>
   );

@@ -11,7 +11,7 @@ interface IChildren {
 }
 
 export const AuthProvider = ({ children }: IChildren) => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const signIn = () => setIsLogin(true);
   const logOut = () => setIsLogin(false);
 

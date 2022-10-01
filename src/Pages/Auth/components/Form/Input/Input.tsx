@@ -8,8 +8,7 @@ interface IInput {
   type?: string;
   placeholder: string;
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  // setValue: (value:string) => void;
+  setValue: (value:string) => void;
   icon: boolean;
   error?: string;
 }

@@ -15,7 +15,10 @@ export const OverviewFooter = () => {
       >
         <OverviewTickets />
       </OverviewLayout>
-      <OverviewLayout title="Tasks" description="Today" btnTitle="View all">
+      <OverviewLayout 
+        title="Tasks" 
+        description="Today" 
+        btnTitle="View all">
         <OverviewTasks />
       </OverviewLayout>
     </div>
