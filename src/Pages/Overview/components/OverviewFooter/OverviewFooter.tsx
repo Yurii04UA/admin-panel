@@ -1,13 +1,12 @@
 import { OverviewLayout } from "./OverviewLayout";
 import { OverviewTickets } from "./OverviewTickets";
-
-import "./OverviewFooter.scss";
 import { OverviewTasks } from "./OverviewTasks";
 
+import s from './OverviewFooter.module.scss';
 
 export const OverviewFooter = () => {
   return (
-    <div className="overview-footer">
+    <div className={s.overviewFooter}>
       <OverviewLayout
         title="Unresolved tickets"
         description="Group: Support"

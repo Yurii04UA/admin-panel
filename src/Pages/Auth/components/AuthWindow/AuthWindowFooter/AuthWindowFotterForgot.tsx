@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
+import s from './AuthWindowFooter.module.scss';
+
 export const AuthWindowFotterForgot = () => {
   const navigate = useNavigate();
   const redirectHandler = (url: string) => {
@@ -7,12 +9,11 @@ export const AuthWindowFotterForgot = () => {
   };
 
   return (
-    <div className="btn-wrapper">
+    <div className={s.btnWrapper}>
       <div>Forgot your password?</div>
       <button
         onClick={() => redirectHandler("/forgot-password")}
-        className="btn-footer"
-      >
+        className={s.btnFooter}>
         Click!
       </button>
     </div>

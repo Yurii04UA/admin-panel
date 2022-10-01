@@ -1,5 +1,5 @@
 import { Title } from '../../Components/Title';
-import './Tickets.scss';
+import s from './Tickets.module.scss';
 
 export const Tickets = () => {
   return (

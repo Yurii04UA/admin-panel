@@ -1,15 +1,15 @@
-import "./GraphHeader.scss";
+import s from './GraphHeader.module.scss';
 
 export const GraphHeader = () => {
   return (
-    <div className="graph-header">
+    <div className={s.graphHeader}>
       <div>
-        <h2 className="graph-title">Today`s trends</h2>
-        <div className="graph-time">as of 25 May 2019, 09:41 PM</div>
+        <h2 className={s.graphTitle}>Today`s trends</h2>
+        <div className={s.graphTime}>as of 25 May 2019, 09:41 PM</div>
       </div>
-      <div className="example-line">
-        <div className="today">Today</div>
-        <div className="yestarday">Yestarday</div>
+      <div className={s.exampleLine}>
+        <div className={s.today}>Today</div>
+        <div className={s.yestarday}>Yestarday</div>
       </div>
     </div>
   );

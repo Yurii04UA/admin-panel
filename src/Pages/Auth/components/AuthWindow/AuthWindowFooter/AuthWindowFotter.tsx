@@ -1,24 +1,26 @@
-import "./AuthWindowFooter.scss";
 import { AuthWindowFotterForgot } from "./AuthWindowFotterForgot";
 import { useNavigate } from "react-router-dom";
+
+import s from './AuthWindowFooter.module.scss';
+
 interface IForgot {
   isForget: boolean;
 }
 
-export const AuthWindowFooter = ({ isForget }: IForgot) => {
+export const AuthWindowFooter: React.FC<IForgot> = ({ isForget }) => {
   const navigate = useNavigate();
   const redirectHandler = (url: string) => {
     navigate(url);
   };
 
   return (
-    <div className="footer">
+    <div className={s.footer}>
       {isForget ? <AuthWindowFotterForgot /> : null}
-      <div className="btn-wrapper">
+      <div className={s.btnWrapper}>
         <div>Don`t have an account?</div>
         <button
           onClick={() => redirectHandler("/registration")}
-          className="btn-footer"
+          className={s.btnFooter}
         >
           Sing up
         </button>

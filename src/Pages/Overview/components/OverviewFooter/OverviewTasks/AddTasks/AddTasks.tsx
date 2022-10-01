@@ -1,44 +1,45 @@
-import uuid from 'react-uuid';
+import uuid from "react-uuid";
 
-import ControlPointIcon from '@mui/icons-material/ControlPoint';
-import { useState } from 'react';
- 
-import './AddTasks.scss';
+import ControlPointIcon from "@mui/icons-material/ControlPoint";
+import { useState } from "react";
+
+import styles from "./AddTasks.module.scss";
 
 type Tasks = {
   id: string;
   title: string;
   status: string;
-};
+}
 
-interface IAddTasksProps{
+interface IAddTasksProps {
   tasks: Tasks[];
   setTasks: (value: Tasks[]) => void;
 }
 
+export const AddTasks: React.FC<IAddTasksProps> = ({ tasks, setTasks }) => {
+  const [value, setValue] = useState("");
 
-export const AddTasks: React.FC<IAddTasksProps> = ({tasks,setTasks}) => {
-  const [value, setValue] = useState('');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setValue(e.target.value);
 
   const addTask = () => {
-   if(value){
-      const newTasks = [...tasks, {id: uuid(),title: value,status:'new'}];
+    if (value) {
+      const newTasks = [...tasks, { id: uuid(), title: value, status: "new" }];
       setTasks(newTasks.slice(-3));
-      setValue('');
-   }
+      setValue("");
+    }
   };
-  
+
   return (
-    <div className='addTask'>
-      <input 
-        type="text" 
-        className='input' 
-        placeholder='Create new task'  
-        value={value} 
-        onChange={handleChange}/>
-      <ControlPointIcon className='btnInput' onClick={addTask}/>
+    <div className={styles.addTask}>
+      <input
+        type="text"
+        className={styles.input}
+        placeholder="Create new task"
+        value={value}
+        onChange={handleChange}
+      />
+      <ControlPointIcon className={styles.btnInput} onClick={addTask} />
     </div>
   );
 };

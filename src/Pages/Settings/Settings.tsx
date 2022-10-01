@@ -1,5 +1,6 @@
 import { Title } from '../../Components/Title';
-import './Settings.scss';
+
+import s from './Settings.module.scss';
 
 export const Settings = () => {
   return (

@@ -3,7 +3,6 @@ import { RadioGroup, FormControl } from "@mui/material";
 
 import { TaskItem } from "./TaskItem";
 
-import "./TasksList.scss";
 
 type Tasks = {
   id: string;
@@ -47,7 +46,7 @@ export const TasksList: React.FC<ITasksListProps> = ({ tasks, setTasks }) => {
   });
 
   return (
-    <div className="overvievTickets">
+    <>
       <FormControl style={{ width: "100%", fontSize: "14px" }}>
         <RadioGroup
           aria-labelledby="demo-controlled-radio-buttons-group"
@@ -58,6 +57,6 @@ export const TasksList: React.FC<ITasksListProps> = ({ tasks, setTasks }) => {
           {tasksList}
         </RadioGroup>
       </FormControl>
-    </div>
+    </>
   );
 };

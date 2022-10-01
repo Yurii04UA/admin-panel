@@ -1,6 +1,6 @@
 import { useState } from "react";
+
 import { OverviewCard } from "../OverviewCard";
-import "./OverviewHeader.scss";
 
 export const OverviewHeader = () => {
   const [unresolver, setUnresolver] = useState(false);
@@ -58,32 +58,3 @@ export const OverviewHeader = () => {
   );
 };
 
-// (
-//    <div className="overview-header">
-//      <OverviewCard
-//        title="Unresolver"
-//        number={60}
-//        id={"1"}
-//        value={isActive === "1" ? true : false}
-//      />
-//      <OverviewCard
-//        title="Overdue"
-//        number={16}
-//        id={"2"}
-//        value={isActive === "2" ? true : false}
-//      />
-//      <OverviewCard
-//        title="Open"
-//        number={43}
-//        id={"3"}
-//        value={isActive === "3" ? true : false}
-//      />
-
-//      <OverviewCard
-//        title="On hold"
-//        number={64}
-//        id={"4"}
-//        value={isActive === "4" ? true : false}
-//      />
-//    </div>
-//  )

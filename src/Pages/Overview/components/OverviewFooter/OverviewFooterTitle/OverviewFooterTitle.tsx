@@ -1,4 +1,5 @@
-import './OverviewFooterTitle.scss';
+import s from './OverviewFooterTitle.module.scss';
+
 interface IOverviewFooterTitleProps{
   title: string
   description: string
@@ -6,15 +7,15 @@ interface IOverviewFooterTitleProps{
   btnTitle: string
 }
 
-export const OverviewFooterTitle = ({title,description,onCLick,btnTitle}: IOverviewFooterTitleProps) => {
+export const OverviewFooterTitle: React.FC<IOverviewFooterTitleProps> = ({title, description, onCLick, btnTitle}) => {
   return (
-    <div className='overview-title'>
+    <div className={s.overviewTitle}>
       <div>
-         <h2>{title}</h2>
-         <div>{description}</div>
+        <h2>{title}</h2>
+        <div>{description}</div>
       </div>
       <button onClick={onCLick}>
-         {btnTitle}
+        {btnTitle}
       </button>
     </div>
   );

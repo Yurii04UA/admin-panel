@@ -4,7 +4,6 @@ import uuid from 'react-uuid';
 import { TasksList } from "./TasksList";
 import { AddTasks } from "./AddTasks";
 
-import "./OverviewTasks.scss";
 
 const data = [
   {  id: uuid(), 
@@ -23,13 +22,12 @@ const data = [
 
   const dataShort = [...data.slice(-3)];
 export const OverviewTasks = () => {
- 
   const [tasks, setTasks] = useState(dataShort);
- 
+
   return (
-    <div className="overview-tasks">
+    <>
       <AddTasks tasks={tasks} setTasks={setTasks}/>
       <TasksList tasks={tasks} setTasks={setTasks}/>
-    </div>
+    </>
   );
 };

@@ -1,37 +1,31 @@
 import { useState } from "react";
-import "./Input.scss";
+
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+
+import s from './Input.module.scss';
 
 interface IInput {
   label: string;
   type?: string;
   placeholder: string;
   value: string;
-  setValue: (value:string) => void;
+  setValue: (value: string) => void;
   icon: boolean;
   error?: string;
 }
 
-export const Input = ({
-  label,
-  type,
-  placeholder,
-  value,
-  setValue,
-  icon,
-  error,
-}: IInput) => {
+export const Input: React.FC<IInput> = ({label, type, placeholder, value, setValue, icon, error}) => {
   const [showPass, setShowPass] = useState(false);
   return (
     <>
-      <label className="label">
+      <label className={s.label}>
         {label}
         <input
           type={!showPass ? type : ""}
           placeholder={placeholder}
           value={value}
-          autoComplete='on'
+          autoComplete="on"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setValue(e.target.value)
           }
@@ -40,7 +34,7 @@ export const Input = ({
           <button
             onClick={() => setShowPass(!showPass)}
             type="button"
-            className="icon"
+            className={s.icon}
           >
             {showPass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
           </button>

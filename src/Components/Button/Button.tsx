@@ -1,4 +1,4 @@
-import "./Button.scss";
+import s from './Button.module.scss';
 
 interface IButtonProps {
   children: React.ReactNode;
@@ -6,10 +6,10 @@ interface IButtonProps {
   type: "submit" | "button";
 }
 
-export const Button = ({ children, onClick, type }: IButtonProps) => {
+export const Button: React.FC<IButtonProps> = ({ children, onClick, type }) => {
   return (
     <>
-      <button onClick={onClick} type={type} className="btn">
+      <button onClick={onClick} type={type} className={s.btn}>
         {children}
       </button>
     </>

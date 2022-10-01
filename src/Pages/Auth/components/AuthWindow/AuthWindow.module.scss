@@ -7,7 +7,7 @@
    bottom: 0;
 }
 
-.auth-box {
+.authBox {
    max-width: 380px;
    width: 100%;
    background-color: #fff;
@@ -26,29 +26,4 @@
    }
 }
 
-.footer {
-   margin-top: 30px;
-   display: flex;
-   gap: 10px;
-   justify-content: center;
-
-   .reg-link {
-      color: #3751FF;
-      font-weight: 600;
-      letter-spacing: 1px;
-   }
-}
-
-.title {
-   text-align: center;
-   margin-top: 30px;
-   margin-bottom: 30px;
-
-   h2 {
-      font-size: 24px;
-      color: #000;
-      font-weight: 700;
-      margin-bottom: 12px;
-   }
-}
 

@@ -1,6 +1,8 @@
 import React from "react";
+
 import { OverviewFooterTitle } from "../OverviewFooterTitle";
-import './OverviewLayout.scss';
+
+import s from './OverviewLayout.module.scss';
 
 interface IOverviewLayout {
   children:React.ReactNode
@@ -12,13 +14,13 @@ interface IOverviewLayout {
 
 export const OverviewLayout:React.FC<IOverviewLayout> = ({ children, title, description, btnTitle, onCLick }) => {
   return (
-    <div className="overview-layout">
+    <div className={s.overviewLayout}>
       <OverviewFooterTitle 
-         title={title} 
-         description={description} 
-         btnTitle={btnTitle} 
-         onCLick={onCLick}
-       />
+        title={title} 
+        description={description} 
+        btnTitle={btnTitle} 
+        onCLick={onCLick}
+      />
       {children}
     </div>
   );

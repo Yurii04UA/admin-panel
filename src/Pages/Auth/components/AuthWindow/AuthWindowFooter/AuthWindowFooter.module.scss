@@ -1,22 +1,23 @@
 .footer{
+   margin-top: 30px;
    display: flex;
+   gap: 10px;
+   justify-content: center;
    flex-direction: column;
-   .btn-wrapper{
+   .btnWrapper{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 20px;
 
 
-      .btn-footer{
+      .btnFooter{
          background-color: #fff;
          border: none;
          color: #3751FF;
          font-size: 14px;
          font-weight: 600;
          cursor: pointer;
-
       }
-   }
-   
+   }  
 }

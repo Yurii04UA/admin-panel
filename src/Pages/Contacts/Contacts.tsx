@@ -1,5 +1,5 @@
 import { Title } from '../../Components/Title';
-import './Contacts.scss';
+import s from './Contacts.module.scss';
 export const Contacts = () => {
   return (
     <div className='contackts'>

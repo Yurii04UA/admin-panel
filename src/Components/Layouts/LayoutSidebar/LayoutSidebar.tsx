@@ -2,15 +2,15 @@ import { Outlet } from "react-router-dom";
 
 import { Sidebar } from "../../Sidebar";
 
-import "./LayoutSidebar.scss";
+import s from './LayoutSidebar.module.scss';
 
 export const LayoutSidebar = () => {
   return (
-    <div className="loyaut-sidebar">
-      <div className="sidebar">
+    <div className={s.loyautSidebar}>
+      <div className={s.sidebar}>
         <Sidebar />
       </div>
-      <div className="content">
+      <div className={s.content}>
         <Outlet />
       </div>
     </div>
