@@ -1,18 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { Avatar } from "../Avatar";
-import "./Title.scss";
+
+import s from './Title.module.scss';
 
 interface ITitleProps {
   title: string;
 }
 
-export const Title = ({ title }: ITitleProps) => {
+export const Title: React.FC<ITitleProps> = ({ title }) => {
+  const name = localStorage.getItem('name');
+  const lastName = localStorage.getItem('lastName');
   return (
-    <div className="title-content">
+    <div className={s.titleContent}>
       <h2>{title}</h2>
       <NavLink to="/admin/settings">
-        <div className="title-login">
-          <div className="name">Jones Ferdinand</div>
+        <div className={s.titleLogin}>
+          <div className={s.name}>{name} {lastName}</div>
           <Avatar />
         </div>
       </NavLink>

@@ -1,2 +1,2 @@
 export * from './AuthWindow';
-export * from './Form/Input';
+export * from '../../../Components/Form/Input';

@@ -1,7 +1,7 @@
 import uuid from "react-uuid";
+import { useState } from "react";
 
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
-import { useState } from "react";
 
 import styles from "./AddTasks.module.scss";
 

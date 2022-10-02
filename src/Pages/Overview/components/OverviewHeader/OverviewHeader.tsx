@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { OverviewCard } from "../OverviewCard";
 
+import s from './OverviewHeader.module.scss';
+
 export const OverviewHeader = () => {
   const [unresolver, setUnresolver] = useState(false);
   const [overdue, setOverdue] = useState(true);
@@ -9,7 +11,7 @@ export const OverviewHeader = () => {
   const [hold, setHold] = useState(false);
 
   return (
-    <div className="overview-header">
+    <div className={s.overviewHeader}>
       <OverviewCard
         title="Unresolved"
         number={60}
