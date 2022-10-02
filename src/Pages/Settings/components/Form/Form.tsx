@@ -46,8 +46,21 @@ export const Form = () => {
     }
   };
 
+  const [image,setImage] = useState<File| null | undefined >(null);
+  const [url,setUrl] = useState<string | ArrayBuffer | null>(null);
+  const filerReader = new FileReader();
+  filerReader.onloadend = () => {
+    setUrl(filerReader.result);
+  };
+
+  const loadHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.item(0);
+    setImage(file);
+    filerReader.readAsDataURL(file as Blob);
+  };
   return (
     <>
+    <img src={url as string} alt="" />
       {isChange ? (
         <div className={s.modal}>
           <div className={s.result}>
@@ -59,6 +72,15 @@ export const Form = () => {
       ) : null}
       <form className={s.form} onSubmit={submitHandler}>
         <Avatar />
+        <div className={s.avatar}>
+          
+          <button onClick={(event) =>{
+            event.preventDefault();
+          }}>add avatar</button>
+
+          <input type= 'file' onChange={loadHandler}/>
+        </div>
+        
         <Input
           label="email"
           placeholder="email"
