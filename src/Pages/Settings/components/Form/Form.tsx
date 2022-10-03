@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Avatar } from "../../../../Components/Avatar";
+
 import { Button } from "../../../../Components/Button";
 import { Input } from "../../../../Components/Form/Input";
+import { InputFile } from "../../../../Components/Form/InputFile";
+import { useAvatar } from "../../../../Hooks/useAvatar";
 
 import s from "./Form.module.scss";
 
@@ -10,12 +12,15 @@ export const Form = () => {
   const nameData = localStorage.getItem("name");
   const lastNameData = localStorage.getItem("lastName");
   const passData = localStorage.getItem("pass");
+  
 
   const [email, setEmail] = useState(emaliData as string);
   const [name, setName] = useState(nameData as string);
   const [lastName, setLastName] = useState(lastNameData as string);
   const [pass, setPass] = useState(passData as string);
   const [isChange, setIsChange] = useState(false);
+  const [showPreview,setShowPreview] = useState(true);
+  const {changeAvatar: changeAvatar,avatarUrl} = useAvatar();
 
   const changeValue = (key: string, newValue: string) => {
     localStorage.removeItem(key);
@@ -42,25 +47,16 @@ export const Form = () => {
       change = true;
     }
     if (change) {
-      setIsChange(true);
+      setIsChange(true);  
+    }
+    if(avatarUrl){
+      changeAvatar();
+      setShowPreview(false);
     }
   };
 
-  const [image,setImage] = useState<File| null | undefined >(null);
-  const [url,setUrl] = useState<string | ArrayBuffer | null>(null);
-  const filerReader = new FileReader();
-  filerReader.onloadend = () => {
-    setUrl(filerReader.result);
-  };
-
-  const loadHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.item(0);
-    setImage(file);
-    filerReader.readAsDataURL(file as Blob);
-  };
   return (
     <>
-    <img src={url as string} alt="" />
       {isChange ? (
         <div className={s.modal}>
           <div className={s.result}>
@@ -71,16 +67,7 @@ export const Form = () => {
         </div>
       ) : null}
       <form className={s.form} onSubmit={submitHandler}>
-        <Avatar />
-        <div className={s.avatar}>
-          
-          <button onClick={(event) =>{
-            event.preventDefault();
-          }}>add avatar</button>
-
-          <input type= 'file' onChange={loadHandler}/>
-        </div>
-        
+        <InputFile showPreview={showPreview}/>
         <Input
           label="email"
           placeholder="email"

@@ -10,7 +10,7 @@ interface IChildren {
    children: React.ReactNode;
 }
 
-export const AuthProvider = ({ children }: IChildren) => {
+export const AuthProvider: React.FC<IChildren> = ({ children }) => {
   const [isLogin, setIsLogin] = useState(true);
   const signIn = () => setIsLogin(true);
   const logOut = () => setIsLogin(false);
