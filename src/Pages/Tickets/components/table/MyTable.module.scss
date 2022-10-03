@@ -1,0 +1,64 @@
+.table {
+   .details {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+ 
+   }
+
+   .title{
+      font-size: 18px;
+      color: #9FA2B4;
+   }
+
+   .timeMarker{
+      color: #C5C7CD;
+      font-size: 12px;
+      margin-top: 5px;
+   }
+
+   .priority{
+      position: relative;
+
+      .btn{
+         padding: 5px 10px;
+         text-transform: uppercase;
+         background-color: #C5C7CD;
+         color: #fff;
+         border-radius: 8px;
+         width: fit-content;
+      }
+
+      
+   }
+
+   .modal {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100px;
+      border: 1px solid #DFE0EB;
+      z-index: 10;
+      background-color: #fff;
+      .modalButton{
+         display: block;
+         width: 100%;
+         padding: 5px;
+         background-color: #fff;
+         border: none;
+         border-bottom: 1px solid #DFE0EB;
+         cursor: pointer;
+      }
+   }
+
+   .modalBtn{
+      background-color: #fff;
+      border: none;
+      color: #C5C7CD;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0,-50%);
+      cursor: pointer;
+   }
+}

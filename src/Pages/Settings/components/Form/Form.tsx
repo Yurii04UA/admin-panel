@@ -8,16 +8,18 @@ import { useAvatar } from "../../../../Hooks/useAvatar";
 import s from "./Form.module.scss";
 
 export const Form = () => {
-  const emaliData = localStorage.getItem("email");
-  const nameData = localStorage.getItem("name");
-  const lastNameData = localStorage.getItem("lastName");
-  const passData = localStorage.getItem("pass");
+  const data = {
+    email: localStorage.getItem("email") as string,
+    name: localStorage.getItem("name") as string,
+    lastName: localStorage.getItem("lastName") as string,
+    pass: localStorage.getItem("pass") as string
+  };
   
 
-  const [email, setEmail] = useState(emaliData as string);
-  const [name, setName] = useState(nameData as string);
-  const [lastName, setLastName] = useState(lastNameData as string);
-  const [pass, setPass] = useState(passData as string);
+  const [email, setEmail] = useState(data.email);
+  const [name, setName] = useState(data.name);
+  const [lastName, setLastName] = useState(data.lastName);
+  const [pass, setPass] = useState(data.pass);
   const [isChange, setIsChange] = useState(false);
   const [showPreview,setShowPreview] = useState(true);
   const {changeAvatar: changeAvatar,avatarUrl} = useAvatar();
@@ -29,28 +31,29 @@ export const Form = () => {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    let change = false;
-    if (email != emaliData) {
+    let isChange = false;
+    if (email != data.email) {
       changeValue("email", email);
-      change = true;
+      isChange = true;
     }
-    if (name != nameData) {
+    if (name != data.name) {
       changeValue("name", name);
-      change = true;
+      isChange = true;
     }
-    if (lastName != lastNameData) {
+    if (lastName != data.lastName) {
       changeValue("lastName", lastName);
-      change = true;
+      isChange = true;
     }
-    if (pass != passData) {
+    if (pass != data.pass) {
       changeValue("pass", pass);
-      change = true;
+      isChange = true;
     }
-    if (change) {
+    if (isChange) {
       setIsChange(true);  
     }
     if(avatarUrl){
       changeAvatar();
+      setIsChange(true);
       setShowPreview(false);
     }
   };
