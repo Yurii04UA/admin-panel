@@ -12,11 +12,12 @@ import {
   TableFooter,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Modal } from "../modal/Modal";
 
+import { Modal } from "../modal/Modal";
 import { TicketsData } from "../../data/ticketsData";
 
 import s from "./MyTable.module.scss";
+import { Header } from "../header";
 
 export const MyTable = () => {
   const [page, setPage] = useState(0);
@@ -37,6 +38,7 @@ export const MyTable = () => {
 
   return (
     <TableContainer component={Paper}>
+      <Header data={data} setData={setData} />
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
           <TableRow>

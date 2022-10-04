@@ -7,6 +7,7 @@ import { AvatarProvider } from "../Context/AvatarContext";
 import { Overview } from "../Pages/Overview";
 import { Tickets } from "../Pages/Tickets";
 import { Contacts } from "../Pages/Contacts";
+
 import { Settings } from "../Pages/Settings";
 import { LayoutSidebar } from "../Components/Layouts/LayoutSidebar";
 import { RequiredAuth } from "../HOC/RequiredAuth";

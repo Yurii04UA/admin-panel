@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { AuthWindow, Input } from "../components";
-import { Button } from "../../../Components/Button";
+import { Button } from "../../../Components/Button/ButtonBasic";
 import { REG, REG_ONLY_LETTER } from "../../../Constants";
 
 export const Registration = () => {

@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { AuthWindow, Input } from "../components";
-import { Button } from "../../../Components/Button";
+import { Button } from "../../../Components/Button/ButtonBasic";
 import { REG } from "../../../Constants";
 import { useAuth } from "../../../Hooks/useAuth";
 

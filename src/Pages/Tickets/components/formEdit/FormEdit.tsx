@@ -1,9 +1,12 @@
 import { useState } from "react";
 import {Box, MenuItem, FormControl ,Select, SelectChangeEvent} from '@mui/material';
+
 import { Input } from "../../../Auth/components";
+import { Button } from "../../../../Components/Button/ButtonBasic";
+import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
+import { StopPropagation } from "../../../../HOC/StopPropagation";
 
 import s from './FormEdit.module.scss';
-import { Button } from "../../../../Components/Button";
 
 
 type ITicketProps = {
@@ -34,28 +37,37 @@ export const FormEdit: React.FC<IModalProps> = ({ id, data, setData, setIsShowMo
 
    const handleChange = (event: SelectChangeEvent) => {
       setStatus(event.target.value as string);
-      
-    };
+   };
 
-    const submitHandler = (event: React.FormEvent) => {
+   const submitHandler = (event: React.FormEvent) => {
       event.preventDefault();
-      const newData = [...data].map(item => {
-         if(item.id === id){
-            item.title = title;
-            item.username = name;
-            item.statuses = status;
-         }
-         return item;
-      });
-      setData(newData);
+      setIsShowModalEdit(false);
+    };
+    
+    const closeModalEdit = () => {
       setIsShowModalEdit(false);
     };
 
+    const editTicket = () => {
+      const newData = [...data].map(item => {
+        if(item.id === id){
+           item.title = title;
+           item.username = name;
+           item.statuses = status;
+        }
+        return item;
+     });
+     setData(newData);
+    };
+
   return (
-    <div className={s.modalWrapper}>
+    <div className={s.modalWrapper} onClick={closeModalEdit}>
       <div className={s.modalEdit}>
          <h2>Edit ticket</h2>
-        <form className={s.form} onSubmit={submitHandler}>
+        <form 
+            className={s.form} 
+            onSubmit={submitHandler} 
+            onClick={StopPropagation} >
           <Input
             label="ticket details"
             type="text"
@@ -87,8 +99,15 @@ export const FormEdit: React.FC<IModalProps> = ({ id, data, setData, setIsShowMo
               </Select>
             </FormControl>
           </Box>
-          <Button type='submit' children={"Save"}/>
-          <Button type='button' children={"Cancel"} onClick={() => setIsShowModalEdit(false)}/>
+          <Button 
+            type='submit' 
+            children={"Save"}
+            onClick={editTicket}/>
+          <ButtonWB 
+            type='button' 
+            children={"Cancel"} 
+            onClick={closeModalEdit}
+            myClass='btnWA'/>
         </form>
       </div>
     </div>

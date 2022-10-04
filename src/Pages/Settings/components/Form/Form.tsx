@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button } from "../../../../Components/Button";
+import { Button } from "../../../../Components/Button/ButtonBasic";
 import { Input } from "../../../../Components/Form/Input";
 import { InputFile } from "../../../../Components/Form/InputFile";
 import { useAvatar } from "../../../../Hooks/useAvatar";
