@@ -50,9 +50,11 @@ export const MyTable = () => {
           {data
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((ticket) => {
-              const deleteHandler = () => {
-               const newData = data.filter(elem => elem.id != ticket.id);
-               setData(newData);
+              const style = {
+                backgroundColor:
+                  (ticket.statuses === "low" ? "#F12B2C" : "") ||
+                  (ticket.statuses === "normal" ? "#29CC97" : "") ||
+                  (ticket.statuses === "high" ? "#FEC400" : ""),
               };
               return (
                 <TableRow key={ticket.id} onClick={() => setShowModal("")}>
@@ -74,32 +76,10 @@ export const MyTable = () => {
                   <TableCell className={s.priority}>
                     <div
                       className={s.btn}
-                      style={{
-                        backgroundColor:
-                          (ticket.statuses === "low" ? "#F12B2C" : "") ||
-                          (ticket.statuses === "normal" ? "#29CC97" : "") ||
-                          (ticket.statuses === "high" ? "#FEC400" : ""),
-                      }}
+                      style={style}
                     >
                       {ticket.statuses}
-                      {showModal === ticket.id ? (
-                        <div className={s.modal}>
-                          <button
-                            className={s.modalButton}
-                            onClick={deleteHandler}
-                          >
-                            {" "}
-                            delete
-                          </button>
-                          <button
-                            className={s.modalButton}
-                            onClick={() => console.log("edit")}
-                          >
-                            {" "}
-                            edit
-                          </button>
-                        </div>
-                      ) : null}
+                      <Modal id={ticket.id} showModal={showModal} data={data} setData={setData}/>
                     </div>
                     <button
                       className={s.modalBtn}

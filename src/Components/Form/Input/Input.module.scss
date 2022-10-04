@@ -1,7 +1,9 @@
 .label{
    position: relative;
-   text-align: start;
    text-transform: uppercase;
+   color: #9FA2B4;
+   text-align: start ;
+   
    input {
       margin-top: 5px;
       width: 100%;
@@ -10,6 +12,7 @@
       border: 1px solid #F0F1F7;
       outline: none;
       color: #8a8a8a;
+     
       
 
       &::placeholder {
