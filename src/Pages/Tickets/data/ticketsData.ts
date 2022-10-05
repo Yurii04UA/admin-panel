@@ -8,7 +8,7 @@ interface ITicketProps {
   title: string;
   username: string;
   avatar: string;
-  registeredAt: string
+  registeredAt: string 
   registeredTime: string
   statuses: string
   updateTime: string
@@ -26,7 +26,7 @@ export function createRandomUser(): ITicketProps {
     username: faker.internet.userName(),
     avatar: faker.image.avatar(),
     registeredAt: faker.date.past().toLocaleDateString(),
-    registeredTime: faker.date.past().toLocaleTimeString('en-US').slice(0, 4) + ' PM',
+    registeredTime: faker.date.past().toLocaleTimeString().slice(0, 5),
     statuses: statuses[Math.floor(Math.random() * statuses.length)],
     updateTime: updateTime[Math.floor(Math.random() * updateTime.length)],
   };

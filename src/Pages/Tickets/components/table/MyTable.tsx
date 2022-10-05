@@ -36,8 +36,10 @@ export const MyTable = () => {
     setPage(0);
   };
 
+  
+
   return (
-    <TableContainer component={Paper}>
+      <TableContainer component={Paper}>
       <Header data={data} setData={setData} />
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
@@ -81,7 +83,9 @@ export const MyTable = () => {
                       style={style}
                     >
                       {ticket.statuses}
+                     
                       <Modal id={ticket.id} showModal={showModal} data={data} setData={setData}/>
+
                     </div>
                     <button
                       className={s.modalBtn}

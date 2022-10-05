@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import SortIcon from "@mui/icons-material/Sort";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
-import s from "./Header.module.scss";
+import { ModalAdd } from '../modalAdd';
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-import uuid from "react-uuid";
+
+import s from "./Header.module.scss";
 
 type ITicketProps = {
   id: string;
@@ -22,25 +24,12 @@ interface IHeaderProps {
 }
 
 export const Header: React.FC<IHeaderProps> = ({ data, setData }) => {
-  const newData = [...data];
-  newData.unshift({
-    id: uuid(),
-    title: "string",
-    username: "string",
-    avatar: "string",
-    registeredAt: "string",
-    registeredTime: "string",
-    statuses: "low",
-    updateTime: "string",
-  });
-  const addTicket = () => {
-    setData(newData);
-  };
+  const [isShowModal, setIsShowModal] = useState(false);
+
   return (
     <div className={s.header}>
       <div className={s.group}>
         <button>
-          {" "}
           <SortIcon /> sort
         </button>
         <button>
@@ -51,8 +40,11 @@ export const Header: React.FC<IHeaderProps> = ({ data, setData }) => {
         type="button"
         children={"+ Add ticket"}
         myClass="btnWF"
-        onClick={addTicket}
+        onClick={() => setIsShowModal(true)}
       />
+     {isShowModal? 
+      <ModalAdd setIsShowModal={setIsShowModal} data={data} setData={setData}/>
+      : null}
     </div>
   );
 };

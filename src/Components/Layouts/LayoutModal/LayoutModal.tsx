@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { StopPropagation } from '../../../HOC/StopPropagation';
 
 import s from './LayoutModal.module.scss';
@@ -6,13 +5,12 @@ import s from './LayoutModal.module.scss';
 interface ILayoutProps{
    children: React.ReactNode;
    title: string;
-   setIsShowModalEdit: (value:boolean) => void
+   setIsShowModal: (value:boolean) => void
 }
 
-export const LayoutModal: React.FC<ILayoutProps> = ({ children, title, setIsShowModalEdit }) => {
+export const LayoutModal: React.FC<ILayoutProps> = ({ children, title, setIsShowModal: setIsShowModalEdit }) => {
    const submitHandler = (event: React.FormEvent) => {
       event.preventDefault();
-      setIsShowModalEdit(false);
     };
 
     const closeModal = () => {

@@ -40,7 +40,7 @@ export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data }) =
   return (
     <>
       {showModal === id ? (
-        <div className={s.modal}>
+          <div className={s.modal}>
           <button
             className={s.modalBtn}
             onClick={() => setIsShowModalAgree(true)}>

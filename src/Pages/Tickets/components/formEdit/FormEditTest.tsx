@@ -1,18 +1,10 @@
 import { useState } from "react";
-import {
-  Box,
-  MenuItem,
-  FormControl,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material";
 
 import { Input } from "../../../Auth/components";
 import { Button } from "../../../../Components/Button/ButtonBasic";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-
-import s from "./FormEdit.module.scss";
 import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
+import { InputSelect } from "../../../../Components/Form/InputSelect";
 
 type ITicketProps = {
   id: string;
@@ -43,10 +35,6 @@ export const FormEditTest: React.FC<IModalProps> = ({
   const [name, setName] = useState(ticket.username);
   const [status, setStatus] = useState(ticket.statuses);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setStatus(event.target.value as string);
-  };
-
 
   const closeModalEdit = () => {
     setIsShowModalEdit(false);
@@ -62,10 +50,12 @@ export const FormEditTest: React.FC<IModalProps> = ({
       return item;
     });
     setData(newData);
+    setIsShowModalEdit(false);
+    
   };
 
   return (
-    <LayoutModal title="Edit ticket" setIsShowModalEdit={setIsShowModalEdit}>
+    <LayoutModal title="Edit ticket" setIsShowModal={setIsShowModalEdit}>
       <Input
         label="ticket details"
         type="text"
@@ -82,21 +72,7 @@ export const FormEditTest: React.FC<IModalProps> = ({
         icon={false}
         placeholder={""}
       />
-      <Box>
-        <FormControl fullWidth>
-          <label>Priority</label>
-          <Select
-            className={s.select}
-            value={status}
-            label="Status"
-            onChange={handleChange}
-          >
-            <MenuItem value={"high"}>high</MenuItem>
-            <MenuItem value={"normal"}>normal</MenuItem>
-            <MenuItem value={"low"}>low</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
+      <InputSelect status={status} setStatus={setStatus} />
       <Button type="submit" children={"Save"} onClick={editTicket} />
       <ButtonWB
         type="button"
