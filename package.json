@@ -8,6 +8,7 @@
     "@microsoft/rush-stack-compiler-3.9": "^0.4.48",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
+    "@mui/x-data-grid": "^5.17.5",
     "@mui/x-date-pickers": "^5.0.3",
     "@progress/kendo-react-charts": "^5.7.0",
     "@progress/kendo-theme-material": "^5.8.1",

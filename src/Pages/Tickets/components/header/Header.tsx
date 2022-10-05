@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import SortIcon from "@mui/icons-material/Sort";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 import { ModalAdd } from '../modalAdd';
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
+import { Sort } from '../sort/Sort';
+import { Filter } from '../filter/Filter';
 
 import s from "./Header.module.scss";
+import { DropDownSort } from '../sort/dropDownSort';
+import { DropDownFilter } from '../filter/dropDownFilter';
 
 type ITicketProps = {
   id: string;
@@ -25,17 +27,17 @@ interface IHeaderProps {
 
 export const Header: React.FC<IHeaderProps> = ({ data, setData }) => {
   const [isShowModal, setIsShowModal] = useState(false);
+  const [isShowDropSort,setIsShowDropSort] = useState(false);
+  const [isShowDropFilter,setIsShowDropFilter] = useState(false);
 
   return (
+    <>
     <div className={s.header}>
       <div className={s.group}>
-        <button>
-          <SortIcon /> sort
-        </button>
-        <button>
-          <FilterAltIcon /> filt
-        </button>
+        <Sort setValue={setIsShowDropSort} value={isShowDropSort}  />
+        <Filter setValue={setIsShowDropFilter} value={isShowDropFilter}/>
       </div>
+     
       <ButtonWB
         type="button"
         children={"+ Add ticket"}
@@ -46,5 +48,10 @@ export const Header: React.FC<IHeaderProps> = ({ data, setData }) => {
       <ModalAdd setIsShowModal={setIsShowModal} data={data} setData={setData}/>
       : null}
     </div>
+    <div className={s.dropDownWrapper}>
+    {isShowDropSort? <DropDownSort /> : null}
+    {isShowDropFilter? <DropDownFilter /> : null}
+    </div>
+    </>
   );
 };

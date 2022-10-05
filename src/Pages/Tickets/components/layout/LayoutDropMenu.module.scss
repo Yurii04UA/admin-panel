@@ -1,0 +1,21 @@
+.wrapper {
+   background-color: #fff;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   color: #4B506D;
+   cursor: pointer;
+
+   svg {
+      color: #C5C7CD;
+   }
+}
+
+button{
+   border: none;
+}
+
+.plug{
+   height: 24px;
+   background-color: #fff;
+}
