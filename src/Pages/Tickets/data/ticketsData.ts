@@ -22,10 +22,10 @@ const updateTime = ['Updated 1 day ago','Updated 2 days ago','Updated 3 days ago
 export function createRandomUser(): ITicketProps {
   return {
     id: uuid(),
-    title: faker.lorem.paragraph().slice(-20),
+    title: faker.lorem.paragraph().slice(0,15),
     username: faker.internet.userName(),
     avatar: faker.image.avatar(),
-    registeredAt: faker.date.past().toLocaleDateString(),
+    registeredAt: faker.date.past().toLocaleDateString('en-US'),
     registeredTime: faker.date.past().toLocaleTimeString().slice(0, 5),
     statuses: statuses[Math.floor(Math.random() * statuses.length)],
     updateTime: updateTime[Math.floor(Math.random() * updateTime.length)],

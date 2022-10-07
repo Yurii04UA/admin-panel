@@ -26,10 +26,11 @@ interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;
   data: ITicketProps[];
   setData: (value: ITicketProps[]) => void;
+  setDataDefault:(value: ITicketProps[]) => void;
 }
 
-export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowModal }) => {
-  const dateNow = new Date().toLocaleDateString(); 
+export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowModal,setDataDefault }) => {
+  const dateNow = new Date().toLocaleDateString('en-US'); 
   const timeNow = new Date().toLocaleTimeString().slice(0, 5);
   const [details, setDatails] = useState("");
   const [name, setName] = useState("");
@@ -51,6 +52,7 @@ export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowMod
     });
     if(details  && name && status){
       setData(newData);
+      setDataDefault(newData);
       setIsShowModal(false);
     }
   };

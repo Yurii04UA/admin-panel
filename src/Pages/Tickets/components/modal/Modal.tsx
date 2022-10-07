@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { StopPropagation } from "../../../../HOC/StopPropagation";
 import { FormEdit } from "../formEdit";
-import { FormEditTest } from "../formEdit/FormEditTest";
 
 import s from "./modal.module.scss";
 
@@ -21,15 +20,17 @@ interface IModalProps {
   id: string;
   data: ITicketProps[];
   setData: (value: ITicketProps[]) => void;
+  setDataDefault:(value: ITicketProps[]) => void;
 }
 
-export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data }) => {
+export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data, setDataDefault }) => {
   const [isShowModalAgree, setIsShowModalAgree] = useState(false);
   const [isShowModalEdit, setIsShowModalEdit] = useState(false);
 
   const deleteHandler = () => {
     const newData = [...data].filter((task) => task.id != id);
     setData(newData);
+    setDataDefault(newData);
   };
 
   const closeModalAgree = () => {
@@ -70,13 +71,7 @@ export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data }) =
         </div>
       ) : null}
       {isShowModalEdit ? (
-        // <FormEdit
-        //   data={data}
-        //   setData={setData}
-        //   setIsShowModalEdit={setIsShowModalEdit}
-        //   id={id}
-        // />
-        <FormEditTest
+        <FormEdit
           data={data}
           setData={setData}
           setIsShowModalEdit={setIsShowModalEdit}

@@ -15,15 +15,17 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { Modal } from "../modal/Modal";
 import { TicketsData } from "../../data/ticketsData";
+import { Header } from "../header";
 
 import s from "./MyTable.module.scss";
-import { Header } from "../header";
 
 export const MyTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(8);
   const [showModal, setShowModal] = useState("");
-  const [data, setData] = useState(TicketsData);
+  const [sortingData,setSortingData] = useState(TicketsData);  
+  const [dataDefault,setDataDefault] = useState(TicketsData);
+ 
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -35,12 +37,15 @@ export const MyTable = () => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-
   
-
+  
   return (
       <TableContainer component={Paper}>
-      <Header data={data} setData={setData} />
+      <Header
+        sortingData={sortingData} 
+        setSortingData={setSortingData}
+        setDataDefault={setDataDefault}
+        dataDefault={dataDefault}/>
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
           <TableRow>
@@ -51,7 +56,7 @@ export const MyTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data
+          {sortingData
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((ticket) => {
               const style = {
@@ -83,9 +88,12 @@ export const MyTable = () => {
                       style={style}
                     >
                       {ticket.statuses}
-                     
-                      <Modal id={ticket.id} showModal={showModal} data={data} setData={setData}/>
-
+                      <Modal 
+                        id={ticket.id} 
+                        showModal={showModal} 
+                        data={sortingData} 
+                        setData={setSortingData} 
+                        setDataDefault={setDataDefault}/>
                     </div>
                     <button
                       className={s.modalBtn}
@@ -106,7 +114,7 @@ export const MyTable = () => {
       <TablePagination
         rowsPerPageOptions={[8, 16, 32]}
         component="div"
-        count={data.length}
+        count={sortingData.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

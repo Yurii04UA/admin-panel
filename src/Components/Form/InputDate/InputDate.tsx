@@ -22,9 +22,9 @@ export const InputDate: React.FC<IInputDate> = ({setDate, setTime }) => {
     );
   
     const handleChange = (newValue: Dayjs | null) => {
-      const date = newValue?.month() as number + 1;
+      const month = newValue?.month() as number + 1;
       setValueDate(newValue);
-      setDate(newValue?.date() + "." + date + "." + newValue?.year());
+      setDate(month + "/" + newValue?.date() + "/" + newValue?.year());
       setTime(newValue?.hour() + ":" + newValue?.minute());
      
     };
