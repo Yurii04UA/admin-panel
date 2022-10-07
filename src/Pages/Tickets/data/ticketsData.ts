@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker";
 import uuid from "react-uuid";
-import { useState } from 'react';
 
 
 interface ITicketProps {
@@ -14,10 +13,10 @@ interface ITicketProps {
   updateTime: string
 }
 
-export const TicketsData: ITicketProps[] = [];
 const statuses = ["low", "normal", "high"];
 const updateTime = ['Updated 1 day ago','Updated 2 days ago','Updated 3 days ago','Today','Updated 4 days ago'];
 
+export const TicketsData: ITicketProps[] = [];
 
 export function createRandomUser(): ITicketProps {
   return {

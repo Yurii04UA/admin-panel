@@ -1,0 +1,16 @@
+.header{
+   padding: 15px;
+   padding-bottom: 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   .group{
+      display: flex;
+      gap: 30px;
+   }
+}
+
+.dropDownWrapper{
+   display: flex;
+   
+}

@@ -1,0 +1,44 @@
+.table {
+   .details {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+ 
+   }
+
+   .title{
+      font-size: 18px;
+      color: #9FA2B4;
+   }
+
+   .timeMarker{
+      color: #C5C7CD;
+      font-size: 12px;
+      margin-top: 5px;
+   }
+
+   .priority{
+      position: relative;
+
+      .btn{
+         padding: 5px 10px;
+         text-transform: uppercase;
+         background-color: #C5C7CD;
+         color: #fff;
+         border-radius: 8px;
+         width: fit-content;
+      }
+   }
+
+   .modalBtn{
+      background-color: #fff;
+      border: none;
+      color: #C5C7CD;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0,-50%);
+      cursor: pointer;
+   }
+}
+

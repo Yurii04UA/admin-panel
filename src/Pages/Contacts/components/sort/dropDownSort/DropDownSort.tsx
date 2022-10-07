@@ -15,7 +15,7 @@ interface IDropDownProps {
 
 const button = ["Details", "Name", "Date", "Priority", "Default"];
 
-export const DropDownSortCopy: React.FC<IDropDownProps> = ({
+export const DropDownSort: React.FC<IDropDownProps> = ({
   sort,
   setSort,
 }) => {
