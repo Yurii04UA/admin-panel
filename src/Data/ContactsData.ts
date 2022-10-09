@@ -9,7 +9,6 @@ interface ITicketProps {
   registeredAt: string; 
   address:string;
   phone: string;
-
 }
 
 export const ContactsData: ITicketProps[] = [];
@@ -22,7 +21,7 @@ export function createRandomUser(): ITicketProps {
     avatar: faker.image.avatar(),
     registeredAt: faker.date.past().toLocaleDateString('en-US'),
     address: faker.address.city(),
-    phone: faker.phone.phoneNumber()
+    phone: faker.phone.number('+###-###-###-###')
   };
 }
 

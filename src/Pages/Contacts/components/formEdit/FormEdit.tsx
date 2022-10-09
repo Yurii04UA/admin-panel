@@ -4,23 +4,21 @@ import { Input } from "../../../Auth/components";
 import { Button } from "../../../../Components/Button/ButtonBasic";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
 import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
-import { InputSelect } from "../../../../Components/Form/InputSelect";
 
-type ITicketProps = {
-  id: string;
-  title: string;
+
+type IContactProps = {
+  id: string
   username: string;
   avatar: string;
-  registeredAt: string;
-  registeredTime: string;
-  statuses: string;
-  updateTime: string;
+  registeredAt: string; 
+  address:string;
+  phone: string;
 };
 
 interface IModalProps {
   id: string;
-  data: ITicketProps[];
-  setData: (value: ITicketProps[]) => void;
+  data: IContactProps[];
+  setData: (value: IContactProps[]) => void;
   setIsShowModalEdit: (value: boolean) => void;
 }
 
@@ -31,22 +29,22 @@ export const FormEdit: React.FC<IModalProps> = ({
   setIsShowModalEdit,
   
 }) => {
-  const [ticket] = data.filter((ticket) => ticket.id === id);
-  const [title, setTitle] = useState(ticket.title);
-  const [name, setName] = useState(ticket.username);
-  const [status, setStatus] = useState(ticket.statuses);
+  const [contact] = data.filter((contact) => contact.id === id);
+  const [name, setName] = useState(contact.username);
+  const [phone, setPhone] = useState(contact.phone);
+  const [address, setAddress] = useState(contact.address);
 
 
   const closeModalEdit = () => {
     setIsShowModalEdit(false);
   };
 
-  const editTicket = () => {
+  const editElement = () => {
     const newData = [...data].map((item) => {
       if (item.id === id) {
-        item.title = title;
         item.username = name;
-        item.statuses = status;
+        item.phone = phone;
+        item.address = address;
       }
       return item;
     });
@@ -56,25 +54,32 @@ export const FormEdit: React.FC<IModalProps> = ({
   };
 
   return (
-    <LayoutModal title="Edit ticket" setIsShowModal={setIsShowModalEdit}>
+    <LayoutModal title="Edit contact" setIsShowModal={setIsShowModalEdit}>
       <Input
-        label="ticket details"
-        type="text"
-        value={title}
-        setValue={setTitle}
-        icon={false}
-        placeholder={""}
-      />
-      <Input
-        label="Customer name"
+        label="Name"
         type="text"
         value={name}
         setValue={setName}
         icon={false}
         placeholder={""}
       />
-      <InputSelect status={status} setStatus={setStatus} />
-      <Button type="submit" children={"Save"} onClick={editTicket} />
+      <Input
+        label="Phone"
+        type="text"
+        value={phone}
+        setValue={setPhone}
+        icon={false}
+        placeholder={""}
+      />
+      <Input
+        label="Address"
+        type="text"
+        value={address}
+        setValue={setAddress}
+        icon={false}
+        placeholder={""}
+      />
+      <Button type="submit" children={"Save"} onClick={editElement} />
       <ButtonWB
         type="button"
         children={"Cancel"}

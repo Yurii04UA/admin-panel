@@ -4,23 +4,21 @@ import { FormEdit } from "../formEdit";
 
 import s from "./modal.module.scss";
 
-type ITicketProps = {
-  id: string;
-  title: string;
+type IContactProps = {
+  id: string
   username: string;
   avatar: string;
-  registeredAt: string;
-  registeredTime: string;
-  statuses: string;
-  updateTime: string;
+  registeredAt: string; 
+  address:string;
+  phone: string;
 };
 
 interface IModalProps {
   showModal: string;
   id: string;
-  data: ITicketProps[];
-  setData: (value: ITicketProps[]) => void;
-  setDataDefault:(value: ITicketProps[]) => void;
+  data: IContactProps[];
+  setData: (value: IContactProps[]) => void;
+  setDataDefault:(value: IContactProps[]) => void;
 }
 
 export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data, setDataDefault }) => {
@@ -36,7 +34,6 @@ export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data, set
   const closeModalAgree = () => {
     setIsShowModalAgree(false);
   };
-
 
   return (
     <>

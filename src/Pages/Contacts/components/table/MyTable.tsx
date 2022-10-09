@@ -14,7 +14,7 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { Modal } from "../modal/Modal";
-import { ContactsData } from "../../data/contactsData";
+import { ContactsData } from "../../../../Data/ContactsData";
 import { Header } from "../header";
 
 import s from "./MyTable.module.scss";
@@ -37,8 +37,7 @@ export const MyTable = () => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  
-  
+
   return (
       <TableContainer component={Paper}>
       <Header
@@ -49,47 +48,36 @@ export const MyTable = () => {
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
           <TableRow>
-            <TableCell className={s.title}>Ticket details</TableCell>
-            <TableCell className={s.title}>Customer name</TableCell>
-            <TableCell className={s.title}>Date</TableCell>
-            <TableCell className={s.title}>Priority</TableCell>
+            <TableCell className={s.title}>Name</TableCell>
+            <TableCell className={s.title}>Phone</TableCell>
+            <TableCell className={s.title}>Address</TableCell>
+            <TableCell className={s.title}>Created at</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {sortingData
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            .map((ticket) => {
-              const style = {
-                backgroundColor:
-                  (ticket.statuses === "low" ? "#F12B2C" : "") ||
-                  (ticket.statuses === "normal" ? "#29CC97" : "") ||
-                  (ticket.statuses === "high" ? "#FEC400" : ""),
-              };
+            .map((contact) => {
               return (
-                <TableRow key={ticket.id} onClick={() => setShowModal("")}>
+                <TableRow key={contact.id} onClick={() => setShowModal("")}>
                   <TableCell className={s.details}>
-                    <Avatar src={ticket.avatar} alt={ticket.username} />
+                    <Avatar src={contact.avatar} alt={contact.username} />
                     <div>
-                      <h3>{ticket.title}</h3>
-                      <div className={s.timeMarker}>{ticket.updateTime}</div>
+                      <h3>{contact.username}</h3>
                     </div>
                   </TableCell>
                   <TableCell>
-                    <h3>{ticket.username}</h3>
-                    <div className={s.timeMarker}>{ticket.registeredAt}</div>
+                    <h3>{contact.phone}</h3>
                   </TableCell>
                   <TableCell>
-                    <h3>{ticket.registeredAt}</h3>
-                    <div className={s.timeMarker}>{ticket.registeredTime}</div>
+                    <h3>{contact.address}</h3>
                   </TableCell>
                   <TableCell className={s.priority}>
                     <div
-                      className={s.btn}
-                      style={style}
                     >
-                      {ticket.statuses}
+                      {contact.registeredAt}
                       <Modal 
-                        id={ticket.id} 
+                        id={contact.id} 
                         showModal={showModal} 
                         data={sortingData} 
                         setData={setSortingData} 
@@ -99,7 +87,7 @@ export const MyTable = () => {
                       className={s.modalBtn}
                       onClick={(e: React.MouseEvent) => {
                         e.stopPropagation();
-                        setShowModal(ticket.id);
+                        setShowModal(contact.id);
                       }}
                     >
                       <MoreVertIcon />

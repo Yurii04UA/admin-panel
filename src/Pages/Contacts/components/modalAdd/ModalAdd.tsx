@@ -11,68 +11,93 @@ import { InputSelect } from "../../../../Components/Form/InputSelect";
 
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
 
-type ITicketProps = {
-  id: string;
-  title: string;
+type ContactProps = {
+  id: string
   username: string;
   avatar: string;
-  registeredAt: string;
-  registeredTime: string;
-  statuses: string;
-  updateTime: string;
+  registeredAt: string; 
+  address:string;
+  phone: string;
 };
 
 interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;
-  data: ITicketProps[];
-  setData: (value: ITicketProps[]) => void;
-  setDataDefault:(value: ITicketProps[]) => void;
+  data: ContactProps[];
+  setData: (value: ContactProps[]) => void;
+  setDataDefault:(value: ContactProps[]) => void;
 }
 
 export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowModal,setDataDefault }) => {
   const dateNow = new Date().toLocaleDateString('en-US'); 
-  const timeNow = new Date().toLocaleTimeString().slice(0, 5);
   const [details, setDatails] = useState("");
   const [name, setName] = useState("");
   const [status, setStatus] = useState("");
   const [date, setDate] = useState<string | Dayjs | null>(dateNow);
-  const [time, setTime] = useState<string | Dayjs | null>(timeNow);
+  const [time, setTime] = useState<string | Dayjs | null>(dateNow);
+
+  const [firstName,setFirstName] = useState('');
+  const [lastName,setLastName] = useState('');
+  const [email,setEmail] = useState('');
+  const [address,setAddress] = useState('');
+  const [phone,setPhone] = useState('');
+
+
 
   const addTicket = () => {
     const newData = [...data];
     newData.unshift({
       id: uuid(),
-      title: details,
-      username: name,
       avatar: faker.image.avatar(),
+      username: firstName + lastName,
       registeredAt: date?.toString() as string,
-      registeredTime: time?.toString() as string,
-      statuses: status,
-      updateTime: "now",
+      address: address,
+      phone: phone
     });
-    if(details  && name && status){
+    if(firstName  && lastName && email && address && phone){
       setData(newData);
       setDataDefault(newData);
       setIsShowModal(false);
+      console.log('a');
+      
     }
   };
   return (
-    <LayoutModal title="Add tickets" setIsShowModal={setIsShowModal}>
+    <LayoutModal title="Add new contact" setIsShowModal={setIsShowModal}>
       <Input
-        label="Ticket details"
-        placeholder="Add description"
-        value={details}
-        setValue={setDatails}
+        label="firts name"
+        placeholder="Add first name"
+        value={firstName}
+        setValue={setFirstName}
         icon={false}
       />
       <Input
-        label="Customer name"
-        placeholder="Name"
-        value={name}
-        setValue={setName}
+        label="last name"
+        placeholder="Add last name"
+        value={lastName}
+        setValue={setLastName}
         icon={false}
       />
-      <InputSelect status={status} setStatus={setStatus} />
+        <Input
+          label="email"
+          placeholder="Add email"
+          value={email}
+          setValue={setEmail}
+          icon={false}
+        />
+      <Input
+        label="address"
+        placeholder="Add address"
+        value={address}
+        setValue={setAddress}
+        icon={false}
+      />
+      <Input
+        label="phone"
+        placeholder="Add phone"
+        value={phone}
+        setValue={setPhone}
+        icon={false}
+      />
       <InputDate setDate={setDate} setTime={setTime} />
       <Button 
         children="Save" 

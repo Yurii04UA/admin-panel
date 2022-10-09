@@ -18,7 +18,7 @@ const updateTime = ['Updated 1 day ago','Updated 2 days ago','Updated 3 days ago
 
 export const TicketsData: ITicketProps[] = [];
 
-export function createRandomUser(): ITicketProps {
+function createRandomUser(): ITicketProps {
   return {
     id: uuid(),
     title: faker.lorem.paragraph().slice(0,15),

@@ -14,7 +14,7 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { Modal } from "../modal/Modal";
-import { TicketsData } from "../../data/ticketsData";
+import { TicketsData } from "../../../../Data/TicketsData";
 import { Header } from "../header";
 
 import s from "./MyTable.module.scss";

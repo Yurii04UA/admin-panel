@@ -1,7 +1,5 @@
-
 import { Title } from '../../Components/Title';
-
-import s from './Contacts.module.scss';
+import { MyTable } from './components/table/MyTable';
 
 
 
@@ -10,7 +8,7 @@ export const Contacts = () => {
     <div className='contackts'>
       <Title title='Contacts'/>
 
-
+    <MyTable />
     </div>
   );
 };

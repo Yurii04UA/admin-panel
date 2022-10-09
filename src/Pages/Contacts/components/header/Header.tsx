@@ -3,31 +3,26 @@ import { useState, useEffect } from "react";
 import { ModalAdd } from "../modalAdd";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
 import { Sort } from "../sort/Sort";
-import { Filter } from "../filter/Filter";
 import { DropDownSort } from "../sort/dropDownSort";
-import { DropDownFilter } from "../filter/dropDownFilter";
-import { SortFunction } from "../sort/dropDownSort/SortFunction";
+import { SortFunctionContact } from "../../../../SortingAndFilter/SortFunctionContact";
 
 import s from "./Header.module.scss";
-import { FilterFunction } from "../filter/dropDownFilter/FilterFunction";
 
-type TicketProps = {
-  id: string;
-  title: string;
+type ContactProps = {
+  id: string
   username: string;
   avatar: string;
-  registeredAt: string;
-  registeredTime: string;
-  statuses: string;
-  updateTime: string;
+  registeredAt: string; 
+  address:string;
+  phone: string;
 };
 
 interface IHeaderProps {
-  dataDefault: TicketProps[];
-  setDataDefault: (value: TicketProps[]) => void;
+  dataDefault: ContactProps[];
+  setDataDefault: (value: ContactProps[]) => void;
 
-  sortingData: TicketProps[];
-  setSortingData: (value: TicketProps[]) => void;
+  sortingData: ContactProps[];
+  setSortingData: (value: ContactProps[]) => void;
 }
 
 export const Header: React.FC<IHeaderProps> = ({
@@ -38,32 +33,22 @@ export const Header: React.FC<IHeaderProps> = ({
 }) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [isShowDropSort, setIsShowDropSort] = useState(false);
-  const [isShowDropFilter, setIsShowDropFilter] = useState(false);
   const [sort, setSort] = useState({
     prop: "none",
     direction: "none",
   });
-  const [filter, setFilter] = useState({
-    prop: "none",
-    state: "none",
-  });
-
+ 
   useEffect(() => {
-    SortFunction({ sort, setSortingData, sortingData, dataDefault });
+    SortFunctionContact({ sort, setSortingData, sortingData, dataDefault });
   }, [sort]);
-    useEffect(() => {
-      FilterFunction({filter,setSortingData,dataDefault});
-  }, [filter]);
-
+ 
 
   return (
     <>
       <div className={s.header}>
         <div className={s.group}>
           <Sort setValue={setIsShowDropSort} value={isShowDropSort} />
-          <Filter setValue={setIsShowDropFilter} value={isShowDropFilter} />
         </div>
-
         <ButtonWB
           type="button"
           children={"+ Add ticket"}
@@ -83,9 +68,6 @@ export const Header: React.FC<IHeaderProps> = ({
         {isShowDropSort ? 
           <DropDownSort sort={sort} setSort={setSort} /> 
           : null}
-        {isShowDropFilter ? 
-          <DropDownFilter filter={filter} setFilter={setFilter} />
-         : null}
       </div>
     </>
   );

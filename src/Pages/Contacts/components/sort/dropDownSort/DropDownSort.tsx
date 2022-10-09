@@ -13,7 +13,7 @@ interface IDropDownProps {
   setSort: (value: SortProps) => void;
 }
 
-const button = ["Details", "Name", "Date", "Priority", "Default"];
+const button = ["Name", "Address", "Date", "Default"];
 
 export const DropDownSort: React.FC<IDropDownProps> = ({
   sort,

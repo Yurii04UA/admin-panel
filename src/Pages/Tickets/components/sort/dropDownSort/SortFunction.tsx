@@ -28,47 +28,41 @@ export const SortFunction = ({
 }: ISortProps) => {
   // sort by Details
   if (sort.prop === "Details" && sort.direction === "desc") {
-    const newData = [...sortingData];
-    const sortNewData = newData.sort((a, b) =>
+    const newData = [...sortingData].sort((a, b) =>
       b.title.toLowerCase() > a.title.toLowerCase() ? 1 : -1,
     );
-    setSortingData(sortNewData);
+    setSortingData(newData);
   } else if (sort.prop === "Details" && sort.direction === "asc") {
-    const newData = [...sortingData];
-    const sortNewData = newData.sort((a, b) =>
+    const newData = [...sortingData].sort((a, b) =>
       a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1,
     );
-    setSortingData(sortNewData);
+    setSortingData(newData);
   }
 
   /// sort by Name
   if (sort.prop === "Name" && sort.direction === "desc") {
-    const newData = [...sortingData];
-    const sortNewData = newData.sort((a, b) =>
+    const newData = [...sortingData].sort((a, b) =>
       b.username.toLowerCase() > a.username.toLowerCase() ? 1 : -1,
     );
-    setSortingData(sortNewData);
+    setSortingData(newData);
   } else if (sort.prop === "Name" && sort.direction === "asc") {
-    const newData = [...sortingData];
-    const sortNewData = newData.sort((a, b) =>
+    const newData = [...sortingData].sort((a, b) =>
       a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1,
     );
-    setSortingData(sortNewData);
+    setSortingData(newData);
   }
 
   /// sort by Date
   if (sort.prop === "Date" && sort.direction === "desc") {
-    const newData = [...sortingData];
-    const sortNewData = newData.sort((a, b) =>
+    const newData = [...sortingData].sort((a, b) =>
       Date.parse(a.registeredAt) > Date.parse(b.registeredAt) ? 1 : -1,
     );
-    setSortingData(sortNewData);
+    setSortingData(newData);
   } else if (sort.prop === "Date" && sort.direction === "asc") {
-    const newData = [...sortingData];
-    const sortNewData = newData.sort((a, b) =>
+    const newData = [...sortingData].sort((a, b) =>
       Date.parse(b.registeredAt) > Date.parse(a.registeredAt) ? 1 : -1,
     );
-    setSortingData(sortNewData);
+    setSortingData(newData);
   }
 
   /// sort by Priority
@@ -82,8 +76,8 @@ export const SortFunction = ({
     const newDataLow = [...sortingData].filter(
       (ticket) => ticket.statuses === "low",
     );
-    const sortNewData = [...newDataHigh, ...newDataNormal, ...newDataLow];
-    setSortingData(sortNewData);
+    const newData = [...newDataHigh, ...newDataNormal, ...newDataLow];
+    setSortingData(newData);
   } else if (sort.prop === "Priority" && sort.direction === "asc") {
     const newDataHigh = [...sortingData].filter(
       (ticket) => ticket.statuses === "high",
@@ -94,8 +88,8 @@ export const SortFunction = ({
     const newDataLow = [...sortingData].filter(
       (ticket) => ticket.statuses === "low",
     );
-    const sortNewData = [...newDataLow, ...newDataNormal, ...newDataHigh];
-    setSortingData(sortNewData);
+    const newData = [...newDataLow, ...newDataNormal, ...newDataHigh];
+    setSortingData(newData);
   }
 
   if (sort.prop === "Default") {
