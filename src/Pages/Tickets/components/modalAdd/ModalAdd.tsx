@@ -8,7 +8,6 @@ import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
 import { Button } from "../../../../Components/Button/ButtonBasic";
 import { Input } from "../../../../Components/Form/Input";
 import { InputSelect } from "../../../../Components/Form/InputSelect";
-
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
 
 type ITicketProps = {
@@ -24,13 +23,14 @@ type ITicketProps = {
 
 interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;
-  data: ITicketProps[];
-  setData: (value: ITicketProps[]) => void;
-  setDataDefault:(value: ITicketProps[]) => void;
+  setNewItem: (value: ITicketProps) => void;
 }
 
-export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowModal,setDataDefault }) => {
-  const dateNow = new Date().toLocaleDateString('en-US'); 
+export const ModalAdd: React.FC<IModalAddProps> = ({
+  setIsShowModal,
+  setNewItem,
+}) => {
+  const dateNow = new Date().toLocaleDateString("en-US");
   const timeNow = new Date().toLocaleTimeString().slice(0, 5);
   const [details, setDatails] = useState("");
   const [name, setName] = useState("");
@@ -39,8 +39,7 @@ export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowMod
   const [time, setTime] = useState<string | Dayjs | null>(timeNow);
 
   const addTicket = () => {
-    const newData = [...data];
-    newData.unshift({
+    const newItem = {
       id: uuid(),
       title: details,
       username: name,
@@ -49,13 +48,13 @@ export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowMod
       registeredTime: time?.toString() as string,
       statuses: status,
       updateTime: "now",
-    });
-    if(details  && name && status){
-      setData(newData);
-      setDataDefault(newData);
+    };
+    if (details && name && status) {
+      setNewItem(newItem);
       setIsShowModal(false);
     }
   };
+
   return (
     <LayoutModal title="Add tickets" setIsShowModal={setIsShowModal}>
       <Input
@@ -74,10 +73,7 @@ export const ModalAdd: React.FC<IModalAddProps> = ({ data, setData, setIsShowMod
       />
       <InputSelect status={status} setStatus={setStatus} />
       <InputDate setDate={setDate} setTime={setTime} />
-      <Button 
-        children="Save" 
-        type="submit" 
-        onClick={addTicket} />
+      <Button children="Save" type="submit" onClick={addTicket} />
       <ButtonWB
         children="Cancel"
         type="button"

@@ -9,10 +9,7 @@ interface ILayoutProps {
   onClick?: () => void;
 }
 
-export const LayoutDropMenu: React.FC<ILayoutProps> = ({
-  icon,
-  onClick,
-}) => {
+export const LayoutDropMenu: React.FC<ILayoutProps> = ({ icon, onClick }) => {
   return (
     <>
       <button onClick={onClick}>
@@ -27,7 +24,6 @@ export const LayoutDropMenu: React.FC<ILayoutProps> = ({
           </div>
         ) : null}
       </button>
-
     </>
   );
 };

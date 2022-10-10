@@ -1,14 +1,10 @@
-import { Title } from '../../Components/Title';
-import { Form } from './components/Form';
-
-import s from './Settings.module.scss';
+import { Title } from "../../Components/Title";
+import { Form } from "./components/Form";
 
 export const Settings = () => {
-  
-
   return (
-    <div className={s.settings}>
-      <Title title='Settings'/>
+    <div >
+      <Title title="Settings" />
       <Form />
     </div>
   );

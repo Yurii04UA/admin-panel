@@ -1,4 +1,4 @@
-import s from './GraphHeader.module.scss';
+import s from "./GraphHeader.module.scss";
 
 export const GraphHeader = () => {
   return (

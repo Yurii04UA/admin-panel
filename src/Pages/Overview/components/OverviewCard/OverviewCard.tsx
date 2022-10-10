@@ -1,4 +1,4 @@
-import s from './OverviewCard.module.scss';
+import s from "./OverviewCard.module.scss";
 
 interface IOverviewCardProps {
   title: string;
@@ -15,7 +15,7 @@ export const OverviewCard: React.FC<IOverviewCardProps> = ({
 }) => {
   return (
     <div
-      className={value? s.overviewCard + ' ' + s.activeCard : s.overviewCard}
+      className={value ? s.overviewCard + " " + s.activeCard : s.overviewCard}
       onClick={onClick}
     >
       <h3>{title}</h3>

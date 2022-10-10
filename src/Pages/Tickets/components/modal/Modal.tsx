@@ -20,36 +20,47 @@ interface IModalProps {
   id: string;
   data: ITicketProps[];
   setData: (value: ITicketProps[]) => void;
-  setDataDefault:(value: ITicketProps[]) => void;
+
+  setIsDeletItem: (value: boolean) => void;
+  setShowModal: (value: string) => void;
+  setEditItem: (value: ITicketProps) => void;
 }
 
-export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data, setDataDefault }) => {
+export const Modal: React.FC<IModalProps> = ({
+  showModal,
+  id,
+  setData,
+  data,
+  setIsDeletItem,
+  setShowModal,
+  setEditItem,
+}) => {
   const [isShowModalAgree, setIsShowModalAgree] = useState(false);
   const [isShowModalEdit, setIsShowModalEdit] = useState(false);
 
   const deleteHandler = () => {
-    const newData = [...data].filter((task) => task.id != id);
-    setData(newData);
-    setDataDefault(newData);
+    setIsDeletItem(true);
+    setShowModal(id);
   };
 
   const closeModalAgree = () => {
     setIsShowModalAgree(false);
   };
 
-
   return (
     <>
       {showModal === id ? (
-          <div className={s.modal}>
+        <div className={s.modal}>
           <button
             className={s.modalBtn}
-            onClick={() => setIsShowModalAgree(true)}>
+            onClick={() => setIsShowModalAgree(true)}
+          >
             delete
           </button>
           <button
             className={s.modalBtn}
-            onClick={() => setIsShowModalEdit(true)}>
+            onClick={() => setIsShowModalEdit(true)}
+          >
             edit
           </button>
         </div>
@@ -61,10 +72,7 @@ export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data, set
             <button className={s.modalBtn} onClick={deleteHandler}>
               Yes
             </button>
-            <button
-              className={s.modalBtn}
-              onClick={closeModalAgree}
-            >
+            <button className={s.modalBtn} onClick={closeModalAgree}>
               No
             </button>
           </div>
@@ -73,9 +81,9 @@ export const Modal: React.FC<IModalProps> = ({ showModal, id, setData, data, set
       {isShowModalEdit ? (
         <FormEdit
           data={data}
-          setData={setData}
           setIsShowModalEdit={setIsShowModalEdit}
           id={id}
+          setEditItem={setEditItem}
         />
       ) : null}
     </>

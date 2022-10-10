@@ -1,10 +1,13 @@
-import s from './GraphInfo.module.scss';
+import s from "./GraphInfo.module.scss";
 
-interface IGpraphInfoProps{
-   title: string
-   description: string
+interface IGpraphInfoProps {
+  title: string;
+  description: string;
 }
-export const GraphInfo: React.FC<IGpraphInfoProps> = ({title,description}) => {
+export const GraphInfo: React.FC<IGpraphInfoProps> = ({
+  title,
+  description,
+}) => {
   return (
     <div className={s.graphInfo}>
       <div className={s.graphInfoTitle}>{title}</div>

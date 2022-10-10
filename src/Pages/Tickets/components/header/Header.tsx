@@ -6,10 +6,20 @@ import { Sort } from "../sort/Sort";
 import { Filter } from "../filter/Filter";
 import { DropDownSort } from "../sort/dropDownSort";
 import { DropDownFilter } from "../filter/dropDownFilter";
-import { SortFunction } from "../sort/dropDownSort/SortFunction";
+import { SortFunctionTicket } from "../../../../SortingAndFilter/SortFunctionTicket";
+import { FilterFunctionTicket } from "../../../../SortingAndFilter/FilterFunctionTicket";
 
 import s from "./Header.module.scss";
-import { FilterFunction } from "../filter/dropDownFilter/FilterFunction";
+
+type SortProps = {
+  prop: string;
+  direction: string;
+};
+
+type FilterProps = {
+  prop: string;
+  state: string;
+};
 
 type TicketProps = {
   id: string;
@@ -23,38 +33,23 @@ type TicketProps = {
 };
 
 interface IHeaderProps {
-  dataDefault: TicketProps[];
-  setDataDefault: (value: TicketProps[]) => void;
-
-  sortingData: TicketProps[];
-  setSortingData: (value: TicketProps[]) => void;
+  sort: SortProps;
+  setSort: (value: SortProps) => void;
+  filter: FilterProps;
+  setFilter: (value: FilterProps) => void;
+  setNewItem: (value: TicketProps) => void;
 }
 
 export const Header: React.FC<IHeaderProps> = ({
-  setSortingData,
-  setDataDefault,
-  sortingData,
-  dataDefault,
+  sort,
+  setSort,
+  filter,
+  setFilter,
+  setNewItem,
 }) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [isShowDropSort, setIsShowDropSort] = useState(false);
   const [isShowDropFilter, setIsShowDropFilter] = useState(false);
-  const [sort, setSort] = useState({
-    prop: "none",
-    direction: "none",
-  });
-  const [filter, setFilter] = useState({
-    prop: "none",
-    state: "none",
-  });
-
-  useEffect(() => {
-    SortFunction({ sort, setSortingData, sortingData, dataDefault });
-  }, [sort]);
-    useEffect(() => {
-      FilterFunction({filter,setSortingData,dataDefault});
-  }, [filter]);
-
 
   return (
     <>
@@ -71,21 +66,14 @@ export const Header: React.FC<IHeaderProps> = ({
           onClick={() => setIsShowModal(true)}
         />
         {isShowModal ? (
-          <ModalAdd
-            setIsShowModal={setIsShowModal}
-            data={sortingData}
-            setData={setSortingData}
-            setDataDefault={setDataDefault}
-          />
+          <ModalAdd setIsShowModal={setIsShowModal} setNewItem={setNewItem} />
         ) : null}
       </div>
       <div className={s.dropDownWrapper}>
-        {isShowDropSort ? 
-          <DropDownSort sort={sort} setSort={setSort} /> 
-          : null}
-        {isShowDropFilter ? 
+        {isShowDropSort ? <DropDownSort sort={sort} setSort={setSort} /> : null}
+        {isShowDropFilter ? (
           <DropDownFilter filter={filter} setFilter={setFilter} />
-         : null}
+        ) : null}
       </div>
     </>
   );

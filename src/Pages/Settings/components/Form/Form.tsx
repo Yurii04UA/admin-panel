@@ -12,17 +12,16 @@ export const Form = () => {
     email: localStorage.getItem("email") as string,
     name: localStorage.getItem("name") as string,
     lastName: localStorage.getItem("lastName") as string,
-    pass: localStorage.getItem("pass") as string
+    pass: localStorage.getItem("pass") as string,
   };
-  
 
   const [email, setEmail] = useState(data.email);
   const [name, setName] = useState(data.name);
   const [lastName, setLastName] = useState(data.lastName);
   const [pass, setPass] = useState(data.pass);
   const [isChange, setIsChange] = useState(false);
-  const [showPreview,setShowPreview] = useState(true);
-  const {changeAvatar: changeAvatar,avatarUrl} = useAvatar();
+  const [showPreview, setShowPreview] = useState(true);
+  const { changeAvatar: changeAvatar, avatarUrl } = useAvatar();
 
   const changeValue = (key: string, newValue: string) => {
     localStorage.removeItem(key);
@@ -49,9 +48,9 @@ export const Form = () => {
       isChange = true;
     }
     if (isChange) {
-      setIsChange(true);  
+      setIsChange(true);
     }
-    if(avatarUrl){
+    if (avatarUrl) {
       changeAvatar();
       setIsChange(true);
       setShowPreview(false);
@@ -63,14 +62,18 @@ export const Form = () => {
       {isChange ? (
         <div className={s.modal}>
           <div className={s.result}>
-          your data has been successfully changed. Reboot may be required to display
-            <Button type="button" children='OK' onClick={() => setIsChange(false)}/>
-            
+            your data has been successfully changed. Reboot may be required to
+            display
+            <Button
+              type="button"
+              children="OK"
+              onClick={() => setIsChange(false)}
+            />
           </div>
         </div>
       ) : null}
       <form className={s.form} onSubmit={submitHandler}>
-        <InputFile showPreview={showPreview}/>
+        <InputFile showPreview={showPreview} />
         <Input
           label="email"
           placeholder="email"

@@ -1,20 +1,22 @@
-import CheckIcon from '@mui/icons-material/Check';
+import CheckIcon from "@mui/icons-material/Check";
 
-import s from './DropDownFilter.module.scss';
+import { buttonTicketFilter } from "../../../../../Constants";
+
+import s from "./DropDownFilter.module.scss";
 
 type FilterProps = {
   prop: string;
   state: string;
 };
 interface IDropDownProps {
- filter: FilterProps;
- setFilter: (value: any) => void;
+  filter: FilterProps;
+  setFilter: (value: FilterProps) => void;
 }
 
-const buttons = ['Low', 'Normal', 'High', 'Default'];
-
-export const DropDownFilter: React.FC<IDropDownProps> = ({filter, setFilter}) => {
-
+export const DropDownFilter: React.FC<IDropDownProps> = ({
+  filter,
+  setFilter,
+}) => {
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (filter.prop != propName) {
@@ -36,18 +38,18 @@ export const DropDownFilter: React.FC<IDropDownProps> = ({filter, setFilter}) =>
     }
   };
 
-  const check = filter.state === 'active'? <CheckIcon /> : null;
+  const check = filter.state === "active" ? <CheckIcon /> : null;
 
   return (
-   <div className={s.dropDown}>
-      {buttons.map(btn => {
+    <div className={s.dropDown}>
+      {buttonTicketFilter.map((btn) => {
         return (
           <button key={btn} onClick={() => clickHandler(btn)}>
             {btn}
-            {btn === filter.prop? check : null}
+            {btn === filter.prop ? check : null}
           </button>
         );
       })}
-   </div>
+    </div>
   );
 };

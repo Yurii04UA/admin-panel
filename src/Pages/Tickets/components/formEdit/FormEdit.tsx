@@ -20,39 +20,37 @@ type ITicketProps = {
 interface IModalProps {
   id: string;
   data: ITicketProps[];
-  setData: (value: ITicketProps[]) => void;
+  setEditItem: (value: ITicketProps) => void;
   setIsShowModalEdit: (value: boolean) => void;
 }
 
 export const FormEdit: React.FC<IModalProps> = ({
   id,
   data,
-  setData,
   setIsShowModalEdit,
-  
+  setEditItem,
 }) => {
   const [ticket] = data.filter((ticket) => ticket.id === id);
   const [title, setTitle] = useState(ticket.title);
   const [name, setName] = useState(ticket.username);
   const [status, setStatus] = useState(ticket.statuses);
 
-
   const closeModalEdit = () => {
     setIsShowModalEdit(false);
   };
 
   const editTicket = () => {
-    const newData = [...data].map((item) => {
-      if (item.id === id) {
-        item.title = title;
-        item.username = name;
-        item.statuses = status;
-      }
-      return item;
+    setEditItem({
+      id: ticket.id,
+      avatar: ticket.avatar,
+      registeredAt: ticket.registeredAt,
+      registeredTime: ticket.registeredTime,
+      updateTime: ticket.updateTime,
+      title: title,
+      statuses: status,
+      username: name,
     });
-    setData(newData);
     setIsShowModalEdit(false);
-    
   };
 
   return (

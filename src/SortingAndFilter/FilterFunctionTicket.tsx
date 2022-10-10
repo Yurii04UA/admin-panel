@@ -19,7 +19,7 @@ interface IFilterProps {
   dataDefault: TicketProps[];
 }
 
-export const FilterFunction = ({
+export const FilterFunctionTicket = ({
   filter,
   dataDefault,
   setSortingData,

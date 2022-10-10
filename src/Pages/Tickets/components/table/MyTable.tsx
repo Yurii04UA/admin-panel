@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -16,6 +16,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Modal } from "../modal/Modal";
 import { TicketsData } from "../../../../Data/TicketsData";
 import { Header } from "../header";
+import { SortFunctionTicket } from "../../../../SortingAndFilter/SortFunctionTicket";
+import { FilterFunctionTicket } from "../../../../SortingAndFilter/FilterFunctionTicket";
 
 import s from "./MyTable.module.scss";
 
@@ -23,9 +25,87 @@ export const MyTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(8);
   const [showModal, setShowModal] = useState("");
-  const [sortingData,setSortingData] = useState(TicketsData);  
-  const [dataDefault,setDataDefault] = useState(TicketsData);
- 
+  const [sortingData, setSortingData] = useState(TicketsData);
+  const [dataDefault, setDataDefault] = useState(TicketsData);
+  const [sort, setSort] = useState({
+    prop: "none",
+    direction: "none",
+  });
+  const [filter, setFilter] = useState({
+    prop: "none",
+    state: "none",
+  });
+  const [newItem, setNewItem] = useState({
+    id: "",
+    title: "",
+    username: "",
+    avatar: "",
+    registeredAt: "",
+    registeredTime: "",
+    statuses: "",
+    updateTime: "",
+  });
+  const [isDeletItem, setIsDeletItem] = useState(false);
+  const [editItem, setEditItem] = useState({
+    id: "",
+    title: "",
+    username: "",
+    avatar: "",
+    registeredAt: "",
+    registeredTime: "",
+    statuses: "",
+    updateTime: "",
+  });
+
+  // sort and filter
+  useEffect(() => {
+    SortFunctionTicket({ sort, setSortingData, sortingData, dataDefault });
+  }, [sort]);
+  useEffect(() => {
+    FilterFunctionTicket({ filter, setSortingData, dataDefault });
+  }, [filter]);
+
+  // added new item
+  useEffect(() => {
+    if (newItem.id) {
+      const newData = [...sortingData];
+      newData.unshift(newItem);
+      setSortingData(newData);
+      setDataDefault(newData);
+    }
+  }, [newItem]);
+
+  //delete item
+  const deleteHandler = () => {
+    if (isDeletItem) {
+      const newData = [...sortingData].filter((task) => task.id != showModal);
+      setSortingData(newData);
+      setDataDefault(newData);
+    }
+  };
+
+  useEffect(() => {
+    deleteHandler();
+  }, [isDeletItem]);
+
+  //edit item
+  const editItemFunction = () => {
+    if (editItem.id) {
+      const newData = [...sortingData].map((item) => {
+        if (item.id === editItem.id) {
+          item.username = editItem.username;
+          item.statuses = editItem.statuses;
+          item.title = editItem.title;
+        }
+        return item;
+      });
+      setSortingData(newData);
+    }
+  };
+
+  useEffect(() => {
+    editItemFunction();
+  }, [editItem]);
 
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
@@ -37,15 +117,16 @@ export const MyTable = () => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  
-  
+
   return (
-      <TableContainer component={Paper}>
+    <TableContainer component={Paper}>
       <Header
-        sortingData={sortingData} 
-        setSortingData={setSortingData}
-        setDataDefault={setDataDefault}
-        dataDefault={dataDefault}/>
+        sort={sort}
+        setSort={setSort}
+        filter={filter}
+        setFilter={setFilter}
+        setNewItem={setNewItem}
+      />
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
           <TableRow>
@@ -83,17 +164,17 @@ export const MyTable = () => {
                     <div className={s.timeMarker}>{ticket.registeredTime}</div>
                   </TableCell>
                   <TableCell className={s.priority}>
-                    <div
-                      className={s.btn}
-                      style={style}
-                    >
+                    <div className={s.btn} style={style}>
                       {ticket.statuses}
-                      <Modal 
-                        id={ticket.id} 
-                        showModal={showModal} 
-                        data={sortingData} 
-                        setData={setSortingData} 
-                        setDataDefault={setDataDefault}/>
+                      <Modal
+                        setData={setSortingData}
+                        id={ticket.id}
+                        showModal={showModal}
+                        data={sortingData}
+                        setIsDeletItem={setIsDeletItem}
+                        setShowModal={setShowModal}
+                        setEditItem={setEditItem}
+                      />
                     </div>
                     <button
                       className={s.modalBtn}

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { OverviewCard } from "../OverviewCard";
 
-import s from './OverviewHeader.module.scss';
+import s from "./OverviewHeader.module.scss";
 
 export const OverviewHeader = () => {
   const [unresolver, setUnresolver] = useState(false);
@@ -59,4 +59,3 @@ export const OverviewHeader = () => {
     </div>
   );
 };
-

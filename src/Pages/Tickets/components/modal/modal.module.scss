@@ -1,4 +1,4 @@
-.modalWrapper{
+.modalWrapper {
    position: fixed;
    left: 0;
    right: 0;
@@ -16,7 +16,8 @@
    border: 1px solid #DFE0EB;
    z-index: 10;
    background-color: #fff;
-   .modalBtn{
+
+   .modalBtn {
       display: block;
       width: 100%;
       padding: 5px;
@@ -31,7 +32,7 @@
    position: fixed;
    right: 40%;
    top: 50%;
-   transform: translate(0,-50%);
+   transform: translate(0, -50%);
    z-index: 10;
    padding: 10px;
    border: 1px solid #DFE0EB;
@@ -39,16 +40,17 @@
    color: #000;
    max-width: 200px;
    text-align: center;
-   .modalBtn{
+
+   .modalBtn {
       margin-top: 10px;
       padding: 5px 10px;
       border-radius: 8px;
       background-color: #ccc;
       border: none;
       cursor: pointer;
-      &:not(:last-child){
+
+      &:not(:last-child) {
          margin-right: 10px;
       }
    }
 }
-

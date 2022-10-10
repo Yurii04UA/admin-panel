@@ -1,21 +1,25 @@
-.dropDown{
+.dropDown {
    padding: 15px;
    display: flex;
-   button{
+
+   button {
       background-color: #fff;
       display: flex;
       align-items: center;
-     
+
       cursor: pointer;
-      &:not(:last-child){
+
+      &:not(:last-child) {
          margin-right: 5px;
       }
-      svg{
+
+      svg {
          width: 15px;
          height: 15px;
       }
    }
-   .plug{
+
+   .plug {
       width: 15px;
       height: 24px;
    }

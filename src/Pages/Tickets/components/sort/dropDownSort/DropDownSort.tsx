@@ -1,6 +1,8 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
+import { buttonTicketSort } from "../../../../../Constants";
+
 import s from "./DropDownSort.module.scss";
 
 type SortProps = {
@@ -13,12 +15,7 @@ interface IDropDownProps {
   setSort: (value: SortProps) => void;
 }
 
-const button = ["Details", "Name", "Date", "Priority", "Default"];
-
-export const DropDownSort: React.FC<IDropDownProps> = ({
-  sort,
-  setSort,
-}) => {
+export const DropDownSort: React.FC<IDropDownProps> = ({ sort, setSort }) => {
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (sort.prop != propName) {
@@ -54,7 +51,7 @@ export const DropDownSort: React.FC<IDropDownProps> = ({
     ) : null;
   return (
     <div className={s.dropDown}>
-      {button.map((btn) => {
+      {buttonTicketSort.map((btn) => {
         return (
           <button onClick={() => clickHandler(btn)} key={btn}>
             {btn}
