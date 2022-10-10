@@ -1,22 +1,13 @@
 import CheckIcon from "@mui/icons-material/Check";
 
 import { buttonTicketFilter } from "../../../../../Constants";
+import { useTickets } from "../../../../../Hooks/useTickets";
 
 import s from "./DropDownFilter.module.scss";
 
-type FilterProps = {
-  prop: string;
-  state: string;
-};
-interface IDropDownProps {
-  filter: FilterProps;
-  setFilter: (value: FilterProps) => void;
-}
 
-export const DropDownFilter: React.FC<IDropDownProps> = ({
-  filter,
-  setFilter,
-}) => {
+export const DropDownFilter = () => {
+  const {filter,setFilter} = useTickets();
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (filter.prop != propName) {

@@ -9,27 +9,19 @@ import { Button } from "../../../../Components/Button/ButtonBasic";
 import { Input } from "../../../../Components/Form/Input";
 import { InputSelect } from "../../../../Components/Form/InputSelect";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
+import { useTickets } from "../../../../Hooks/useTickets";
 
-type ITicketProps = {
-  id: string;
-  title: string;
-  username: string;
-  avatar: string;
-  registeredAt: string;
-  registeredTime: string;
-  statuses: string;
-  updateTime: string;
-};
 
 interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;
-  setNewItem: (value: ITicketProps) => void;
 }
 
 export const ModalAdd: React.FC<IModalAddProps> = ({
   setIsShowModal,
-  setNewItem,
+
 }) => {
+const {setNewItem} = useTickets();
+
   const dateNow = new Date().toLocaleDateString("en-US");
   const timeNow = new Date().toLocaleTimeString().slice(0, 5);
   const [details, setDatails] = useState("");

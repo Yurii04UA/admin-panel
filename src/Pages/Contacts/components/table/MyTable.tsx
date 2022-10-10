@@ -23,16 +23,13 @@ import s from "./MyTable.module.scss";
 
 export const MyTable = () => {
   const {showModal, setShowModal} = useContacts();
-  const {newItem} = useContacts();
-  const {editItem} = useContacts();
-  const {sort} = useContacts();
-  const {sortingData, setSortingData} = useContacts();
+  const {newItem, editItem, sort, sortingData, setSortingData} = useContacts();
   const [isDeletItem, setIsDeletItem] = useState(false);
+  const [dataDefault, setDataDefault] = useState(ContactsData);
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(8);
 
-  const [dataDefault, setDataDefault] = useState(ContactsData);
 
   //Table handlers
   const handleChangePage = (event: unknown, newPage: number) => {

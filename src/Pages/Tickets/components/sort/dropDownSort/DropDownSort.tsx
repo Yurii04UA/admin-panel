@@ -4,18 +4,11 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { buttonTicketSort } from "../../../../../Constants";
 
 import s from "./DropDownSort.module.scss";
+import { useTickets } from "../../../../../Hooks/useTickets";
 
-type SortProps = {
-  prop: string;
-  direction: string;
-};
 
-interface IDropDownProps {
-  sort: SortProps;
-  setSort: (value: SortProps) => void;
-}
-
-export const DropDownSort: React.FC<IDropDownProps> = ({ sort, setSort }) => {
+export const DropDownSort= () => {
+  const {sort,setSort} = useTickets();
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (sort.prop != propName) {

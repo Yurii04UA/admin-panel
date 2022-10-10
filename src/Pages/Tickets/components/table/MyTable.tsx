@@ -18,44 +18,27 @@ import { TicketsData } from "../../../../Data/TicketsData";
 import { Header } from "../header";
 import { SortFunctionTicket } from "../../../../SortingAndFilter/SortFunctionTicket";
 import { FilterFunctionTicket } from "../../../../SortingAndFilter/FilterFunctionTicket";
+import { useTickets } from "../../../../Hooks/useTickets";
 
 import s from "./MyTable.module.scss";
 
 export const MyTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(8);
-  const [showModal, setShowModal] = useState("");
-  const [sortingData, setSortingData] = useState(TicketsData);
   const [dataDefault, setDataDefault] = useState(TicketsData);
-  const [sort, setSort] = useState({
-    prop: "none",
-    direction: "none",
-  });
-  const [filter, setFilter] = useState({
-    prop: "none",
-    state: "none",
-  });
-  const [newItem, setNewItem] = useState({
-    id: "",
-    title: "",
-    username: "",
-    avatar: "",
-    registeredAt: "",
-    registeredTime: "",
-    statuses: "",
-    updateTime: "",
-  });
   const [isDeletItem, setIsDeletItem] = useState(false);
-  const [editItem, setEditItem] = useState({
-    id: "",
-    title: "",
-    username: "",
-    avatar: "",
-    registeredAt: "",
-    registeredTime: "",
-    statuses: "",
-    updateTime: "",
-  });
+
+  const {
+    showModal,
+    setShowModal,
+    sortingData,
+    setSortingData,
+    sort,
+    filter,
+    newItem,
+    editItem,
+    setEditItem,
+  } = useTickets();
 
   // sort and filter
   useEffect(() => {
@@ -119,14 +102,8 @@ export const MyTable = () => {
   };
 
   return (
-    <TableContainer component={Paper}>
-      <Header
-        sort={sort}
-        setSort={setSort}
-        filter={filter}
-        setFilter={setFilter}
-        setNewItem={setNewItem}
-      />
+    <TableContainer component={Paper} onClick={() => setShowModal("")}>
+      <Header />
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
           <TableRow>
@@ -147,7 +124,7 @@ export const MyTable = () => {
                   (ticket.statuses === "high" ? "#FEC400" : ""),
               };
               return (
-                <TableRow key={ticket.id} onClick={() => setShowModal("")}>
+                <TableRow key={ticket.id} >
                   <TableCell className={s.details}>
                     <Avatar src={ticket.avatar} alt={ticket.username} />
                     <div>
@@ -167,13 +144,8 @@ export const MyTable = () => {
                     <div className={s.btn} style={style}>
                       {ticket.statuses}
                       <Modal
-                        setData={setSortingData}
                         id={ticket.id}
-                        showModal={showModal}
-                        data={sortingData}
                         setIsDeletItem={setIsDeletItem}
-                        setShowModal={setShowModal}
-                        setEditItem={setEditItem}
                       />
                     </div>
                     <button

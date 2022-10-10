@@ -7,7 +7,7 @@ export const AuthContext = createContext({
 });
 
 interface IChildren {
-   children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const AuthProvider: React.FC<IChildren> = ({ children }) => {
@@ -17,10 +17,5 @@ export const AuthProvider: React.FC<IChildren> = ({ children }) => {
 
   const value = { isLogin, signIn, logOut };
 
-  return (
-      <AuthContext.Provider 
-       value={value}>
-         {children}
-      </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

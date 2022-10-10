@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { ModalAdd } from "../modalAdd";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
@@ -6,20 +6,8 @@ import { Sort } from "../sort/Sort";
 import { Filter } from "../filter/Filter";
 import { DropDownSort } from "../sort/dropDownSort";
 import { DropDownFilter } from "../filter/dropDownFilter";
-import { SortFunctionTicket } from "../../../../SortingAndFilter/SortFunctionTicket";
-import { FilterFunctionTicket } from "../../../../SortingAndFilter/FilterFunctionTicket";
 
 import s from "./Header.module.scss";
-
-type SortProps = {
-  prop: string;
-  direction: string;
-};
-
-type FilterProps = {
-  prop: string;
-  state: string;
-};
 
 type TicketProps = {
   id: string;
@@ -32,21 +20,8 @@ type TicketProps = {
   updateTime: string;
 };
 
-interface IHeaderProps {
-  sort: SortProps;
-  setSort: (value: SortProps) => void;
-  filter: FilterProps;
-  setFilter: (value: FilterProps) => void;
-  setNewItem: (value: TicketProps) => void;
-}
 
-export const Header: React.FC<IHeaderProps> = ({
-  sort,
-  setSort,
-  filter,
-  setFilter,
-  setNewItem,
-}) => {
+export const Header = () => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [isShowDropSort, setIsShowDropSort] = useState(false);
   const [isShowDropFilter, setIsShowDropFilter] = useState(false);
@@ -66,14 +41,12 @@ export const Header: React.FC<IHeaderProps> = ({
           onClick={() => setIsShowModal(true)}
         />
         {isShowModal ? (
-          <ModalAdd setIsShowModal={setIsShowModal} setNewItem={setNewItem} />
+          <ModalAdd setIsShowModal={setIsShowModal} />
         ) : null}
       </div>
       <div className={s.dropDownWrapper}>
-        {isShowDropSort ? <DropDownSort sort={sort} setSort={setSort} /> : null}
-        {isShowDropFilter ? (
-          <DropDownFilter filter={filter} setFilter={setFilter} />
-        ) : null}
+        {isShowDropSort ? <DropDownSort /> : null}
+        {isShowDropFilter ? <DropDownFilter /> : null}
       </div>
     </>
   );
