@@ -1,37 +1,20 @@
 import { useState } from "react";
 import { StopPropagation } from "../../../../HOC/StopPropagation";
+import { useContacts } from "../../../../Hooks/useContacts";
 import { FormEdit } from "../formEdit";
 
 import s from "./modal.module.scss";
 
-type IContactProps = {
-  id: string;
-  username: string;
-  avatar: string;
-  registeredAt: string;
-  address: string;
-  phone: string;
-};
-
 interface IModalProps {
   id: string;
-  data: IContactProps[];
-  setData: (value: IContactProps[]) => void;
-  showModal: string;
   setIsDeletItem: (value: boolean) => void;
-  setShowModal: (value: string) => void;
-  setEditItem: (value: IContactProps) => void;
 }
 
 export const Modal: React.FC<IModalProps> = ({
-  showModal,
   id,
-  setData,
-  data,
   setIsDeletItem,
-  setShowModal,
-  setEditItem,
 }) => {
+  const {showModal, setShowModal} = useContacts();
   const [isShowModalAgree, setIsShowModalAgree] = useState(false);
   const [isShowModalEdit, setIsShowModalEdit] = useState(false);
 
@@ -77,11 +60,8 @@ export const Modal: React.FC<IModalProps> = ({
       ) : null}
       {isShowModalEdit ? (
         <FormEdit
-          data={data}
-          setData={setData}
           setIsShowModalEdit={setIsShowModalEdit}
           id={id}
-          setEditItem={setEditItem}
         />
       ) : null}
     </>

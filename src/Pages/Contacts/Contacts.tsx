@@ -1,11 +1,14 @@
 import { Title } from "../../Components/Title";
+import { ContactsProvider } from "../../Context/ContactsContext";
 import { MyTable } from "./components/table/MyTable";
 
 export const Contacts = () => {
   return (
-    <div className="contackts">
-      <Title title="Contacts" />
-      <MyTable />
+    <div>
+      <ContactsProvider>
+        <Title title="Contacts" />
+        <MyTable />
+      </ContactsProvider>
     </div>
   );
 };

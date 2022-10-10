@@ -17,37 +17,22 @@ import { Modal } from "../modal/Modal";
 import { ContactsData } from "../../../../Data/ContactsData";
 import { Header } from "../header";
 import { SortFunctionContact } from "../../../../SortingAndFilter/SortFunctionContact";
+import { useContacts } from "../../../../Hooks/useContacts";
 
 import s from "./MyTable.module.scss";
 
 export const MyTable = () => {
+  const {showModal, setShowModal} = useContacts();
+  const {newItem} = useContacts();
+  const {editItem} = useContacts();
+  const {sort} = useContacts();
+  const {sortingData, setSortingData} = useContacts();
+  const [isDeletItem, setIsDeletItem] = useState(false);
+
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(8);
-  const [showModal, setShowModal] = useState("");
-  const [sortingData, setSortingData] = useState(ContactsData);
-  const [dataDefault, setDataDefault] = useState(ContactsData);
 
-  const [sort, setSort] = useState({
-    prop: "none",
-    direction: "none",
-  });
-  const [newItem, setNewItem] = useState({
-    id: "",
-    avatar: "",
-    username: "",
-    registeredAt: "",
-    address: "",
-    phone: "",
-  });
-  const [isDeletItem, setIsDeletItem] = useState(false);
-  const [editItem, setEditItem] = useState({
-    id: "",
-    avatar: "",
-    username: "",
-    registeredAt: "",
-    address: "",
-    phone: "",
-  });
+  const [dataDefault, setDataDefault] = useState(ContactsData);
 
   //Table handlers
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -108,8 +93,8 @@ export const MyTable = () => {
   }, [editItem]);
 
   return (
-    <TableContainer component={Paper}>
-      <Header sort={sort} setSort={setSort} setNewItem={setNewItem} />
+    <TableContainer component={Paper} onClick={() => setShowModal("")}>
+      <Header />
       <Table aria-label="simple table" className={s.table}>
         <TableHead>
           <TableRow>
@@ -124,7 +109,7 @@ export const MyTable = () => {
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((contact) => {
               return (
-                <TableRow key={contact.id} onClick={() => setShowModal("")}>
+                <TableRow key={contact.id} >
                   <TableCell className={s.details}>
                     <Avatar src={contact.avatar} alt={contact.username} />
                     <div>
@@ -141,13 +126,8 @@ export const MyTable = () => {
                     <div>
                       {contact.registeredAt}
                       <Modal
-                        data={sortingData}
-                        setData={setSortingData}
                         id={contact.id}
-                        showModal={showModal}
                         setIsDeletItem={setIsDeletItem}
-                        setShowModal={setShowModal}
-                        setEditItem={setEditItem}
                       />
                     </div>
                     <button

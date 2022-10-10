@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 import uuid from "react-uuid";
 
 
-interface ITicketProps {
+interface IContactProps {
   id: string
   username: string;
   avatar: string;
@@ -11,10 +11,10 @@ interface ITicketProps {
   phone: string;
 }
 
-export const ContactsData: ITicketProps[] = [];
+export const ContactsData: IContactProps[] = [];
 
 
-export function createRandomUser(): ITicketProps {
+export function createRandomUser(): IContactProps {
   return {
     id: uuid(),
     username: faker.internet.userName(),

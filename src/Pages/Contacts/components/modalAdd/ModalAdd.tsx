@@ -8,25 +8,18 @@ import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
 import { Button } from "../../../../Components/Button/ButtonBasic";
 import { Input } from "../../../../Components/Form/Input";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-
-type ContactProps = {
-  id: string;
-  username: string;
-  avatar: string;
-  registeredAt: string;
-  address: string;
-  phone: string;
-};
+import { useContacts } from "../../../../Hooks/useContacts";
 
 interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;
-  setNewItem: (value: ContactProps) => void;
 }
 
 export const ModalAdd: React.FC<IModalAddProps> = ({
   setIsShowModal,
-  setNewItem,
 }) => {
+  const {setNewItem} = useContacts();
+
+
   const dateNow = new Date().toLocaleDateString("en-US");
   const [date, setDate] = useState<string | Dayjs | null>(dateNow);
   const [time, setTime] = useState<string | Dayjs | null>(dateNow);

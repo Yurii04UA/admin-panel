@@ -4,31 +4,21 @@ import { Input } from "../../../Auth/components";
 import { Button } from "../../../../Components/Button/ButtonBasic";
 import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
 import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
+import { useContacts } from "../../../../Hooks/useContacts";
 
-type IContactProps = {
-  id: string;
-  username: string;
-  avatar: string;
-  registeredAt: string;
-  address: string;
-  phone: string;
-};
 
 interface IModalProps {
   id: string;
-  data: IContactProps[];
-  setData: (value: IContactProps[]) => void;
-  setEditItem: (value: IContactProps) => void;
   setIsShowModalEdit: (value: boolean) => void;
 }
 
 export const FormEdit: React.FC<IModalProps> = ({
   id,
-  data,
   setIsShowModalEdit,
-  setEditItem,
 }) => {
-  const [contact] = data.filter((contact) => contact.id === id);
+  const {setEditItem,sortingData} = useContacts();
+
+  const [contact] = sortingData.filter((contact) => contact.id === id);
   const [name, setName] = useState(contact.username);
   const [phone, setPhone] = useState(contact.phone);
   const [address, setAddress] = useState(contact.address);

@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { AuthProvider } from "../Context/AuthContext";
 import { AvatarProvider } from "../Context/AvatarContext";
 
-
 import { Overview } from "../Pages/Overview";
 import { Tickets } from "../Pages/Tickets";
 import { Contacts } from "../Pages/Contacts";

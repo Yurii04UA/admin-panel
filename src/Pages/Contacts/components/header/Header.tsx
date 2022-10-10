@@ -7,31 +7,8 @@ import { DropDownSort } from "../sort/dropDownSort";
 
 import s from "./Header.module.scss";
 
-type SortProps = {
-  prop: string;
-  direction: string;
-};
+export const Header = () => {
 
-type ContactProps = {
-  id: string;
-  username: string;
-  avatar: string;
-  registeredAt: string;
-  address: string;
-  phone: string;
-};
-
-interface IHeaderProps {
-  sort: SortProps;
-  setSort: (value: SortProps) => void;
-  setNewItem: (value: ContactProps) => void;
-}
-
-export const Header: React.FC<IHeaderProps> = ({
-  sort,
-  setSort,
-  setNewItem,
-}) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [isShowDropSort, setIsShowDropSort] = useState(false);
 
@@ -52,11 +29,11 @@ export const Header: React.FC<IHeaderProps> = ({
         {isShowModal ? (
           <ModalAdd 
             setIsShowModal={setIsShowModal} 
-            setNewItem={setNewItem} />
+            />
         ) : null}
       </div>
       <div className={s.dropDownWrapper}>
-        {isShowDropSort ? <DropDownSort sort={sort} setSort={setSort} /> : null}
+        {isShowDropSort ? <DropDownSort /> : null}
       </div>
     </>
   );

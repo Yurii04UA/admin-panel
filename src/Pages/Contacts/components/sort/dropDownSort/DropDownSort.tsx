@@ -1,20 +1,12 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { buttonContactSort } from "../../../../../Constants";
+import { useContacts } from "../../../../../Hooks/useContacts";
 
 import s from "./DropDownSort.module.scss";
 
-type SortProps = {
-  prop: string;
-  direction: string;
-};
-
-interface IDropDownProps {
-  sort: SortProps;
-  setSort: (value: SortProps) => void;
-}
-
-export const DropDownSort: React.FC<IDropDownProps> = ({ sort, setSort }) => {
+export const DropDownSort= () => {
+  const {sort, setSort} = useContacts();
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (sort.prop != propName) {
