@@ -5,9 +5,8 @@ import { useTickets } from "../../../../../Hooks/useTickets";
 
 import s from "./DropDownFilter.module.scss";
 
-
 export const DropDownFilter = () => {
-  const {filter,setFilter} = useTickets();
+  const { filter, setFilter } = useTickets();
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (filter.prop != propName) {

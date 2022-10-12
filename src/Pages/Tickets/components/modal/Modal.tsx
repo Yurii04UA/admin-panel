@@ -38,6 +38,10 @@ export const Modal: React.FC<IModalProps> = ({
     setIsShowModalAgree(false);
   };
 
+  useEffect(() =>{
+    console.log('test');
+     
+  },[]);
   return (
     <>
       {showModal === id ? (

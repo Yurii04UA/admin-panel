@@ -10,8 +10,8 @@ export const Filter: React.FC<IFilterProps> = ({ setValue, value }) => {
     <>
       <LayoutDropMenu
         icon="filter"
-        onClick={() => setValue(!value)}
-      ></LayoutDropMenu>
+        onClick={() => setValue(!value)}>
+      </LayoutDropMenu>
     </>
   );
 };

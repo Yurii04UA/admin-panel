@@ -31,14 +31,14 @@ export const Modal: React.FC<IModalProps> = ({
     //     console.log(e.target, refModal);
         
     // };
-    useEffect(() => {
-        document.addEventListener('click', (e: MouseEvent) => console.log(refModal)
-        );
-        return () => {
-            document.removeEventListener('click', () => console.log(refModal));
-        };
+    // useEffect(() => {
+    //     document.addEventListener('click', (e: MouseEvent) => console.log(refModal)
+    //     );
+    //     return () => {
+    //         document.removeEventListener('click', () => console.log(refModal));
+    //     };
         
-    }, [showModal]);
+    // }, [showModal]);
 
     
 
@@ -51,7 +51,7 @@ export const Modal: React.FC<IModalProps> = ({
   const closeModalAgree = () => {
     setIsShowModalAgree(false);
   };
-  console.log(refModal);
+  // console.log(refModal);
   
   return (
     <>

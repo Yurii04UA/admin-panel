@@ -16,8 +16,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Modal } from "../modal/Modal";
 import { ContactsData } from "../../../../Data/ContactsData";
 import { Header } from "../header";
-import { SortFunctionContact } from "../../../../SortingAndFilter/SortFunctionContact";
 import { useContacts } from "../../../../Hooks/useContacts";
+import { SortByLodashContact } from "../../../../SortingAndFilter/SortByLodashContact";
 
 import s from "./MyTable.module.scss";
 
@@ -44,7 +44,8 @@ export const MyTable = () => {
 
   // sort/filter
   useEffect(() => {
-    SortFunctionContact({ sort, setSortingData, sortingData, dataDefault });
+    SortByLodashContact({sort, setSortingData, sortingData, dataDefault});
+    
   }, [sort]);
 
   // added new item

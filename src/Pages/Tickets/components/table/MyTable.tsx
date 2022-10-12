@@ -16,9 +16,9 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Modal } from "../modal/Modal";
 import { TicketsData } from "../../../../Data/TicketsData";
 import { Header } from "../header";
-import { SortFunctionTicket } from "../../../../SortingAndFilter/SortFunctionTicket";
 import { FilterFunctionTicket } from "../../../../SortingAndFilter/FilterFunctionTicket";
 import { useTickets } from "../../../../Hooks/useTickets";
+import { SortByLodashTicket } from "../../../../SortingAndFilter/SortByLodashTicket";
 
 import s from "./MyTable.module.scss";
 
@@ -37,13 +37,13 @@ export const MyTable = () => {
     filter,
     newItem,
     editItem,
-    setEditItem,
   } = useTickets();
 
   // sort and filter
   useEffect(() => {
-    SortFunctionTicket({ sort, setSortingData, sortingData, dataDefault });
+    SortByLodashTicket({ sort, setSortingData, sortingData, dataDefault });
   }, [sort]);
+
   useEffect(() => {
     FilterFunctionTicket({ filter, setSortingData, dataDefault });
   }, [filter]);
@@ -124,7 +124,7 @@ export const MyTable = () => {
                   (ticket.statuses === "high" ? "#FEC400" : ""),
               };
               return (
-                <TableRow key={ticket.id} >
+                <TableRow key={ticket.id}>
                   <TableCell className={s.details}>
                     <Avatar src={ticket.avatar} alt={ticket.username} />
                     <div>
@@ -143,10 +143,7 @@ export const MyTable = () => {
                   <TableCell className={s.priority}>
                     <div className={s.btn} style={style}>
                       {ticket.statuses}
-                      <Modal
-                        id={ticket.id}
-                        setIsDeletItem={setIsDeletItem}
-                      />
+                      <Modal id={ticket.id} setIsDeletItem={setIsDeletItem} />
                     </div>
                     <button
                       className={s.modalBtn}

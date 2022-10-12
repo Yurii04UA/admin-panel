@@ -3,7 +3,7 @@ import { Form } from "./components/Form";
 
 export const Settings = () => {
   return (
-    <div >
+    <div>
       <Title title="Settings" />
       <Form />
     </div>
