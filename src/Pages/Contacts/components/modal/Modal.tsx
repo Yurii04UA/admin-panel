@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { StopPropagation } from "../../../../HOC/StopPropagation";
 import { useContacts } from "../../../../Hooks/useContacts";
 import { FormEdit } from "../formEdit";
+import { useClickOutside } from '../../../../Hooks';
 
 import s from "./modal.module.scss";
 
@@ -18,6 +19,30 @@ export const Modal: React.FC<IModalProps> = ({
   const [isShowModalAgree, setIsShowModalAgree] = useState(false);
   const [isShowModalEdit, setIsShowModalEdit] = useState(false);
 
+  // const ref = useClickOutside(() => console.log('click outside')
+  // );
+
+  const refModal = useRef<HTMLDivElement>(null);
+    // const click = (e: MouseEvent) => {
+    //     // if ((refModal.current! as any)?.contains(e.target)) {
+    //     //     console.log('ss');
+            
+    //     // }
+    //     console.log(e.target, refModal);
+        
+    // };
+    useEffect(() => {
+        document.addEventListener('click', (e: MouseEvent) => console.log(refModal)
+        );
+        return () => {
+            document.removeEventListener('click', () => console.log(refModal));
+        };
+        
+    }, [showModal]);
+
+    
+
+  
   const deleteHandler = () => {
     setIsDeletItem(true);
     setShowModal(id);
@@ -26,12 +51,13 @@ export const Modal: React.FC<IModalProps> = ({
   const closeModalAgree = () => {
     setIsShowModalAgree(false);
   };
-
+  console.log(refModal);
+  
   return (
     <>
       {showModal === id ? (
-        <div className={s.modal}>
-          <button
+        <div className={s.modal} ref={refModal}>
+          <button 
             className={s.modalBtn}
             onClick={() => setIsShowModalAgree(true)}
           >
