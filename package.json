@@ -19,6 +19,7 @@
     "@types/node": "^16.11.59",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "axios": "^1.1.2",
     "dayjs": "^1.11.5",
     "hammerjs": "^2.0.8",
     "lodash.orderby": "^4.6.0",

@@ -3,6 +3,7 @@ import uuid from "react-uuid";
 
 
 interface IContactProps {
+
   id: string
   username: string;
   avatar: string;

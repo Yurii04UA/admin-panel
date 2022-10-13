@@ -78,6 +78,14 @@ export const ContactsProvider: React.FC<IChildren> = ({ children }) => {
   });
 
   // data
+  // const [sortingData, setSortingData] = useState([{
+  //   id: "",
+  //   avatar: "",
+  //   username: "",
+  //   registeredAt: "",
+  //   address: "",
+  //   phone: "",
+  // }]);
   const [sortingData, setSortingData] = useState(ContactsData);
 
   const value = { 

@@ -39,6 +39,9 @@ export const MyTable = () => {
     editItem,
   } = useTickets();
 
+
+
+
   // sort and filter
   useEffect(() => {
     SortByLodashTicket({ sort, setSortingData, sortingData, dataDefault });
