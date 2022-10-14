@@ -17,7 +17,7 @@ interface IModalAddProps {
 export const ModalAdd: React.FC<IModalAddProps> = ({
   setIsShowModal,
 }) => {
-  const {setNewItem} = useContacts();
+  const { setNewItem } = useContacts();
 
 
   const dateNow = new Date().toLocaleDateString("en-US");

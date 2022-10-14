@@ -11,7 +11,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [passErr, setPassErr] = useState("");
-  const [errorMessage,setErrorMassage] = useState('');
+  const [errorMessage, setErrorMassage] = useState('');
   const emailCheck = localStorage.getItem("email");
   const passCheck = localStorage.getItem("pass");
 

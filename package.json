@@ -54,9 +54,12 @@
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",
     "@types/lodash.orderby": "^4.6.7",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
-    "eslint": "^8.23.1",
-    "eslint-plugin-react": "^7.31.8"
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "tslint": "^6.1.3"
   }
 }

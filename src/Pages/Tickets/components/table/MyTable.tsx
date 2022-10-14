@@ -40,8 +40,6 @@ export const MyTable = () => {
   } = useTickets();
 
 
-
-
   // sort and filter
   useEffect(() => {
     SortByLodashTicket({ sort, setSortingData, sortingData, dataDefault });

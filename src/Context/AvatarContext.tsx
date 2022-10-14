@@ -22,7 +22,12 @@ export const AvatarProvider: React.FC<IChildren> = ({ children }) => {
 
   return (
     <AvatarContext.Provider
-      value={{changeAvatar: changeAvatarTrue, isChangeAvatar, setAvatar, avatarUrl, }}
+      value={{
+        changeAvatar: changeAvatarTrue,
+        isChangeAvatar,
+        setAvatar,
+        avatarUrl,
+      }}
     >
       {children}
     </AvatarContext.Provider>

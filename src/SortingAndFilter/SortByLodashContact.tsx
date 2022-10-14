@@ -30,8 +30,8 @@ export const SortByLodashContact = ({
   const sortingDataCopy = [...sortingData];
   const direction = sort.direction === "asc" ? "asc" : "desc";
   const propName =
-    sort.prop === "Name"? "username" : "" ||
-    sort.prop === "Address"? "address" : "";
+    sort.prop === "Name" ? "username" : "" ||
+    sort.prop === "Address" ? "address" : "";
   const newSortingData = orderby(sortingDataCopy, [propName], [direction]);
   setSortingData(newSortingData);
 

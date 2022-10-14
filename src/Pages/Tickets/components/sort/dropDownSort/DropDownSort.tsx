@@ -7,8 +7,8 @@ import s from "./DropDownSort.module.scss";
 import { useTickets } from "../../../../../Hooks/useTickets";
 
 
-export const DropDownSort= () => {
-  const {sort,setSort} = useTickets();
+export const DropDownSort = () => {
+  const { sort, setSort } = useTickets();
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (sort.prop != propName) {

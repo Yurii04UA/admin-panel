@@ -9,7 +9,7 @@ import s from './AuthWindow.module.scss';
 type Title = {
   title: string;
   subtitle: string;
-}
+};
 
 interface IAuthWindow {
   children: React.ReactNode;

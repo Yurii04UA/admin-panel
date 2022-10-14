@@ -3,5 +3,5 @@ import { AvatarContext } from '../Context/AvatarContext';
 
 export const useAvatar = () =>{
 
-   return useContext(AvatarContext);
+  return useContext(AvatarContext);
 };

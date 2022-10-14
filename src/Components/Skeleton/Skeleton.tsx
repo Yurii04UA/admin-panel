@@ -1,7 +1,8 @@
 export const Skeleton = () => {
-   return(
-      <div>
-      {  "...is loadin"}
-      </div>
-     );
+  return (
+    <div>
+      <div></div>
+      {"...is loadin"}
+    </div>
+  );
 };

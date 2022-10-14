@@ -3,5 +3,5 @@ import { AuthContext } from '../Context/AuthContext';
 
 export const useAuth = () =>{
 
-   return useContext(AuthContext);
+  return useContext(AuthContext);
 };

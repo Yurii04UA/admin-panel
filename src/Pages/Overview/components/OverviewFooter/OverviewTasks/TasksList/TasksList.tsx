@@ -22,7 +22,7 @@ export const TasksList: React.FC<ITasksListProps> = ({ tasks, setTasks }) => {
     const newTasks = [...tasks].filter((task) => {
       if (task.id === id) {
         task.status = "default";
-      }else{
+      } else {
         task.status = "new";
       }
       return task;

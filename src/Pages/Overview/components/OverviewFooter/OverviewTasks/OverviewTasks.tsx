@@ -7,20 +7,20 @@ import { AddTasks } from "./AddTasks";
 
 const data = [
   {  id: uuid(), 
-     title: "Finish ticket update", 
-     status: "new" 
+    title: "Finish ticket update", 
+    status: "new", 
   },
   {  id: uuid(), 
-     title: "Create new ticket example", 
-     status: "new" 
+    title: "Create new ticket example", 
+    status: "new", 
   },
   {  id: uuid(), 
-     title: "Update ticket report", 
-     status: "new" 
+    title: "Update ticket report", 
+    status: "new", 
   },
-  ];
+];
 
-  const dataShort = [...data.slice(-3)];
+const dataShort = [...data.slice(-3)];
 export const OverviewTasks = () => {
   const [tasks, setTasks] = useState(dataShort);
 

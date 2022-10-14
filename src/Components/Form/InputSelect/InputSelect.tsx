@@ -1,18 +1,18 @@
-import {Box, MenuItem, FormControl ,Select, SelectChangeEvent, InputLabel} from '@mui/material';
+import { Box, MenuItem, FormControl, Select, SelectChangeEvent } from '@mui/material';
 
 import s from './InputSelect.module.scss';
 
 
-interface IInputSelectProps{
-   status: string;
-   setStatus: (value: string) => void
+interface IInputSelectProps {
+  status: string;
+  setStatus: (value: string) => void
 }
 
 export const InputSelect: React.FC<IInputSelectProps> = ({ status, setStatus }) => {
 
-   const handleChange = (event: SelectChangeEvent) => {
-      setStatus(event.target.value as string);
-   };
+  const handleChange = (event: SelectChangeEvent) => {
+    setStatus(event.target.value as string);
+  };
   return (
    <Box>
    <FormControl fullWidth>
@@ -24,10 +24,13 @@ export const InputSelect: React.FC<IInputSelectProps> = ({ status, setStatus }) 
        value={status}
        onChange={handleChange}
        >
-       {status? null : 
+       {
+       status ? 
+         null : 
           <MenuItem value="">
             <div className={s.placeholder}>Choose priority</div>
-          </MenuItem>}
+          </MenuItem>
+       }
        <MenuItem value={"high"}>high</MenuItem>
        <MenuItem value={"normal"}>normal</MenuItem>
        <MenuItem value={"low"}>low</MenuItem>

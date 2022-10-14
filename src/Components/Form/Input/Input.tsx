@@ -15,7 +15,7 @@ interface IInput {
   error?: string;
 }
 
-export const Input: React.FC<IInput> = ({label, type, placeholder, value, setValue, icon, error}) => {
+export const Input: React.FC<IInput> = ({ label, type, placeholder, value, setValue, icon, error }) => {
   const [showPass, setShowPass] = useState(false);
   return (
     <>

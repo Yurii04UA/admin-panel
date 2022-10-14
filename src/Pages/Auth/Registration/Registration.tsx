@@ -75,10 +75,10 @@ export const Registration = () => {
 
     if (!err) {
       setShowResult(true);
-      localStorage.setItem('email',email);
-      localStorage.setItem('name',name);
-      localStorage.setItem('lastName',lastName);
-      localStorage.setItem('pass',pass);
+      localStorage.setItem('email', email);
+      localStorage.setItem('name', name);
+      localStorage.setItem('lastName', lastName);
+      localStorage.setItem('pass', pass);
     }
   };
 

@@ -9,18 +9,6 @@ import { DropDownFilter } from "../filter/dropDownFilter";
 
 import s from "./Header.module.scss";
 
-type TicketProps = {
-  id: string;
-  title: string;
-  username: string;
-  avatar: string;
-  registeredAt: string;
-  registeredTime: string;
-  statuses: string;
-  updateTime: string;
-};
-
-
 export const Header = () => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [isShowDropSort, setIsShowDropSort] = useState(false);

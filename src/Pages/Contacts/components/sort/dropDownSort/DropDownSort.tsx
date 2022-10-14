@@ -5,8 +5,8 @@ import { useContacts } from "../../../../../Hooks/useContacts";
 
 import s from "./DropDownSort.module.scss";
 
-export const DropDownSort= () => {
-  const {sort, setSort} = useContacts();
+export const DropDownSort = () => {
+  const { sort, setSort } = useContacts();
   const clickHandler = (propName: string) => {
     if (propName != "Default") {
       if (sort.prop != propName) {

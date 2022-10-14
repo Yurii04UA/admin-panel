@@ -9,7 +9,7 @@ type Tasks = {
   id: string;
   title: string;
   status: string;
-}
+};
 
 interface IAddTasksProps {
   tasks: Tasks[];

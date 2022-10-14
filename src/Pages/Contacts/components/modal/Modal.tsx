@@ -15,7 +15,7 @@ export const Modal: React.FC<IModalProps> = ({
   id,
   setIsDeletItem,
 }) => {
-  const {showModal, setShowModal} = useContacts();
+  const { showModal, setShowModal } = useContacts();
   const [isShowModalAgree, setIsShowModalAgree] = useState(false);
   const [isShowModalEdit, setIsShowModalEdit] = useState(false);
 
@@ -23,24 +23,22 @@ export const Modal: React.FC<IModalProps> = ({
   // );
 
   const refModal = useRef<HTMLDivElement>(null);
-    // const click = (e: MouseEvent) => {
-    //     // if ((refModal.current! as any)?.contains(e.target)) {
-    //     //     console.log('ss');
+  // const click = (e: MouseEvent) => {
+  //     // if ((refModal.current! as any)?.contains(e.target)) {
+  //     //     console.log('ss');
             
-    //     // }
-    //     console.log(e.target, refModal);
+  //     // }
+  //     console.log(e.target, refModal);
         
-    // };
-    // useEffect(() => {
-    //     document.addEventListener('click', (e: MouseEvent) => console.log(refModal)
-    //     );
-    //     return () => {
-    //         document.removeEventListener('click', () => console.log(refModal));
-    //     };
+  // };
+  // useEffect(() => {
+  //     document.addEventListener('click', (e: MouseEvent) => console.log(refModal)
+  //     );
+  //     return () => {
+  //         document.removeEventListener('click', () => console.log(refModal));
+  //     };
         
-    // }, [showModal]);
-
-    
+  // }, [showModal]);
 
   
   const deleteHandler = () => {

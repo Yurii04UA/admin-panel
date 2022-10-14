@@ -14,14 +14,14 @@ interface ITicketProps {
 }
 
 const statuses = ["low", "normal", "high"];
-const updateTime = ['Updated 1 day ago','Updated 2 days ago','Updated 3 days ago','Today','Updated 4 days ago'];
+const updateTime = ['Updated 1 day ago', 'Updated 2 days ago', 'Updated 3 days ago', 'Today', 'Updated 4 days ago'];
 
 export const TicketsData: ITicketProps[] = [];
 
 function createRandomUser(): ITicketProps {
   return {
     id: uuid(),
-    title: faker.lorem.paragraph().slice(0,15),
+    title: faker.lorem.paragraph().slice(0, 15),
     username: faker.internet.userName(),
     avatar: faker.image.avatar(),
     registeredAt: faker.date.past().toLocaleDateString('en-US'),

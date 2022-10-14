@@ -20,7 +20,7 @@ export const ModalAdd: React.FC<IModalAddProps> = ({
   setIsShowModal,
 
 }) => {
-const {setNewItem} = useTickets();
+  const { setNewItem } = useTickets();
 
   const dateNow = new Date().toLocaleDateString("en-US");
   const timeNow = new Date().toLocaleTimeString().slice(0, 5);

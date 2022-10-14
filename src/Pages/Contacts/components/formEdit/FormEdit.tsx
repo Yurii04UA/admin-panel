@@ -16,7 +16,7 @@ export const FormEdit: React.FC<IModalProps> = ({
   id,
   setIsShowModalEdit,
 }) => {
-  const {setEditItem,sortingData} = useContacts();
+  const { setEditItem, sortingData } = useContacts();
 
   const [contact] = sortingData.filter((contact) => contact.id === id);
   const [name, setName] = useState(contact.username);

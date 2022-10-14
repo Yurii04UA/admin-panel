@@ -30,25 +30,25 @@ export const SortByLodashTicket = ({
   const sortingDataCopy = [...sortingData];
   const direction = sort.direction === "asc" ? "asc" : "desc";
   const propName =
-    sort.prop === "Details"? "title": "" || 
-    sort.prop === "Name"? "username": "" ;
+    sort.prop === "Details" ? "title" : "" || 
+    sort.prop === "Name" ? "username" : "" ;
   const newSortingData = orderBy(sortingDataCopy, [propName], [direction]);
   setSortingData(newSortingData);
 
-  if(sort.prop === 'Priority'){
-      sortingDataCopy.map(item => 
-        item.statuses=== 'low'? item.statuses = '2' : '' ||
-        item.statuses=== 'normal'? item.statuses = '1' : '' ||
-        item.statuses=== 'high'? item.statuses = '0' : ''
-      );
-      const newSortingData = orderBy(sortingDataCopy, ['statuses'], [direction]);
+  if (sort.prop === 'Priority') {
+    sortingDataCopy.map(item => 
+      item.statuses === 'low' ? item.statuses = '2' : '' ||
+        item.statuses === 'normal' ? item.statuses = '1' : '' ||
+        item.statuses === 'high' ? item.statuses = '0' : '',
+    );
+    const newSortingData = orderBy(sortingDataCopy, ['statuses'], [direction]);
 
-      newSortingData.map(item => 
-        item.statuses=== '2'? item.statuses = 'low' : '' ||
-        item.statuses=== '1'? item.statuses = 'normal' : '' ||
-        item.statuses=== '0'? item.statuses = 'high' : ''
-      );
-      setSortingData(newSortingData);
+    newSortingData.map(item => 
+      item.statuses === '2' ? item.statuses = 'low' : '' ||
+        item.statuses === '1' ? item.statuses = 'normal' : '' ||
+        item.statuses === '0' ? item.statuses = 'high' : '',
+    );
+    setSortingData(newSortingData);
   }
 
   if (sort.prop === "Date" && sort.direction === "asc") {

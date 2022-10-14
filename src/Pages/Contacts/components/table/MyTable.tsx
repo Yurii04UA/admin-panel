@@ -12,36 +12,23 @@ import {
   TableFooter,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import axios from "axios";
 
 import { Modal } from "../modal/Modal";
 import { ContactsData } from "../../../../Data/ContactsData";
 import { Header } from "../header";
 import { useContacts } from "../../../../Hooks/useContacts";
 import { SortByLodashContact } from "../../../../SortingAndFilter/SortByLodashContact";
-import { Skeleton } from "../../../../Components/Skeleton/Skeleton";
 
 import s from "./MyTable.module.scss";
 
 export const MyTable = () => {
-  const {showModal, setShowModal} = useContacts();
-  const {newItem, editItem, sort, sortingData, setSortingData} = useContacts();
+  const { showModal, setShowModal } = useContacts();
+  const { newItem, editItem, sort, sortingData, setSortingData } = useContacts();
   const [isDeletItem, setIsDeletItem] = useState(false);
   const [dataDefault, setDataDefault] = useState(ContactsData);
-  const [isLoading,setIsLoading] = useState(false);
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(8);
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   axios.get("https://my.api.mockaroo.com/contacts.json?key=48de96e0").then((res) => {
-  //     setSortingData(res.data);
-  //     setIsLoading(false);
-  //   });
-  // },[]);
-
-
 
   //Table handlers
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -56,7 +43,7 @@ export const MyTable = () => {
 
   // sort/filter
   useEffect(() => {
-    SortByLodashContact({sort, setSortingData, sortingData, dataDefault});
+    SortByLodashContact({ sort, setSortingData, sortingData, dataDefault });
     
   }, [sort]);
 
@@ -107,7 +94,6 @@ export const MyTable = () => {
       
       <Header />
       
-     {isLoading? <Skeleton />:
       <Table aria-label="simple table" className={s.table}>
       <TableHead>
         <TableRow>
@@ -158,7 +144,7 @@ export const MyTable = () => {
           })}
       </TableBody>
       <TableFooter></TableFooter>
-    </Table>}
+    </Table>
       <TablePagination
         rowsPerPageOptions={[8, 16, 32]}
         component="div"

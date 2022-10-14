@@ -1,11 +1,11 @@
 import s from './OverviewTicket.module.scss';
 
-interface IOverviewTicketProps{
+interface IOverviewTicketProps {
   title: string
   description: string
 }
 
-export const OverviewTicket: React.FC<IOverviewTicketProps> = ({title,description}) => {
+export const OverviewTicket: React.FC<IOverviewTicketProps> = ({ title, description }) => {
   return (
     <div className={s.overviewTicket}>
       <div>{title}</div>
