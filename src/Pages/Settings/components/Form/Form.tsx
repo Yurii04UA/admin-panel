@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { Button } from "../../../../Components/Button/ButtonBasic";
-import { Input } from "../../../../Components/Form/Input";
-import { InputFile } from "../../../../Components/Form/InputFile";
-import { useAvatar } from "../../../../Hooks/useAvatar";
+import { Button } from "components/button/buttonBasic";
+import { Input } from "components/form/input";
+import { InputFile } from "components/form/inputFile";
+import { useAvatar } from "hooks/useAvatar";
 
 import s from "./Form.module.scss";
 

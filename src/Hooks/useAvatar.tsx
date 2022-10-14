@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AvatarContext } from '../Context/AvatarContext';
+import { AvatarContext } from 'context/AvatarContext';
 
 export const useAvatar = () =>{
 

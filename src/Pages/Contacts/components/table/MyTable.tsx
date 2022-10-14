@@ -14,10 +14,10 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { Modal } from "../modal/Modal";
-import { ContactsData } from "../../../../Data/ContactsData";
+import { ContactsData } from "data/ContactsData";
 import { Header } from "../header";
-import { useContacts } from "../../../../Hooks/useContacts";
-import { SortByLodashContact } from "../../../../SortingAndFilter/SortByLodashContact";
+import { useContacts } from "hooks/useContacts";
+import { SortByLodashContact } from "sortingAndFilter/SortByLodashContact";
 
 import s from "./MyTable.module.scss";
 

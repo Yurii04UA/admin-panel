@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { OverviewCard } from "../OverviewCard";
+import { Card } from "../Card";
 
 import s from "./OverviewHeader.module.scss";
 
@@ -12,7 +12,7 @@ export const OverviewHeader = () => {
 
   return (
     <div className={s.overviewHeader}>
-      <OverviewCard
+      <Card
         title="Unresolved"
         number={60}
         value={unresolver}
@@ -23,7 +23,7 @@ export const OverviewHeader = () => {
           setUnresolver(true);
         }}
       />
-      <OverviewCard
+      <Card
         title="Overdue"
         number={16}
         value={overdue}
@@ -34,7 +34,7 @@ export const OverviewHeader = () => {
           setOverdue(true);
         }}
       />
-      <OverviewCard
+      <Card
         title="Open"
         number={43}
         value={open}
@@ -45,7 +45,7 @@ export const OverviewHeader = () => {
           setOpen(true);
         }}
       />
-      <OverviewCard
+      <Card
         title="On hold"
         number={64}
         value={hold}

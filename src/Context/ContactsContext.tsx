@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { ContactsData } from "../Data";
+import { ContactsData } from "data";
 
 type ContactProps = {
   id: string;

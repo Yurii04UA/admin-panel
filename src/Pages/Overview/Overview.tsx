@@ -1,4 +1,4 @@
-import { Title } from "../../Components/Title";
+import { Title } from "components/title";
 import { OverviewHeader, OverviewFooter, Graph } from "./components";
 
 export const Overview = () => {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { StopPropagation } from "../../../../HOC/StopPropagation";
-import { useTickets } from "../../../../Hooks/useTickets";
-import { FormEdit } from "../formEdit";
+import { StopPropagation } from "hoc/StopPropagation";
+import { useTickets } from "hooks/useTickets";
 
 import s from "./modal.module.scss";
+import { FormEdit } from "../formEdit";
 
 
 interface IModalProps {

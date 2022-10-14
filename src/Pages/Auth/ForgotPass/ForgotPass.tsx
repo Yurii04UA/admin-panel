@@ -1,8 +1,8 @@
 import { useState } from "react";
 
+import { Button } from "components/button/buttonBasic";
 import { AuthWindow, Input } from "../components";
-import { Button } from "../../../Components/Button/ButtonBasic";
-import { REG } from "../../../Constants";
+import { REG } from "constants/";
 
 export const ForgotPass = () => {
   const [email, setEmail] = useState("");

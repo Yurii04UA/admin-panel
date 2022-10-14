@@ -1,22 +1,21 @@
-import React from "react";
-import { Login, Registration, ForgotPass } from "../Pages/Auth";
 import { Route, Routes } from "react-router-dom";
-import { AuthProvider } from "../Context/AuthContext";
-import { AvatarProvider } from "../Context/AvatarContext";
+import { AuthProvider } from "context/AuthContext";
+import { AvatarProvider } from "context/AvatarContext";
 
-import { Overview } from "../Pages/Overview";
-import { Tickets } from "../Pages/Tickets";
-import { Contacts } from "../Pages/Contacts";
+import { Login, Registration, ForgotPass } from "pages/auth";
+import { Overview } from "pages/overview";
+import { Tickets } from "pages/tickets";
+import { Contacts } from "pages/contacts";
 
-import { Settings } from "../Pages/Settings";
-import { LayoutSidebar } from "../Components/Layouts/LayoutSidebar";
-import { RequiredAuth } from "../HOC/RequiredAuth";
+import { Settings } from "pages/settings";
+import { LayoutSidebar } from "components/layouts/layoutSidebar";
+import { RequiredAuth } from "hoc/RequiredAuth";
 
-import "./App.scss";
+import s from './App.module.scss';
 
 export const App = () => {
   return (
-    <div className="App">
+    <div className={s.App}>
       <AuthProvider>
         <AvatarProvider>
           <Routes>

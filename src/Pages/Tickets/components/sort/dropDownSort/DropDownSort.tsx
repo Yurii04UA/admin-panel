@@ -1,10 +1,10 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
-import { buttonTicketSort } from "../../../../../Constants";
+import { buttonTicketSort } from "constants/";
 
 import s from "./DropDownSort.module.scss";
-import { useTickets } from "../../../../../Hooks/useTickets";
+import { useTickets } from "hooks/useTickets";
 
 
 export const DropDownSort = () => {

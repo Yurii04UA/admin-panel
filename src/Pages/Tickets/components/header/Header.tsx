@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import { ModalAdd } from "../modalAdd";
-import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-import { Sort } from "../sort/Sort";
-import { Filter } from "../filter/Filter";
-import { DropDownSort } from "../sort/dropDownSort";
+import { ButtonWB } from "components/button/buttonWithoutBorder";
 import { DropDownFilter } from "../filter/dropDownFilter";
+import { Filter } from "../filter/Filter";
+import { ModalAdd } from "../modalAdd";
+import { DropDownSort } from "../sort/dropDownSort";
+import { Sort } from "../sort/Sort";
 
 import s from "./Header.module.scss";
 

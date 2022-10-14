@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { TicketsData } from "../Data";
+import { TicketsData } from "data";
 
 type ITicketProps = {
   id: string;

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { Avatar } from "../Avatar";
+
+import { Avatar } from "components/avatar";
 
 import s from './Title.module.scss';
 

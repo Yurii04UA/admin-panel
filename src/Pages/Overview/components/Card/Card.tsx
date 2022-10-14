@@ -1,13 +1,13 @@
-import s from "./OverviewCard.module.scss";
+import s from "./Card.module.scss";
 
-interface IOverviewCardProps {
+interface ICardProps {
   title: string;
   number: number;
   onClick?: () => void;
   value?: boolean;
 }
 
-export const OverviewCard: React.FC<IOverviewCardProps> = ({
+export const Card: React.FC<ICardProps> = ({
   title,
   number,
   onClick,
@@ -15,7 +15,7 @@ export const OverviewCard: React.FC<IOverviewCardProps> = ({
 }) => {
   return (
     <div
-      className={value ? s.overviewCard + " " + s.activeCard : s.overviewCard}
+      className={value ? s.card + " " + s.activeCard : s.card}
       onClick={onClick}
     >
       <h3>{title}</h3>

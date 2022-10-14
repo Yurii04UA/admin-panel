@@ -14,11 +14,11 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { Modal } from "../modal/Modal";
-import { TicketsData } from "../../../../Data/TicketsData";
+import { TicketsData } from "data/TicketsData";
 import { Header } from "../header";
-import { FilterFunctionTicket } from "../../../../SortingAndFilter/FilterFunctionTicket";
-import { useTickets } from "../../../../Hooks/useTickets";
-import { SortByLodashTicket } from "../../../../SortingAndFilter/SortByLodashTicket";
+import { FilterFunctionTicket } from "sortingAndFilter/FilterFunctionTicket";
+import { useTickets } from "hooks/useTickets";
+import { SortByLodashTicket } from "sortingAndFilter/SortByLodashTicket";
 
 import s from "./MyTable.module.scss";
 

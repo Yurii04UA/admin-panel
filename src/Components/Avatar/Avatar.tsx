@@ -1,5 +1,5 @@
-import { unknownAvatar } from "../../assets/img/avatar";
-import { useAvatar } from "../../Hooks/useAvatar";
+import { unknownAvatar } from "assets/img/avatar";
+import { useAvatar } from "hooks/useAvatar";
 
 import s from './Avatar.module.scss';
 

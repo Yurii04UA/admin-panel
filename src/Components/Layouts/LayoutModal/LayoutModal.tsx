@@ -1,4 +1,4 @@
-import { StopPropagation } from "../../../HOC/StopPropagation";
+import { StopPropagation } from "hoc/StopPropagation";
 
 import s from "./LayoutModal.module.scss";
 

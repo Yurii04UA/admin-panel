@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Logo } from "../../../../Components/Logo";
+import { Logo } from "components/logo";
 import { AuthBodyTitle } from "./AuthBodyTitle";
 import { AuthWindowFooter } from "./AuthWindowFooter";
 

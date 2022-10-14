@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useAvatar } from "../../../Hooks/useAvatar";
-import { Avatar } from "../../Avatar";
+import { useAvatar } from "hooks/useAvatar";
+import { Avatar } from "components/avatar";
 
 import s from "./InputFile.module.scss";
 

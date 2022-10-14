@@ -1,5 +1,5 @@
-import { Title } from "../../Components/Title";
-import { TicketProvider } from "../../Context/TicketContext";
+import { Title } from "components/title";
+import { TicketProvider } from "context/TicketContext";
 import { MyTable } from "./components/table/MyTable";
 
 export const Tickets = () => {

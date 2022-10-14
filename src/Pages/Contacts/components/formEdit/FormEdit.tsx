@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Input } from "../../../Auth/components";
-import { Button } from "../../../../Components/Button/ButtonBasic";
-import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
-import { useContacts } from "../../../../Hooks/useContacts";
+import { Input } from "components/form/input";
+import { Button } from "components/button/buttonBasic";
+import { ButtonWB } from "components/button/buttonWithoutBorder";
+import { LayoutModal } from "components/layouts/layoutModal";
+import { useContacts } from "hooks/useContacts";
 
 
 interface IModalProps {

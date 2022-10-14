@@ -3,12 +3,12 @@ import { Dayjs } from "dayjs";
 import uuid from "react-uuid";
 import { faker } from "@faker-js/faker";
 
-import { InputDate } from "../../../../Components/Form/InputDate";
-import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
-import { Button } from "../../../../Components/Button/ButtonBasic";
-import { Input } from "../../../../Components/Form/Input";
-import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-import { useContacts } from "../../../../Hooks/useContacts";
+import { InputDate } from "components/form/inputDate";
+import { LayoutModal } from "components/layouts/layoutModal";
+import { Button } from "components/button/buttonBasic";
+import { Input } from "components/form/input";
+import { ButtonWB } from "components/button/buttonWithoutBorder";
+import { useContacts } from "hooks/useContacts";
 
 interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;

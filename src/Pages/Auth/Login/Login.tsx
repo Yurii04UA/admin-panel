@@ -1,10 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+
+import { Button } from "components/button/buttonBasic";
+import { REG } from "constants/";
+import { useAuth } from "hooks/useAuth";
 import { AuthWindow, Input } from "../components";
-import { Button } from "../../../Components/Button/ButtonBasic";
-import { REG } from "../../../Constants";
-import { useAuth } from "../../../Hooks/useAuth";
 
 export const Login = () => {
   const [email, setEmail] = useState("");

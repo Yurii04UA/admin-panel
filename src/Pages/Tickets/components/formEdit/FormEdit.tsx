@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-import { Input } from "../../../Auth/components";
-import { Button } from "../../../../Components/Button/ButtonBasic";
-import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
-import { InputSelect } from "../../../../Components/Form/InputSelect";
-import { useTickets } from "../../../../Hooks/useTickets";
+import { Button } from "components/button/buttonBasic";
+import { ButtonWB } from "components/button/buttonWithoutBorder";
+import { LayoutModal } from "components/layouts/layoutModal";
+import { InputSelect } from "components/form/inputSelect";
+import { useTickets } from "hooks/useTickets";
+import { Input } from "components/form/input";
 
 interface IModalProps {
   id: string;

@@ -1,7 +1,7 @@
 import CheckIcon from "@mui/icons-material/Check";
 
-import { buttonTicketFilter } from "../../../../../Constants";
-import { useTickets } from "../../../../../Hooks/useTickets";
+import { buttonTicketFilter } from "constants/";
+import { useTickets } from "hooks/useTickets";
 
 import s from "./DropDownFilter.module.scss";
 

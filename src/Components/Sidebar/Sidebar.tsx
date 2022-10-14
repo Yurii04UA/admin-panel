@@ -5,7 +5,7 @@ import {
   overview,
   settings,
   tickets,
-} from "../../assets/img/sidebar";
+} from "assets/img/sidebar";
 
 import s from './Sidebar.module.scss';
 

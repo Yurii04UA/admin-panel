@@ -1,7 +1,7 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { buttonContactSort } from "../../../../../Constants";
-import { useContacts } from "../../../../../Hooks/useContacts";
+import { useContacts } from "hooks/useContacts";
+import { buttonContactSort } from "constants/";
 
 import s from "./DropDownSort.module.scss";
 

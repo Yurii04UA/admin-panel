@@ -3,13 +3,13 @@ import { Dayjs } from "dayjs";
 import uuid from "react-uuid";
 import { faker } from "@faker-js/faker";
 
-import { InputDate } from "../../../../Components/Form/InputDate";
-import { LayoutModal } from "../../../../Components/Layouts/LayoutModal";
-import { Button } from "../../../../Components/Button/ButtonBasic";
-import { Input } from "../../../../Components/Form/Input";
-import { InputSelect } from "../../../../Components/Form/InputSelect";
-import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
-import { useTickets } from "../../../../Hooks/useTickets";
+import { InputDate } from "components/form/inputDate";
+import { LayoutModal } from "components/layouts/layoutModal";
+import { Button } from "components/button/buttonBasic";
+import { Input } from "components/form/input";
+import { InputSelect } from "components/form/inputSelect";
+import { ButtonWB } from "components/button/buttonWithoutBorder";
+import { useTickets } from "hooks/useTickets";
 
 
 interface IModalAddProps {

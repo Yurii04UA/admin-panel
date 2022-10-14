@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { StopPropagation } from "../../../../HOC/StopPropagation";
-import { useContacts } from "../../../../Hooks/useContacts";
+import { StopPropagation } from "hoc/StopPropagation";
+import { useContacts } from "hooks/useContacts";
 import { FormEdit } from "../formEdit";
-import { useClickOutside } from '../../../../Hooks';
+import { useClickOutside } from 'hooks';
 
 import s from "./modal.module.scss";
 

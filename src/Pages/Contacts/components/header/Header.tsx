@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { ModalAdd } from "../modalAdd";
-import { ButtonWB } from "../../../../Components/Button/ButtonWithoutBorder";
+import { ButtonWB } from "components/button/buttonWithoutBorder";
 import { Sort } from "../sort/Sort";
 import { DropDownSort } from "../sort/dropDownSort";
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { AuthWindow, Input } from "../components";
-import { Button } from "../../../Components/Button/ButtonBasic";
+import { Button } from "components/button/buttonBasic";
 
 export const ResetPassword = () => {
   const [pass, setPass] = useState("");

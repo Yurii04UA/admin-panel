@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, Navigate } from "react-router-dom";
-import { useAuth } from "../Hooks/useAuth";
+import { useAuth } from "hooks/useAuth";
 
 export const RequiredAuth = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
