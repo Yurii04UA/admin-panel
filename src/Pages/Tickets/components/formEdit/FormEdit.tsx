@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import { Button } from "components/button/buttonBasic";
 import { ButtonWB } from "components/button/buttonWithoutBorder";
-import { LayoutModal } from "components/layouts/layoutModal";
 import { InputSelect } from "components/form/inputSelect";
 import { useTickets } from "hooks/useTickets";
 import { Input } from "components/form/input";
+import { LayoutModal } from "layouts/layoutModal";
 
 interface IModalProps {
   id: string;

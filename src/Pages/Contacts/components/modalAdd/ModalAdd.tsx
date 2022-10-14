@@ -4,11 +4,11 @@ import uuid from "react-uuid";
 import { faker } from "@faker-js/faker";
 
 import { InputDate } from "components/form/inputDate";
-import { LayoutModal } from "components/layouts/layoutModal";
 import { Button } from "components/button/buttonBasic";
 import { Input } from "components/form/input";
 import { ButtonWB } from "components/button/buttonWithoutBorder";
 import { useContacts } from "hooks/useContacts";
+import { LayoutModal } from "layouts/layoutModal";
 
 interface IModalAddProps {
   setIsShowModal: (value: boolean) => void;

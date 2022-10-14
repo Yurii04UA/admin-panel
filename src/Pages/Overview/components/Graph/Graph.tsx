@@ -8,7 +8,7 @@ import {
   Legend,
 } from "recharts";
 
-import { dataGraph } from "constants/";
+import { dataGraph } from "./mock";
 import { GraphHeader, GraphInfo } from "./";
 
 import "./Graph.scss";

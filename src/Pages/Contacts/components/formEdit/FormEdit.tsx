@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Input } from "components/form/input";
 import { Button } from "components/button/buttonBasic";
 import { ButtonWB } from "components/button/buttonWithoutBorder";
-import { LayoutModal } from "components/layouts/layoutModal";
+
+import { LayoutModal } from "layouts/layoutModal";
 import { useContacts } from "hooks/useContacts";
 
 

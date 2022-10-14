@@ -4,12 +4,12 @@ import uuid from "react-uuid";
 import { faker } from "@faker-js/faker";
 
 import { InputDate } from "components/form/inputDate";
-import { LayoutModal } from "components/layouts/layoutModal";
 import { Button } from "components/button/buttonBasic";
 import { Input } from "components/form/input";
 import { InputSelect } from "components/form/inputSelect";
 import { ButtonWB } from "components/button/buttonWithoutBorder";
 import { useTickets } from "hooks/useTickets";
+import { LayoutModal } from "layouts/layoutModal";
 
 
 interface IModalAddProps {
