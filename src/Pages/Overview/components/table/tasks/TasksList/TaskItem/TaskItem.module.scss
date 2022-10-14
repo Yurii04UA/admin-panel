@@ -1,10 +1,10 @@
-.taskItem{
+.taskItem {
    padding: 11px 30px;
    display: flex;
    align-items: center;
    justify-content: space-between;
 
-   span{
+   span {
       font-size: 14px;
       font-weight: 600;
       padding: 0;
@@ -12,22 +12,23 @@
       letter-spacing: normal;
    }
 
-   .taskItemStatusNew{
+   .taskItemStatusNew {
       color: #fff;
       background-color: #29CC97;
       padding: 5px 12px;
       border-radius: 8px;
       text-transform: uppercase;
    }
-   .taskItemStatusDefault{
+
+   .taskItemStatusDefault {
       color: #9FA2B4;
       background-color: #F0F1F7;
       padding: 5px 12px;
       border-radius: 8px;
       text-transform: uppercase;
    }
-   &:not(:last-child){
+
+   &:not(:last-child) {
       border-bottom: 1px solid #DFE0EB;
    }
 }
-

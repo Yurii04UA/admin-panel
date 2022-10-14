@@ -1,13 +1,13 @@
-import { Title } from "components/title";
-import { Cards, OverviewFooter, Graph } from "./components";
+import { Header } from "components/header";
+import { Cards, Graph, Table } from "./components";
 
 export const Overview = () => {
   return (
     <>
-      <Title title="Overview" />
+      <Header title="Overview" />
       <Cards />
       <Graph />
-      <OverviewFooter />
+      <Table />
     </>
   );
 };

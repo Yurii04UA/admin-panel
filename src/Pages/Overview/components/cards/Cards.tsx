@@ -1,47 +1,40 @@
 import { useState } from "react";
 
 import { Card } from "../card";
+import { cardsDate } from "./mock/cardsDate";
 
 import s from "./Cards.module.scss";
-
-const cardsArr = [
-  {
-    label: "Unresolved",
-    value: 60,
-  },
-  {
-    label: "Overdue",
-    value: 16,
-  },
-  {
-    label: "Open",
-    value: 43,
-  },
-  {
-    label: "On hold",
-    value: 64,
-  },
-];
 
 export const Cards = () => {
   const [cards, setCards] = useState({
     label: "Overdue",
-    state: false,
+    state: true,
   });
 
   const clickHandler = (label: string) => {
-  
+    if (cards.label != label) {
+      setCards({
+        label: label,
+        state: false,
+      });
+    } else {
+      setCards({
+        label: label,
+        state: cards.state === false ? true : false,
+      });
+    }
   };
 
   return (
     <div className={s.cards}>
-      {cardsArr.map((card) => {
+      {cardsDate.map((card) => {
+        const isActive = card.label === cards.label ? true : false;
         return (
           <Card
             key={card.label}
             label={card.label}
             value={card.value}
-            isActive={cards.state}
+            isActive={isActive}
             onClick={() => clickHandler(card.label)}
           />
         );

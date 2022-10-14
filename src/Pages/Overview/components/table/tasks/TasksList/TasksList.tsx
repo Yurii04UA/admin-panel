@@ -3,7 +3,6 @@ import { RadioGroup, FormControl } from "@mui/material";
 
 import { TaskItem } from "./TaskItem";
 
-
 type Tasks = {
   id: string;
   title: string;

@@ -4,10 +4,7 @@ interface IGpraphInfoProps {
   label: string;
   value: string;
 }
-export const GraphInfo: React.FC<IGpraphInfoProps> = ({
-  label,
-  value,
-}) => {
+export const GraphInfo: React.FC<IGpraphInfoProps> = ({ label, value }) => {
   return (
     <div className={s.graphInfo}>
       <div className={s.graphInfoTitle}>{label}</div>

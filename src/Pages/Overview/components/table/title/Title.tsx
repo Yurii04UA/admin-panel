@@ -1,13 +1,13 @@
-import s from './OverviewFooterTitle.module.scss';
+import s from './Title.module.scss';
 
-interface IOverviewFooterTitleProps {
+interface ITitleProps {
   title: string
   description: string
   onCLick?: () => void
   btnTitle: string
 }
 
-export const OverviewFooterTitle: React.FC<IOverviewFooterTitleProps> = ({ title, description, onCLick, btnTitle }) => {
+export const Title: React.FC<ITitleProps> = ({ title, description, onCLick, btnTitle }) => {
   return (
     <div className={s.overviewTitle}>
       <div>
