@@ -1,25 +1,25 @@
 import s from "./Card.module.scss";
 
 interface ICardProps {
-  title: string;
-  number: number;
+  label: string;
+  value: number;
   onClick?: () => void;
-  value?: boolean;
+  isActive?: boolean;
 }
 
 export const Card: React.FC<ICardProps> = ({
-  title,
-  number,
+  label,
   onClick,
   value,
+  isActive,
 }) => {
   return (
     <div
-      className={value ? s.card + " " + s.activeCard : s.card}
+      className={isActive ? s.card + " " + s.activeCard : s.card}
       onClick={onClick}
     >
-      <h3>{title}</h3>
-      <div>{number}</div>
+      <h3>{label}</h3>
+      <div>{value}</div>
     </div>
   );
 };

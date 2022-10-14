@@ -40,11 +40,11 @@ export const Graph = () => {
       </div>
 
       <div className="graph-right">
-        <GraphInfo title="Resolved" description="449" />
-        <GraphInfo title="Received" description="426" />
-        <GraphInfo title="Average first response time" description="33m" />
-        <GraphInfo title="Average response time" description="3h 8m" />
-        <GraphInfo title="Resolution within SLA" description="94%" />
+        <GraphInfo label="Resolved" value="449" />
+        <GraphInfo label="Received" value="426" />
+        <GraphInfo label="Average first response time" value="33m" />
+        <GraphInfo label="Average response time" value="3h 8m" />
+        <GraphInfo label="Resolution within SLA" value="94%" />
       </div>
     </div>
   );

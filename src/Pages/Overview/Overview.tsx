@@ -1,11 +1,11 @@
 import { Title } from "components/title";
-import { OverviewHeader, OverviewFooter, Graph } from "./components";
+import { Cards, OverviewFooter, Graph } from "./components";
 
 export const Overview = () => {
   return (
     <>
       <Title title="Overview" />
-      <OverviewHeader />
+      <Cards />
       <Graph />
       <OverviewFooter />
     </>
