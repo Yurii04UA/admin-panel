@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import MuiTable from '@mui/material/Table';
 import {
-  Table,
   TableBody,
   TableCell,
   TableContainer,
@@ -19,9 +19,9 @@ import { Header } from "../header";
 import { useContacts } from "hooks/useContacts";
 import { SortByLodashContact } from "sortingAndFilter/SortByLodashContact";
 
-import s from "./MyTable.module.scss";
+import s from "./Table.module.scss";
 
-export const MyTable = () => {
+export const Table = () => {
   const { showModal, setShowModal } = useContacts();
   const { newItem, editItem, sort, sortingData, setSortingData } = useContacts();
   const [isDeletItem, setIsDeletItem] = useState(false);
@@ -91,10 +91,8 @@ export const MyTable = () => {
 
   return (
     <TableContainer component={Paper} onClick={() => setShowModal("")}>
-      
       <Header />
-      
-      <Table aria-label="simple table" className={s.table}>
+      <MuiTable aria-label="simple table" className={s.table}>
       <TableHead>
         <TableRow>
           <TableCell className={s.title}>Name</TableCell>
@@ -143,8 +141,7 @@ export const MyTable = () => {
             );
           })}
       </TableBody>
-      <TableFooter></TableFooter>
-    </Table>
+    </MuiTable>
       <TablePagination
         rowsPerPageOptions={[8, 16, 32]}
         component="div"
