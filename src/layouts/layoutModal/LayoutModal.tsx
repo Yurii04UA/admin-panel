@@ -11,14 +11,15 @@ interface ILayoutProps {
 export const LayoutModal: React.FC<ILayoutProps> = ({
   children,
   title,
-  setIsShowModal: setIsShowModalEdit,
+  setIsShowModal,
+  
 }) => {
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
   };
 
   const closeModal = () => {
-    setIsShowModalEdit(false);
+    setIsShowModal(false);
   };
 
   return (

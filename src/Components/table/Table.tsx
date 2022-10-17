@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MuiTable from "@mui/material/Table";
 import {
   TableBody,
@@ -10,7 +11,6 @@ import {
   TableFooter,
 } from "@mui/material";
 
-import { useState } from "react";
 
 interface ITableProps {
   labels: string[];

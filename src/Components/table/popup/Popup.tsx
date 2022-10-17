@@ -1,22 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { StopPropagation } from "hoc/StopPropagation";
 
 import s from "./Popup.module.scss";
-import { FormContacts } from "../formContacts/FormContacts";
 
 interface IPopupProps {
   id: string;
   setValue: (value: any) => void;
   value: any[];
   setItem: (value: any) => void;
-  type: string;
+  type?: string;
   setIsShowEditModal: (value: boolean) => void;
 }
 
 export const Popup: React.FC<IPopupProps> = ({
   id,
-  type,
   setValue,
   value,
   setItem,
@@ -34,7 +32,6 @@ export const Popup: React.FC<IPopupProps> = ({
   const deleteHandler = () => {
     const newData = value.filter((item) => item.id != id);
     setValue(newData);
-    
   };
 
   const editHandler = () => {
@@ -62,7 +59,6 @@ export const Popup: React.FC<IPopupProps> = ({
           </div>
         </div>
       ) : null}
-
     </>
   );
 };

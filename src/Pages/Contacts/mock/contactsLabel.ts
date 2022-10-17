@@ -1,1 +1,1 @@
-export const contactsLabel = ['Name', 'Email', 'Address', 'Created at', ''];
+export const contactsLabel = ['Name', 'Phone', 'Address', 'Created at', ''];
