@@ -1,0 +1,28 @@
+.btnWF{
+    background-color: #fff !important;
+    color: #2b42da ;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    transition: all .3s ease;
+    cursor: pointer;
+   
+    &:hover{
+       color: #0a1b88 !important;
+    }
+}
+.btnWA{
+    width: 100%;
+    background-color: #fff !important;
+    color: #2b42da ;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    transition: all .3s ease;
+    margin-top: 20px;
+    cursor: pointer;
+   
+    &:hover{
+       color: #0a1b88 !important;
+    }
+}

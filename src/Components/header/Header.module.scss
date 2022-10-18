@@ -1,0 +1,20 @@
+.headerContent{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+
+   .headerLogin{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-radius: 5px;
+      padding: 0px 5px;
+      transition: all 0.3s ease;
+      &:hover{
+         background-color: rgba(128, 128, 128, 0.1);
+      }
+      .name{
+         font-weight: 600;
+      }
+   }
+}

@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import { App } from "./app";
+
 import "./index.scss";
-import App from "./Components/App/App";
-import { State } from "./Context/Context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 root.render(
-  <State>
+  <BrowserRouter>
     <App />
-  </State>,
+  </BrowserRouter>,
 );

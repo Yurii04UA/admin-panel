@@ -1,0 +1,59 @@
+.popup {
+   padding: 10px;
+   border: 1px solid #ccc;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   position: absolute;
+   top: 50%;
+   transform: translate(0, -50%);
+   background-color: #fff;
+
+   button {
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      text-align: left;
+
+      &:hover {
+         color: rgba(204, 204, 204);
+      }
+   }
+
+}
+
+.modalWrapper {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   background-color: #00000050;
+   z-index: 10;
+}
+.modalAgree {
+   position: absolute;
+   right: 40%;
+   top: 50%;
+   transform: translate(0, -50%);
+   z-index: 10;
+   padding: 10px;
+   border: 1px solid #DFE0EB;
+   background-color: #fff;
+   color: #000;
+   max-width: 200px;
+   text-align: center;
+
+   .modalBtn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background-color: #ccc;
+      border: none;
+      cursor: pointer;
+
+      &:not(:last-child) {
+         margin-right: 10px;
+      }
+   }
+}

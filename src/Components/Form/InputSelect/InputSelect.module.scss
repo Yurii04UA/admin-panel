@@ -1,0 +1,29 @@
+.select {
+   width: 100%;
+   border-radius: 8px;
+   outline: none;
+   color: #8a8a8a;
+   outline: none;
+   background-color: #FCFDFE;
+   border: 1px solid #F0F1F7;
+
+   fieldset{
+      border: none;
+   }
+
+   .placeholder{
+      color: #9FA2B4;
+      opacity: 0.8;
+      font-size: 14px;
+      padding: 0;
+   }
+
+   div {
+      padding: 4px 10px;  
+      color: #8a8a8a;
+   }
+}
+
+label{
+   text-transform: uppercase;
+}

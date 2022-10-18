@@ -1,0 +1,27 @@
+.header{
+   display: flex;
+   justify-content: space-between;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   align-items: center;
+   padding: 10px;
+
+   .wrapper{
+      display: flex;
+      gap: 10px;
+      button{
+         display: flex;
+         align-items: center;
+         gap: 5px;
+         background-color: #fff;
+         border: none;
+         color: rgb(123, 123, 123);
+         cursor: pointer;
+      }
+   }
+   
+}
+
+.dropDownWrapper{
+   display: flex;
+}

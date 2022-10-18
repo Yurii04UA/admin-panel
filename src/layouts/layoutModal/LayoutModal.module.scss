@@ -1,0 +1,39 @@
+.modalWrapper {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   background-color: #00000050;
+   z-index: 10;
+
+   .modalWindow {
+      position: fixed;
+      right: 40%;
+      top: 50%;
+      transform: translate(0, -50%);
+      z-index: 10;
+      padding: 10px;
+      border: 1px solid #DFE0EB;
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+
+      h2 {
+         margin-top: 30px;
+      }
+
+      .form {
+         width: 360px;
+         padding: 30px;
+         text-align: start;
+   
+         label {
+            color: #9FA2B4;
+            margin-bottom: 6px;
+         }
+
+      }
+
+   }
+}

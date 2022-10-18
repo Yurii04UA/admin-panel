@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #838383;
 }
 
 code {
@@ -32,4 +33,10 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.error {
+  color: #c10000;
+  text-transform: none;
+  margin-bottom: 10px;
 }

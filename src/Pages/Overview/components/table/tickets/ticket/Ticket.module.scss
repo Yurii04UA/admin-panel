@@ -1,0 +1,21 @@
+.overviewTicket {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 15px 30px;
+
+   &:not(:last-child) {
+      border-bottom: 1px solid #DFE0EB;
+   }
+
+   div {
+      &:first-child {
+         font-size: 14px;
+         font-weight: 600;
+      }
+
+      &:last-child {
+         color: #9FA2B4;
+      }
+   }
+}
